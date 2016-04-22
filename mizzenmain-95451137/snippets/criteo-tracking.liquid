@@ -1,0 +1,58 @@
+    <!-- CRITEO -->
+    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+    <script type="text/javascript">
+      var site_type = /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk/.test(navigator.userAgent) ? "m" : /iPad/.test(navigator.userAgent) ? "t" : "d";
+      window.criteo_q = window.criteo_q || [];
+      window.criteo_q.push(
+        { event: "setAccount", account: 21919},
+        { event: "setSiteType", type: site_type});
+    </script>
+    {% case template %}
+      {% when 'index' %}
+        <script type="text/javascript">
+          window.criteo_q.push(
+            { event: "viewHome"}
+          );
+        </script>
+      {% when 'collection' %}
+        <script>
+          var criteo_items = [];
+          {% for item in collection.products limit:3 %}
+            criteo_items.push("{{item.handle}}");
+          {% endfor %}
+            window.criteo_q.push(
+              { event: "viewList", product: criteo_items}
+            );
+        </script>
+      {% when 'product' %}
+        <script type="text/javascript">
+          window.criteo_q.push(
+            { event: "viewItem", product: "{{ product.handle }}" }
+          );
+        </script>
+        <script>
+$('button.action_button.add_to_cart').click(function() {
+          var criteo_items = [];
+  
+var criteoprice = $('span[itemprop="price"]').attr("content");  
+  criteo_items.push({
+              id : "{{product.handle}}",
+              price : criteoprice,
+              quantity : 1
+            });
+  
+          {% for item in cart.items %}
+            criteo_items.push({
+              id : "{{item.product.handle}}",
+              price : {{item.price | money_without_currency}},
+              quantity : {{item.quantity}}
+            });            
+          {% endfor %}
+  
+  
+          window.criteo_q.push(
+            { event: "viewBasket", product: criteo_items}
+          );  
+})
+        </script>
+    {% endcase %}

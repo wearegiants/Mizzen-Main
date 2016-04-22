@@ -1,0 +1,69 @@
+{% comment %}
+Apply discount codes for product bundles
+{% endcomment %}
+<script>
+var Discounts = (function($) {
+  var _public = {};
+
+  _public.invalidCodes = [];
+
+  _public.initialize = function() {
+    protect();
+  }
+
+  return _public;
+
+  function protect() {
+    for (var i = 0; i < _public.invalidCodes.length; i++) {
+      var code = _public.invalidCodes[i];
+      removeDiscountCode(code)
+    };
+  }
+
+  function removeDiscountCode(code) {
+    // string comparison needs to be case insensitive because Shopify's code validation is case insensitive as well
+
+    if ( $('.applied-discount__code').length !== 0 && $('.applied-discount__code').html().toUpperCase().indexOf(code.toUpperCase()) !== -1 ) {
+      $('.discount-delete').click();
+    }
+  }
+
+}(jQuery));
+
+$(document).ready(function() {
+  Discounts.initialize();
+});
+
+</script>
+
+{% assign dress_shirt_count = 0 %}
+{% for item in checkout.line_items %}
+  {% assign is_dress_shirt = false %}
+
+  {% for collection in item.product.collections %}
+    {% if collection.title == 'Dress Shirts' %}
+      {% assign is_dress_shirt = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if is_dress_shirt %}
+    {% assign dress_shirt_count = dress_shirt_count | plus: item.quantity %}
+  {% endif %}
+{% endfor %}
+
+{% if dress_shirt_count < 3 %}
+  <script>
+  Discounts.invalidCodes.push('MainMan3');
+  Discounts.invalidCodes.push('MainMan6');
+  </script>
+{% endif %}
+{% if dress_shirt_count >= 3 and dress_shirt_count < 6 %}
+  <script>
+  Discounts.invalidCodes.push('MainMan6')
+  </script>
+{% endif %}
+{% if dress_shirt_count >= 6 %}
+  <script>
+  Discounts.invalidCodes.push('MainMan3')
+  </script>
+{% endif %}

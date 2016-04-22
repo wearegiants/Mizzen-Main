@@ -1,0 +1,212 @@
+<script>
+console.log('Hello');
+/**
+ * This module operates on the collection.filtered.liquid template.
+ */
+var CollectionSizes = (function($) {
+  var _this = {};
+
+
+  _this.collection = {{ collection.products | json }};
+  _this.sizes_map = [];
+  _this.selected_size = '';
+
+
+  _this.main = function() {
+    _this.sizes_map = getProductIdsToSizesMap(_this.collection);
+    _this.selected_size = getSelectedSizeFromDOM();
+    updateDOMSizeAvailabilityMessage(_this.selected_size);
+    updateDOMVariantLink(_this.selected_size);
+  }
+
+  return _this;
+
+  function getSelectedSizeFromDOM() {
+    var $size_select = $('#filter-by-size');
+    if ($size_select.val() !== '') {
+      var selected_size = $size_select.val();
+      return selected_size;
+    }
+  }
+
+  /**
+   * End result:
+    [
+      {
+        "product_id": 123456789,
+        "sizes": {}
+          "Small": "In Stock"
+          "Medium": "Backorder",
+          "Large": 'Unavailable'
+        }
+      },
+
+    ]
+   */
+  function getProductIdsToSizesMap(collection) {
+    var products_sizes_map = [];
+
+    // iterate through products
+    for (var i = 0; i < collection.length; i++) {
+      var product = collection[i];
+      var new_product_object = {
+        product_id: product.id,
+        sizes: {}
+      };
+
+
+      // Figure out index of option "Size" for this product.
+      var size_option_index;
+      for (var j = 0; j < product.options.length; j++) {
+        if (product.options[j].indexOf('Size') !== -1) {
+          size_option_index = j;
+        }
+      };
+
+      var product_sizes = {};
+
+      // Loop through variants to aggregate product sizes and availability
+      for (var j = 0; j < product.variants.length; j++) {
+        var variant = product.variants[j];
+        var size;
+        var availability;
+
+        var propertyName = 'option' + (size_option_index +1);
+
+        // Get size value
+        if ( typeof(variant[propertyName]) === "string" ) {
+          size = variant[propertyName];
+        };
+        // Get availability for this variant
+        if (variant.inventory_quantity > 0) {
+          availability = "In Stock";
+        } else if (variant.inventory_policy === 'continue') {
+           availability = 'Backorder';
+        } else {
+          availability = 'Unavailable';
+        };
+
+        // if this size isn't already stored, let's add this to our `product_sizes` var
+        // if ( typeof(size) === 'string' && typeof(availability) === 'string' ) {
+        if (true) {
+          product_sizes[size] = availability;
+          // This line above should render something like `"Medium": "Unavailable"`
+        };
+      };// for product.variants
+
+      new_product_object.sizes = product_sizes;
+      products_sizes_map.push(new_product_object)
+
+    };// for collection.products
+
+    return products_sizes_map;
+  }// function getProductIdsToSizesMap(collection) {
+
+  function updateDOMSizeAvailabilityMessage(selected_size) {
+    // Remove old size notice injections - this is uneccessary currently because any time a size is
+    // selected, page reloads
+    //$('.product-grid .info .title .preorder').remove();
+
+    var matching_products_ids = [];
+
+    // Loop through sizes map and find every product item with a matching size whose status is "Unavailable"
+    // for (var i = 0; i < _this.sizes_map.length; i++) {
+    //   var name = _this.sizes_map[i];
+    // };
+    for (var i = 0; i < _this.sizes_map.length; i++) {
+      var product_entry = _this.sizes_map[i];
+      for (var key in product_entry['sizes']) {
+        if (product_entry['sizes'].hasOwnProperty(key)) {
+          var name = key;
+          var value = product_entry['sizes'][key];
+          if (name === selected_size  && value === 'Unavailable') {
+            matching_products_ids.push(product_entry['product_id']);
+          };
+        }
+      }
+    };
+    /**
+     * Now that `matching_products_id` is built, iterate through it and update every product grid
+     * DOM element with a matching `product-id` data attribute selector
+     */
+
+    var $products = $('.product-grid > .thumbnail');
+    $products.each( function( index, element ) {
+      var $product = $( element );
+      var product_id = $product.data('product-id');
+      var $title = $product.find('.info .title');
+      var msg = '';
+
+
+      if (matching_products_ids.indexOf(product_id) === -1 ) {// not a match
+        //msg = '<span class="preorder">-</span>';
+      } else {// is a match
+        // msg = '<span class="preorder">"' + selected_size + '" out of stock. Notify me.</span>';
+        msg = '<span class="preorder">' + 'Size' + ' out of stock. Notify me.</span>';
+
+      }
+      $title.append(msg);
+
+
+    });
+
+  }// function updateDOMSizeAvailabilityMessage(selected_size) {
+
+
+  function updateDOMVariantLink(selected_size) {
+    var products = _this.collection;
+
+    // get options index for "Size"
+    var size_option_index = 0;
+    var arbitrary_product = products[0];
+
+    for (var i = 0; i < arbitrary_product['options'].length; i++) {
+      if ( arbitrary_product['options'][i] === "Size" ) {
+        size_option_index = i;
+      }
+    };
+
+    // Get `matching_variant_id`
+    // Loop through all products to find variant with matching size. Update product's link in DOM
+    // to link to variant
+    for (var i = 0; i < products.length; i++) {
+      var product = products[i];
+      var matching_variant_id = '';
+
+      for (var j = 0; j < product.variants.length; j++) {
+        var variant = product.variants[j];
+        // if variant's target option entry contains 'selected_size', pull that variant ID to add to
+        // product link
+        if (variant.options[size_option_index] === selected_size) {
+          matching_variant_id = variant.id;
+        };
+      };
+
+      if (matching_variant_id !== '') {
+        var $product = $('.product-grid div.thumbnail[data-product-id="' + product.id + '"]');
+        console.log('$product.length');
+        console.log($product.length);
+
+        var $link = $($product.find('a'));
+
+
+        console.log('$link.length');
+        console.log($link.length);
+        var updated_href = $link.attr('href') + '?variant=' + matching_variant_id;
+        $link.attr('href', updated_href);
+      }
+
+    };// for product
+  }// function updateDOMVariantLink(selected_size) {
+
+}(jQuery));
+
+/**
+ * When user selects a size, find all products with "Backorder" status on that size.
+ * Append a note to the product title element
+ */
+
+$(document).ready(function() {
+  CollectionSizes.main();
+});
+</script>

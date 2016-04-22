@@ -1,0 +1,37 @@
+{% comment %}
+<div class="text-center breadcrumb">
+  <a href="{{ blog.url }}" class="back">Back to &quot;Main Scoop&quot;</a>
+  <span>&gt;</span>
+  <span>{{ article.title }}</span>
+</div>
+{% endcomment %}
+
+<ol class="articles">
+  {% comment %}
+  Article
+  {% endcomment %}
+  <li class="active">
+    <article>
+      <figure>
+        <img src="{{ article.image | img_url: 'original' }}" alt="{{ image.alt }}">
+        <figcaption><time>{{ article.published_at | date: "%m/%d/%y" }}</time></figcaption>
+      </figure>
+      <h2>{{ article.title }}</h2>
+      <div class="excerpt">
+        <p>
+          {{ article.excerpt | strip_html }}
+        </p>
+      </div><!-- .excerpt -->
+      <div class="full">
+        {{ article.content }}
+      </div><!-- .full-article -->
+      <button class="toggle">+More</button>
+    </article>
+  </li><!-- .active -->
+</ol>
+
+<div class="text-center breadcrumb">
+  <a href="{{ blog.url }}" class="back">Back to &quot;Main Scoop&quot;</a>
+  <span>&gt;</span>
+  <span>{{ article.title }}</span>
+</div>

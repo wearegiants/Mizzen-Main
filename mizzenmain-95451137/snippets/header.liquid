@@ -1,0 +1,153 @@
+<header id="header">
+
+  <a class="promotion" href="/collections/the-shirt">
+    Use "MAINMAN3" at Checkout <br>for $50 Off 3 Dress Shirts
+  </a>
+
+  {% comment %}
+  Desktop View
+  {% endcomment %}
+  <section class="desktop">
+    {% comment %}
+    Newsletter Signup Slideout/Modal
+    {% endcomment %}
+    <div class="newsletter-modal">
+      <a class="close close-newsletter-modal"><i></i></a>
+      <h2>Join the List</h2>
+      <p>
+        Stay up to date with exclusive offers, new arrivals,
+        <br>
+        and the latest news from Mizzen + Main!
+      </p>
+      <form class="float-contents" action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" target="_blank">
+        <input type="email" name="EMAIL" required="required" placeholder="Your email please...">
+        <input type="submit" value="submit" class="bbutton">
+      </form>
+    </div><!-- .newsletter-modal -->
+    {% include 'newsletter-modal-js' %}
+
+    <div class="container">
+      {% comment %}
+      Header Top Row
+      {% endcomment %}
+      <div class="row top">
+        {% comment %}
+        Left - Promo Text
+        {% endcomment %}
+        <div class="columns five left">
+          <a class="open-newsletter-modal"><i class="fa fa-envelope"></i><span>Join the Email List</span></a>
+        </div><!-- .columns -->
+
+        <div class="columns six text-center">
+          <p class="prompt">{{ settings.header_prompt }}</p>
+        </div>
+
+        {% comment %}
+        Right - Account / Cart Nav
+        {% endcomment %}
+        <div class="columns five right text-right">
+          <nav>
+            <ul class="list-inline">
+              <li><a href="/account">Sign In</a></li>
+              <li><a class="view-cart">Shopping Bag</a></li>
+            </ul>
+          </nav>
+        </div><!-- .columns -->
+      </div><!-- .row.top -->
+
+
+      {% comment %}
+      Middle Row - Logo
+      {% endcomment %}
+      <div class="row middle">
+        <div class="columns sixteen">
+          <a href="/" class="logo"><img src="{{ 'header-logo.svg' | asset_url }}" alt=""></a>
+        </div>
+      </div><!-- .row.middle -->
+
+
+      {% comment %}
+      Bottom Row - Main Nav
+      {% endcomment %}
+      {% comment %}
+      <div class="row bottom">
+        <nav class="main-menu">
+          <ul class="list-inline">
+            {% for link in linklists.new-homepage-main-menu.links %}
+              <li{% if forloop.index == 2 %}{% endif %}>
+
+                <a href="{{ link.url }}">{{ link.title }}</a>
+
+                {% assign sublist_handle = link.title | handleize | append: '-collections' %}
+                {% if linklists[sublist_handle].links.size > 0 %}
+                  <ul>
+                    {% for _link in linklists[sublist_handle].links %}
+                      <li><a href="{{ _link.url }}">{{ _link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div><!-- .row.bottom -->
+      {% endcomment %}
+
+
+      <div class="row bottom">
+        <nav class="main-menu">
+          <ul class="list-inline">
+            {% for link in linklists.main-menu.links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                {% assign _handle = link.title | handle %}
+                {% if linklists[_handle].links.size > 0 %}
+                  <ul>
+                    {% for _link in linklists[_handle].links %}
+                      <li><a href="{{ _link.url }}">{{ _link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div><!-- .row.bottom -->
+
+    </div><!-- .container -->
+
+  </section><!-- .desktop -->
+
+  {% comment %}
+  Mobile View
+  {% endcomment %}
+  <section class="mobile">
+    <div class="container">
+      <div class="row top">
+        <div class="columns left">
+          <a class="view-mobile-nav"><i class="fa fa-navicon"></i></a>
+        </div>
+        <div class="columns middle">
+          <a class="logo" href="/"><img src="{{ 'header-logo.svg' | asset_url }}" alt=""></a>
+        </div>
+        <div class="columns right text-right">
+          <a class="view-cart">
+            <button class="cart-btn btn-flat">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="23px" viewBox="0 0 31 29.261" enable-background="new 0 0 31 29.261" xml:space="preserve" class="icon">
+                <path fill="#002855" d="M29,6.261h-6.355V1.375C22.645,0.616,22.03,0,21.27,0C21.178,0,21.088,0.01,21,0.027
+                  C20.913,0.01,20.823,0,20.73,0H10.27C10.177,0,10.087,0.01,10,0.027C9.912,0.01,9.822,0,9.73,0C8.97,0,8.355,0.616,8.355,1.375
+                  v4.886H2c-1.105,0-2,0.895-2,2v19c0,1.105,0.895,2,2,2h27c1.105,0,2-0.895,2-2v-19C31,7.157,30.105,6.261,29,6.261z M11.105,2.75
+                  h8.791v3.511h-8.791V2.75z">
+                </path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </div><!-- .row.top -->
+      <div class="row bottom">
+        <p class="prompt">{{ settings.header_prompt }}</p>
+      </div>
+    </div><!-- .container -->
+  </section><!-- .mobile -->
+
+</header><!-- #header -->

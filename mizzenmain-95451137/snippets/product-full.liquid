@@ -1,0 +1,112 @@
+{% for product in products %}
+  {% capture left_product_layout %}
+    <div class="product-{{ product.id }} section clearfix" itemscope itemtype="http://data-vocabulary.org/Product">   
+       <div class="seven columns offset-by-two alpha">
+        {% include 'product-images' %}
+      </div>
+    
+     <div class="five columns omega">
+       <h2 class="product_name" itemprop="name"><a href="{{ product.url }}">{{ product.title }}</a></h2>
+       {% if settings.display_vendor %}
+          <p class="vendor">
+            <span class="label">by:</span> <span itemprop="brand">{{ product.vendor | link_to_vendor }}</span>
+          </p>
+       {% endif %}
+
+      {% assign variant = product.selected_or_first_available_variant %}
+      <p class="modal_price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+         <meta itemprop="currency" content="{{ shop.currency }}" />
+         <meta itemprop="seller" content="{{ shop.name | escape }}" />
+         <meta itemprop="availability" content="{% if product.available %}in_stock{% else %}out_of_stock{% endif %}" />
+         
+         <span class="sold_out">{% if variant.available == false %}{{ settings.sold_out_text }}{% endif %}</span>
+         <span itemprop="price" content="{{ variant.price | money_without_currency }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
+            <span class="current_price">
+              {% if variant.available %}
+                {% if variant.price > 0 %} 
+                  {{ variant.price | money }} 
+                {% else %}
+                  {{ settings.free_price_text }}
+                {% endif %}
+              {% endif %}
+            </span>
+         </span>
+         <span class="was_price">
+          {% if variant.price < variant.compare_at_price %}
+            {{ variant.compare_at_price | money }}
+          {% endif %}
+         </span>
+      </p>
+     
+      {% include 'product-notify-me' %}
+      {% include 'product-form' with 'product' %}
+
+       {% if settings.frontpage_display_description and product.description != blank %}
+        <div class="description" itemprop="description">
+          {{ product.description | split: '<!-- split -->' | first }}
+        </div>
+      {% endif %}
+
+      </div>
+    </div>
+  {% endcapture %}
+
+  {% capture right_product_layout %}
+    <div class="product-{{ product.id }} section clearfix" itemscope itemtype="http://data-vocabulary.org/Product">       
+     <div class="five columns offset-by-two alpha">
+       <h2 class="product_name" itemprop="name"><a href="{{ product.url }}">{{ product.title }}</a></h2>
+       {% if settings.display_vendor %}
+          <p class="vendor">
+            <span class="label">by:</span> <span itemprop="brand">{{ product.vendor | link_to_vendor }}</span>
+          </p>
+       {% endif %}
+
+      {% assign variant = product.selected_or_first_available_variant %}
+      <p class="modal_price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+         <meta itemprop="currency" content="{{ shop.currency }}" />
+         <meta itemprop="seller" content="{{ shop.name | escape }}" />
+         <meta itemprop="availability" content="{% if product.available %}in_stock{% else %}out_of_stock{% endif %}" />
+         
+         <span class="sold_out">{% if variant.available == false %}{{ settings.sold_out_text }}{% endif %}</span>
+         <span itemprop="price" content="{{ variant.price | money_without_currency }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
+            <span class="current_price">
+              {% if variant.available %}
+                {% if variant.price > 0 %} 
+                  {{ variant.price | money }} 
+                {% else %}
+                  {{ settings.free_price_text }}
+                {% endif %}
+              {% endif %}
+            </span>
+         </span>
+         <span class="was_price">
+          {% if variant.price < variant.compare_at_price %}
+            {{ variant.compare_at_price | money }}
+          {% endif %}
+         </span>
+      </p>
+     
+      {% include 'product-notify-me' %}
+      {% include 'product-form' with 'product' %}
+
+       {% if settings.frontpage_display_description and product.description != blank %}
+        <div class="description" itemprop="description">
+          {{ product.description | split: '<!-- split -->' | first }}
+        </div>
+      {% endif %}
+
+      </div>
+
+      <div class="seven columns omega">
+        {% include 'product-images' %}
+      </div>
+    </div>
+  {% endcapture %}
+
+
+  {% if settings.frontpage_product_stagger %}
+    {% cycle left_product_layout, right_product_layout %}
+  {% else %}
+    {{ left_product_layout }}
+  {% endif %}
+{% endfor %}

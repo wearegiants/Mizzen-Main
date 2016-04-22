@@ -1,0 +1,351 @@
+{% comment %}
+Optimizely Default Variation
+{% endcomment %}
+<div id="variation_default">
+  {% comment %}
+  Top Banner
+  {% endcomment %}
+  <section class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="columns sixteen">
+          <a href="{{ settings.index_pic_1_link }}" class="captioned-pic{% if settings.index_pic_1_text_color == 'dark' %} dark{% endif %}">
+            <img class="desktop" src="{{ 'index-slide-1-desktop.jpg' | asset_url }}" alt="">
+            <img class="mobile" src="{{ 'index-slide-1-mobile.jpg' | asset_url }}" alt="">
+            <div class="text">
+              <h2>{{ settings.index_pic_1_heading_text }}</h2>
+              <button class="bbutton">{{ settings.index_pic_1_button_text }}</button>
+            </div><!-- .text -->
+          </a>
+        </div><!-- .columns -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </section><!-- .banner -->
+
+
+  {% comment %}
+  Quote
+  {% endcomment %}
+  <section class="quote">
+    <div class="container">
+      <div class="row">
+        <div class="columns sixteen">
+          <div class="float-contents">
+            <p>"The next evolution of the men's dress shirt."</p>
+            <img src="{{ 'the-new-york-times.png' | asset_url }}" alt="The New York Times">
+          </div>
+        </div><!-- .columns -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </section><!-- .text -->
+
+  {% comment %}
+  Shop by Collection
+  {% endcomment %}
+  <section class="shop-by-collection">
+    <div class="container">
+      {% comment %}
+      Row A
+      {% endcomment %}
+      <div class="row a">
+        <div class="columns left">
+          <a href="{{ settings.index_pic_2_link }}" class="captioned-pic{% if settings.index_pic_2_text_color == 'dark' %} dark{% endif %}">
+            <img src="{{ 'index-shop-by-collection-1.jpg' | asset_url }}" alt="">
+            <div class="text">
+              {% if settings.index_pic_2_heading_text != '' %}
+                <p>{{ settings.index_pic_2_heading_text }}</p>
+              {% endif %}
+              <button class="bbutton">{{ settings.index_pic_2_button_text }}</button>
+            </div><!-- .text -->
+          </a>
+        </div><!-- .columns.left -->
+        <div class="columns right">
+          <a href="{{ settings.index_pic_3_link }}" class="captioned-pic{% if settings.index_pic_3_text_color == 'dark' %} dark{% endif %}">
+            <img src="{{ 'index-shop-by-collection-2.jpg' | asset_url }}" alt="">
+            <div class="text">
+              {% if settings.index_pic_3_heading_text != '' %}
+                <p>{{ settings.index_pic_3_heading_text }}</p>
+              {% endif %}
+              <button class="bbutton">{{ settings.index_pic_3_button_text }}</button>
+            </div><!-- .text -->
+          </a>
+        </div><!-- .columns.right -->
+      </div><!-- .row.a -->
+      {% comment %}
+      Row B
+      {% endcomment %}
+      <div class="row b">
+        <div class="columns sixteen">
+          <a href="{{ settings.index_pic_4_link }}" class="captioned-pic{% if settings.index_pic_4_text_color == 'dark' %} dark{% endif %}">
+            <img class="desktop" src="{{ 'index-shop-by-collection-3-desktop.jpg' | asset_url }}" alt="">
+            <img class="mobile" src="{{ 'index-shop-by-collection-3-mobile.jpg' | asset_url }}" alt="">
+            <div class="text">
+              {% if settings.index_pic_4_heading_text != '' %}
+                <p>{{ settings.index_pic_4_heading_text }}</p>
+              {% endif %}
+              <button class="bbutton">{{ settings.index_pic_4_button_text }}</button>
+            </div><!-- .text -->
+          </a>
+        </div><!-- .columns.sixteen -->
+      </div><!-- .row.b -->
+
+    </div><!-- .container -->
+  </section><!-- .shop-by-collection -->
+
+
+  {% comment %}
+  America!
+  {% endcomment %}
+  <section class="usa">
+    <div class="container">
+      <div class="row">
+        <div class="columns sixteen text-center">
+          <div class="float-contents">
+            <img src="{{ 'american-flag.png' | asset_url }}" alt="">
+            <p>Made in the USA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- .usa -->
+</div><!-- #variation_default -->
+
+
+{% comment %}
+Optimizely Variation 1
+{% endcomment %}
+<div id="variation_1">
+
+    {% comment %}
+    Top Banner
+    {% endcomment %}
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="columns sixteen">
+            <a href="{{ settings.index_pic_1_link }}" class="captioned-pic{% if settings.index_pic_1_text_color == 'dark' %} dark{% endif %}">
+              <img class="desktop" src="{{ 'index-slide-1-desktop.jpg' | asset_url }}" alt="">
+              <img class="mobile" src="{{ 'index-slide-1-mobile.jpg' | asset_url }}" alt="">
+              <div class="text">
+                <h2>{{ settings.index_pic_1_heading_text }}</h2>
+                <button class="bbutton">{{ settings.index_pic_1_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </section><!-- .banner -->
+
+    {% comment %}
+    Quote
+    {% endcomment %}
+    <section class="quote">
+      <div class="container">
+        <div class="row">
+          <div class="columns sixteen">
+            <div class="float-contents">
+              <p>"The next evolution of the men's dress shirt."</p>
+              <img src="{{ 'the-new-york-times.png' | asset_url }}" alt="The New York Times">
+            </div>
+          </div><!-- .columns -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </section><!-- .text -->
+
+    {% comment %}
+    New Arrivals
+    {% endcomment %}
+    {% include 'new-arrivals' %}
+
+
+    {% comment %}
+    Shop by Collection
+    {% endcomment %}
+    <section class="shop-by-collection">
+      <div class="container">
+        {% comment %}
+        Row A
+        {% endcomment %}
+        <div class="row a">
+          <div class="columns left">
+            <a href="{{ settings.index_pic_2_link }}" class="captioned-pic{% if settings.index_pic_2_text_color == 'dark' %} dark{% endif %}">
+              <img src="{{ 'index-shop-by-collection-1.jpg' | asset_url }}" alt="">
+              <div class="text">
+                {% if settings.index_pic_2_heading_text != '' %}
+                  <p>{{ settings.index_pic_2_heading_text }}</p>
+                {% endif %}
+                <button class="bbutton">{{ settings.index_pic_2_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns.left -->
+          <div class="columns right">
+            <a href="{{ settings.index_pic_3_link }}" class="captioned-pic{% if settings.index_pic_3_text_color == 'dark' %} dark{% endif %}">
+              <img src="{{ 'index-shop-by-collection-2.jpg' | asset_url }}" alt="">
+              <div class="text">
+                {% if settings.index_pic_3_heading_text != '' %}
+                  <p>{{ settings.index_pic_3_heading_text }}</p>
+                {% endif %}
+                <button class="bbutton">{{ settings.index_pic_3_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns.right -->
+        </div><!-- .row.a -->
+        {% comment %}
+        Row B
+        {% endcomment %}
+        <div class="row b">
+          <div class="columns sixteen">
+            <a href="{{ settings.index_pic_4_link }}" class="captioned-pic{% if settings.index_pic_4_text_color == 'dark' %} dark{% endif %}">
+              <img class="desktop" src="{{ 'index-shop-by-collection-3-desktop.jpg' | asset_url }}" alt="">
+              <img class="mobile" src="{{ 'index-shop-by-collection-3-mobile.jpg' | asset_url }}" alt="">
+              <div class="text">
+                {% if settings.index_pic_4_heading_text != '' %}
+                  <p>{{ settings.index_pic_4_heading_text }}</p>
+                {% endif %}
+                <button class="bbutton">{{ settings.index_pic_4_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns.sixteen -->
+        </div><!-- .row.b -->
+
+      </div><!-- .container -->
+    </section><!-- .shop-by-collection -->
+
+
+    {% comment %}
+    America!
+    {% endcomment %}
+    <section class="usa">
+      <div class="container">
+        <div class="row">
+          <div class="columns sixteen text-center">
+            <div class="float-contents">
+              <img src="{{ 'american-flag.png' | asset_url }}" alt="">
+              <p>Made in the USA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- .usa -->
+
+</div><!-- #variation_1 -->
+
+
+{% comment %}
+Optimizely Variation 2
+{% endcomment %}
+<div id="variation_2">
+
+    {% comment %}
+    Top Banner
+    {% endcomment %}
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="columns sixteen">
+            <a href="{{ settings.index_pic_1_link }}" class="captioned-pic{% if settings.index_pic_1_text_color == 'dark' %} dark{% endif %}">
+              <img class="desktop" src="{{ 'index-slide-1-desktop.jpg' | asset_url }}" alt="">
+              <img class="mobile" src="{{ 'index-slide-1-mobile.jpg' | asset_url }}" alt="">
+              <div class="text">
+                <h2>{{ settings.index_pic_1_heading_text }}</h2>
+                <button class="bbutton">{{ settings.index_pic_1_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </section><!-- .banner -->
+
+    {% comment %}
+    Quote
+    {% endcomment %}
+    <section class="quote">
+      <div class="container">
+        <div class="row">
+          <div class="columns sixteen">
+            <div class="float-contents">
+              <p>"The next evolution of the men's dress shirt."</p>
+              <img src="{{ 'the-new-york-times.png' | asset_url }}" alt="The New York Times">
+            </div>
+          </div><!-- .columns -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </section><!-- .text -->
+
+    {% comment %}
+    Shop by Collection
+    {% endcomment %}
+    <section class="shop-by-collection">
+      <div class="container">
+        {% comment %}
+        Row A
+        {% endcomment %}
+        <div class="row a">
+          <div class="columns left">
+            <a href="{{ settings.index_pic_2_link }}" class="captioned-pic{% if settings.index_pic_2_text_color == 'dark' %} dark{% endif %}">
+              <img src="{{ 'index-shop-by-collection-1.jpg' | asset_url }}" alt="">
+              <div class="text">
+                {% if settings.index_pic_2_heading_text != '' %}
+                  <p>{{ settings.index_pic_2_heading_text }}</p>
+                {% endif %}
+                <button class="bbutton">{{ settings.index_pic_2_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns.left -->
+          <div class="columns right">
+            <a href="{{ settings.index_pic_3_link }}" class="captioned-pic{% if settings.index_pic_3_text_color == 'dark' %} dark{% endif %}">
+              <img src="{{ 'index-shop-by-collection-2.jpg' | asset_url }}" alt="">
+              <div class="text">
+                {% if settings.index_pic_3_heading_text != '' %}
+                  <p>{{ settings.index_pic_3_heading_text }}</p>
+                {% endif %}
+                <button class="bbutton">{{ settings.index_pic_3_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns.right -->
+        </div><!-- .row.a -->
+        {% comment %}
+        Row B
+        {% endcomment %}
+        <div class="row b">
+          <div class="columns sixteen">
+            <a href="{{ settings.index_pic_4_link }}" class="captioned-pic{% if settings.index_pic_4_text_color == 'dark' %} dark{% endif %}">
+              <img class="desktop" src="{{ 'index-shop-by-collection-3-desktop.jpg' | asset_url }}" alt="">
+              <img class="mobile" src="{{ 'index-shop-by-collection-3-mobile.jpg' | asset_url }}" alt="">
+              <div class="text">
+                {% if settings.index_pic_4_heading_text != '' %}
+                  <p>{{ settings.index_pic_4_heading_text }}</p>
+                {% endif %}
+                <button class="bbutton">{{ settings.index_pic_4_button_text }}</button>
+              </div><!-- .text -->
+            </a>
+          </div><!-- .columns.sixteen -->
+        </div><!-- .row.b -->
+
+      </div><!-- .container -->
+    </section><!-- .shop-by-collection -->
+
+
+    {% comment %}
+    New Arrivals
+    {% endcomment %}
+    {% include 'new-arrivals' %}
+
+
+    {% comment %}
+    America!
+    {% endcomment %}
+    <section class="usa">
+      <div class="container">
+        <div class="row">
+          <div class="columns sixteen text-center">
+            <div class="float-contents">
+              <img src="{{ 'american-flag.png' | asset_url }}" alt="">
+              <p>Made in the USA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- .usa -->
+
+</div><!-- #variation_2 -->

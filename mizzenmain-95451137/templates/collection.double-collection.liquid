@@ -1,0 +1,292 @@
+{% paginate collection.products by settings.pagination_limit %}
+
+  {% if settings.display_collection_title %}
+    <div class="sixteen columns">
+      <h1 class="center">{{ collection.title }}</h1>
+      <div class="feature_divider"></div>
+    </div>
+  {% endif %}
+
+{% assign banner_text_position = '' %}
+{% if collection.description contains '<!-- position:left -->' %}
+  {% assign banner_text_position = 'snap-left' %}
+{% elsif collection.description contains '<!-- position:right -->' %}
+  {% assign banner_text_position = 'snap-right' %}
+{% endif %}
+
+{% assign collection_title_condition = '' %}
+{% if collection.handle contains '-collection' %}
+  {% assign collection_title_condition = 'downsize' %}
+{% endif %}
+
+{% assign banner_text_width = '40%' }
+{% assign description = collection.description | split: '<!-- width:' %}
+{% assign description = collection.description | split: '<!-- width:' %}
+{% for width in description %}
+  {% if width contains '% -->' %}
+    {% assign new_width = width | split: '% -->' %}
+  {% endif %}
+{% endfor %}
+
+{% assign description-background-x = collection.description | split: '<!-- background-x:' %}
+{% assign description-background-x = collection.description | split: '<!-- background-x:' %}
+{% for width in description-background-x %}
+  {% if width contains '% -->' %}
+    {% assign new_background-x = width | split: '% -->' | first %}
+  {% endif %}
+{% endfor %}
+
+  <div class="collection-banner center">
+    <img src="{{ collection.image.src | img_url: '2048x2048' }}" alt="{{ collection.image.alt }}" />
+    <div class="collection-banner-text {{ banner_text_position }} {{ collection_title_condition }}" style="width: {{ new_width | first }}%;" >{{ collection.description }}</div>
+    {% if collection.handle contains '-collection' %}
+      <a href="#less-btn-poss" class="more-button">+ MORE ABOUT THE {{ collection.title | uppercase }}</a>
+    {% endif %}
+  </div>
+
+  {% if collection.handle contains '-collection' %}
+  <div id="less-btn-poss" class="info-container">
+    <div class="row icons">
+      <div class="columns">
+        <img src="{{ 'icon-moisture-wicking.png' | asset_url }}" alt="">
+        <h4>Moisture Wicking</h4>
+      </div>
+      <div class="columns">
+        <img src="{{ 'icon-machine-washable.png' | asset_url }}" alt="">
+        <h4>Machine Washable</h4>
+      </div>
+      <div class="columns">
+        <img src="{{ 'icon-four-way-stretch.png' | asset_url }}" alt="">
+        <h4>Four Way Stretch</h4>
+      </div>
+      <div class="columns">
+        <img src="{{ 'icon-superior-fit.png' | asset_url }}" alt="">
+        <h4>Superior Fit</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns left featimg">
+        {% if collection.handle contains 'leeward' %}
+          {% assign infoprod = all_products['montauk-blue-check-dress-shirt'] %}
+        {% elsif collection.handle contains 'spinnaker' %}
+          {% assign infoprod = all_products['captiva-bright-coral-gingham-spread-collar-dress-shirt'] %}
+        {% endif %}
+        <a href="{{ infoprod.url }}"><img src="{{ infoprod.featured_image.src | product_img_url: 'master' }}" /></a>
+      </div>
+      <div class="columns right product-info">
+        <ul>
+          <li>
+            <h3>Maintenance</h3>
+            <p>Machine washable and requires no ironing</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <h3>Quick dry</h3>
+            <p>Moisture wicking fabric lets you breathe</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <h3>Four-way Stretch</h3>
+            <p>Moisture wicking fabric lets you breathe</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <h3>Weight</h3>
+            <p>Lightweight and comfortable to keep you cool</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row linkholder">
+      <a href="#" class="less-button">- LESS</a>
+    </div>
+  </div>
+  {% endif %}
+
+  <script type="text/javascript">
+    $.fn.scrollView = function () {
+      return this.each(function () {
+          $('html, body').animate({
+              scrollTop: $(this).offset().top
+          }, 1000);
+      });
+    }
+    $(document).ready(function() {
+        $( "a.more-button" ).click(function() {
+          $('#less-btn-poss').scrollView();
+          $( ".info-container" ).show().addClass('active');
+
+          return false;
+        });
+        $( "a.less-button" ).click(function() {
+          $( ".info-container" ).hide().removeClass('active');
+          return false;
+        });
+    });
+  </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.info-button').click(function(){
+          $('.info-container').toggle(function(){
+            if ($('.info-button').text() == '+ MORE ABOUT THE LEEWARD') {
+              $('.info-button').text('- SHOW LESS');
+            }
+            else {
+              $('.info-button').text('+ MORE ABOUT THE LEEWARD');
+            }
+          });
+        });
+        // $('.info-button').click(function(){
+        //   $('.info-container').toggle(function(){
+        //     if ($('.info-button').text() == '+ MORE ABOUT THE SPINNAKER') {
+        //       $('.info-button').text('- SHOW LESS');
+        //     }
+        //     else {
+        //       $('.info-button').text('+ MORE ABOUT THE SPINNAKER');
+        //     }
+        //   });
+        // });
+      });
+    </script>
+
+  <div class="section clearfix breadcrumb-wrapper">
+    <div class="sixteen columns breadcrumb">
+      {% comment %}<div class="eight columns breadcrumb_text alpha">
+        {% if settings.collection_breadcrumb %}
+          <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span class="filter-category" itemprop="title">Home</span></a></span>
+          &nbsp;<span class="icon-right-arrow"></span>
+          <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="active"><a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="url"><span class="filter-category" itemprop="title">{{ collection.title }}</span></a></span>
+          {% if current_tags %}
+            {% for tag in current_tags %}
+              &nbsp;<span class="icon-right-arrow"></span>
+              <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="url"><span itemprop="title">{{ tag }}</span></a></span>
+            {% endfor %}
+          {% endif %}
+
+          {% if paginate.pages != 0 %}
+            &nbsp;<span class="icon-right-arrow hide-mobile"></span> <span class="hide-mobile">Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+          {% endif %}
+
+        {% endif %}
+      </div>{% endcomment %}
+
+      {% if collection.handle != blank and collection.products_count > 0 %}
+        {% if settings.collection_tags %}
+          <div class="four columns section_select {% unless settings.collection_sort %}offset-by-twelve omega{% endunless %}">
+            {% for tag in collection.all_tags %}
+              {% if forloop.first %}
+                <label for="tag_filter" class="inline">Filter by: </label>
+                <select name="tag_filter" id="tag_filter">
+                    <option {% unless current_tags %}selected="selected"{% endunless %} value="{% if collection.handle == "all" %}/collections/all{% else %}{{ collection.url }}{% endif %}">All {{ collection.title }}</option>
+              {% endif %}
+
+              {% unless tag contains 'meta-related-collection-' %}
+                <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}">{{ tag }}</option>
+              {% endunless %}
+
+              {% if forloop.last %}
+                </select>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+       {% if settings.collection_sort %}
+          <div class="four columns section_select omega {% unless settings.collection_tags %}offset-by-twelve{% endunless %}">
+            <label for="sort-by" class="inline">Sort by: </label>
+            <select id="sort-by">
+              <option value="manual">Featured</option>
+              <option value="price-ascending">Price: Low to High</option>
+              <option value="price-descending">Price: High to Low</option>
+              <option value="title-ascending">A-Z</option>
+              <option value="title-descending">Z-A</option>
+              <option value="created-ascending">Oldest to Newest</option>
+              <option value="created-descending">Newest to Oldest</option>
+              <option value="best-selling">Best Selling</option>
+            </select>
+            <script type="text/javascript">
+              // <![CDATA[
+                $('#sort-by')
+                  .val('{{ collection.sort_by | default: collection.default_sort_by  }}')
+                  .bind('change', function() {
+                    Shopify.queryParams.sort_by = $(this).val();
+                    location.search = $.param(Shopify.queryParams);
+                });
+              // ]]>
+            </script>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+    {% comment %}{% if collection.description != blank %}
+      <div class="section clearfix collection_description">
+        {{ collection.description }}
+      </div>
+    {% endif %}{% endcomment %}
+    {% if collection.products.size == 0 %}
+
+    {% if settings.collection_sidebar %}
+      {% include 'sidebar' %}
+      <div class="twelve columns">
+    {% else %}
+      <div class="sixteen columns product-grid">
+    {% endif %}
+      <div class="section clearfix">
+        <p class="quote">No products found in this collection.</p>
+      </div>
+      {% else %}
+        {% assign collection_handle_1 = collection.metafields.bva.collection_1 | handleize %}
+        {% assign collection_handle_2 = collection.metafields.bva.collection_2 | handleize %}
+        <script type="text/javascript">
+          console.log('{{ collection_handle_1 }}');
+          console.log('{{ collection_handle_2 }}');
+        </script>
+        {% assign collection_handles = collection_handle_1 | append: '|' | append: collection_handle_2 | split: '|' %}
+        {% for handle in collection_handles %}
+          {% if settings.collection_sidebar %}
+            {% include 'sidebar' %}
+            <div class="twelve columns">
+          {% else %}
+            <div class="sixteen columns product-grid double-collection  {% if forloop.last %}last{% endif %}">
+          {% endif %}
+          {% assign products = collections[handle].products %}
+          {% assign products_per_row = settings.products_per_row %}
+            <div class="double-collection-heading">{{ handle | uppercase }}</div>
+            <script type="text/javascript">
+              console.log('{{ products | size }}');
+            </script>
+            {% for product in products limit: limit %}
+              {% if product.id == skip_product.id or skip == true %}
+                {% assign product_found = true %}
+              {% else %}
+                {% if forloop.rindex0 == 0 and product_found == false and forloop.length != products.count and template != 'search' %}
+                  {% assign skip = true %}
+                {% else %}
+                  {% include 'product-thumbnail' with product-loop %}
+                  {% if products_per_row == "2" %}
+                    {% cycle '', new_row %}
+                  {% elsif products_per_row == "3" %}
+                    {% cycle '', '', new_row %}
+                  {% elsif products_per_row == "4" %}
+                    {% cycle '', '', '', new_row %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% include 'pagination' with settings.collection_sidebar %}
+  </div>
+{% endpaginate %}

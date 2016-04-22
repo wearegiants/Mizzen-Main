@@ -1,0 +1,266 @@
+{% comment %}
+Top Section: Gallery and Product Details
+{% endcomment %}
+<div class="product-{{ product.id }} product-wrapper-{{ product.id }}">
+  <div class="row top-wrapper" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+    <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
+
+    {% comment %}
+    Left Column - Product Gallery
+    {% endcomment %}
+    <div class="columns left gallery">
+      {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+
+      <div class="flexslider product_gallery product-{{ product.id }}-gallery {% if product-images == blank %}product_slider{% endif %} {% if settings.product_thumbs == false %}animated fadeInUp{% endif %}">
+        <ul class="slides">
+          {% for image in product.images %}
+            <li data-thumb="{{ image | product_img_url: '1024x1024' }}" data-title="{% if image.alt contains 'youtube' or image.alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image.alt | escape }}{% endif %}">
+              {% if image.alt contains 'youtube' or image.alt contains 'vimeo' %}
+                {% assign src = image.alt | split: 'src="' %}
+                {% assign src = src[1] | split: '"' | first %}
+
+                {% if src contains '?' %}
+                  {% assign src = src | append: '&amp;autoplay=1' %}
+                {% else %}
+                  {% assign src = src | append: '?autoplay=1' %}
+                {% endif %}
+
+                <div class="video-container {% if image.alt contains 'vimeo' %}vimeo{% else %}youtube{% endif %}">
+                  <div>
+                    <a href="{{ src }}" class="fancybox fancybox.iframe" data-fancybox-group="{{ product.id }}" title="{{ product.title | escape }}">
+                      {{ image.alt }}
+                    </a>
+                  </div>
+                </div>
+              {% else %}
+                <a href="{{ image | product_img_url: 'master' }}" class="fancybox" data-fancybox-group="{{ product.id }}" title="{{ image.alt | escape }}">
+                  <img src="{{ 'loader.gif' | asset_url }}" data-src="{{ image | product_img_url: '1024x1024' }}" data-src-retina="{{ image | product_img_url: '2048x2048' }}" alt="{{ image.alt | escape }}" data-index="{{ forloop.index0 }}" data-image-id="{{ image.id }}" data-cloudzoom="zoomImage: '{{ image | product_img_url: 'master' }}', tintColor: '{{ settings.shop_bg_color }}', zoomPosition: 'inside', zoomOffsetX: 0, touchStartDelay: 250" class="cloudzoom {% if featured_image.id == image.id %}featured_image{% endif %}" />
+                </a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div><!-- .flexslider -->
+    </div>
+
+    {% comment %}
+    Right Column - Product Form
+    {% endcomment %}
+    <div class="columns right product-form">
+      {% comment %}
+      Title Row
+      {% endcomment %}
+      <div class="row title a">
+        {% assign h1 = '' %}
+        {% assign h3 = '' %}
+        {% assign a = product.title | split: '"' %}
+        {% if a.size == 3 %}
+          {% assign h1 = a[1] %}
+          {% assign h3 = a[2] %}
+        {% else %}
+          {% assign h1 = {{ product.title }} %}
+        {% endif %}
+
+        <div class="columns left">
+          <h1>{{ h1 }}</h1>
+        </div>
+        <div class="columns right">
+          {% if collection %}
+            {% if collection.previous_product %}
+              <a href="{{ collection.previous_product.url }}" class="ss-icon prev">&#x25C5;</a>
+            {% endif %}
+            {% if collection.next_product %}
+              <a href="{{ collection.next_product.url }}" class="ss-icon next">&#x25BB;</a>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="row title b">
+        <div class="columns">
+          <h3>{{ h3 }}</h3>
+          <div class="price"><span class="current">{{ product.selected_or_first_available_variant.price | money | replace: '.00', '' }}</span><span class="compare_at">{{ product.selected_or_first_available_variant.compare_at_price | money | replace: '.00', '' }}</span></div>
+        </div>
+      </div><!-- .row.title -->
+
+      {% comment %}
+      Icons Row
+      {% endcomment %}
+      <div class="row icons">
+        <div class="columns">
+          <img src="{{ 'icon-moisture-wicking.png' | asset_url }}" alt="">
+          <h4>Moisture Wicking</h4>
+        </div>
+        <div class="columns">
+          <img src="{{ 'icon-machine-washable.png' | asset_url }}" alt="">
+          <h4>Machine Washable</h4>
+        </div>
+        <div class="columns">
+          <img src="{{ 'icon-four-way-stretch.png' | asset_url }}" alt="">
+          <h4>Four Way Sketch</h4>
+        </div>
+        <div class="columns">
+          <img src="{{ 'icon-superior-fit.png' | asset_url }}" alt="">
+          <h4>Superior Fit</h4>
+        </div>
+      </div>
+
+      {% comment %}
+      Collection Info
+      {% endcomment %}
+      {% if product.type == 'Dress Shirt' and product.tags contains 'Spinnaker' %}
+        <div class="row collection">
+          <div class="columns">
+            <h2>Spinnaker</h2>
+            <p>The Spinnaker is a special type of sail that fills with wind, ballooning off a ship's bow. Constructed of a lightweight fabric, it is referred to as flying when deployed. Our advanced performance line embodies this spirit down to the smallest details with our highest stretch, moisture wicking properties, and zero hassle maintenance requiring no ironing or dry cleaning.</p>
+          </div>
+        </div>
+
+      {% elsif product.type == 'Dress Shirt' and product.tags contains 'Leeward' %}
+        <div class="row collection">
+          <div class="columns">
+            <h2>Leeward Collection</h2>
+            <p>Leeward is downwind, on the calmer side of the vessel or island. The Leeward Collection has a more structured, traditional appearance. Despite this, it is crafted from a lighter weight fabric with superior quick dry properties, still maintains a four way stretch and of course never needs any dry cleaning.</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% comment %}
+      Form Input Elements
+      {% endcomment %}
+      <form class="new_product_form" action="/cart/add" method="post" enctype="multipart/form-data">
+        <div class="row inputs">
+          <div class="columns options">
+            <div id="product-variants" {% comment %}style="display:none;"{% endcomment %}>
+
+              {% if product.options.size > 1 %}
+                <select id="product-select-{{ product.id }}" name="id">
+                  {% for variant in product.variants %}
+                    {% unless variant.metafields.info.visibility contains 'hidden' %}
+                      <option {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %} value="{{ variant.id }}">{{ variant.title }}</option>
+                    {% endunless %}
+                  {% endfor %}
+                </select>
+              {% elsif product.options.size == 1 and (product.variants.size > 1 or product.options[0] != "Title") %}
+                <label>{{ product.options[0] }}:</label>
+                <select id="product-select-{{ product.id }}" name="id">
+                  {% for variant in product.variants %}
+                    {% unless variant.metafields.info.visibility contains 'hidden' %}
+                      <option {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %} value="{{ variant.id }}">{{ variant.title }}</option>
+                    {% endunless %}
+                  {% endfor %}
+                </select>
+              {% else %}
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              {% endif %}
+            </div><!-- #product-variants -->
+          </div>
+          <div class="columns ssubmit">
+            <a class="free-shipping">Free Shipping</a>
+            <input class="add_product" type="submit" name="add" value="Add to Cart" data-product="{{ product.id }}">
+          </div>
+        </div><!-- .row.inputs -->
+
+        <div class="row">
+          <div class="columns">
+            <div class="select-message"></div>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="columns">
+          {% include 'product-notify-me' %}
+        </div>
+      </div>
+    </div><!-- .product-form -->
+
+  </div><!-- .row.top-wrapper -->
+</div><!-- .product-{{ product.id }} -->
+
+{% comment %}
+Extra Info
+{% endcomment %}
+<div class="row extra-info">
+  <div class="columns left">
+
+    {% comment %}
+    Collection Info
+    {% endcomment %}
+    {% if product.type == 'Dress Shirt' and product.tags contains 'Spinnaker' %}
+      <div class="row collection just-mobile">
+        <div class="columns">
+          <h2>Spinnaker</h2>
+          <p>The Spinnaker is a special type of sail that fills with wind, ballooning off a ship's bow. Constructed of a lightweight fabric, it is referred to as flying when deployed. Our advanced performance line embodies this spirit down to the smallest details with our highest stretch, moisture wicking properties, and zero hassle maintenance requiring no ironing or dry cleaning.</p>
+        </div>
+      </div>
+
+    {% elsif product.type == 'Dress Shirt' and product.tags contains 'Leeward' %}
+      <div class="row collection just-mobile">
+        <div class="columns">
+          <h2>Leeward Collection</h2>
+          <p>Leeward is downwind, on the calmer side of the vessel or island. The Leeward Collection has a more structured, traditional appearance. Despite this, it is crafted from a lighter weight fabric with superior quick dry properties, still maintains a four way stretch and of course never needs any dry cleaning.</p>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="columns">
+        <h2>Fabric</h2>
+        <p>
+          <strong>Moisture Wicking</strong> It wicks away moisture to prevent sweat stains. Our unique fabric blend breathes better and keeps you cooler.
+        </p>
+        <p>
+          <strong>Four-way Stretch</strong> Performance fabric that’s made to move with you.
+        </p>
+        <p>
+          <strong>Wrinkle Resistant</strong> Our fabric won’t crease like traditional rigid dress shirts. No need to iron.
+
+        </p>
+        <p>
+          <strong>Low Maintenance</strong> Say goodbye to ironing and dry cleaning. Throw it in the washing machine and hang it up to dry. It's ready to wear in 16 minutes.
+        </p>
+      </div><!-- .columns -->
+    </div><!-- .row -->
+  </div><!-- .columns.left -->
+  <div class="columns right">
+    <div class="row">
+      <div class="columns">
+        <h2>Fit</h2>
+        <p>
+          <strong>Trim Fit</strong> Trim Fit has a more tapered fit in on the torso with room in the chest and arms. They are not hipster skinny or a 90’s box cut..
+        </p>
+        <p>
+          Not sure what size you are? Reference our <a class="clotheshorse_widget_trigger"><strong>size chart</strong></a>.
+        </p>
+        <p>
+          If you are between sizes, we recommend that you choose the size up.
+        </p>
+      </div>
+    </div>
+  </div>
+</div><!-- .row -->
+
+{% comment %}
+Related Items
+{% endcomment %}
+{% assign col = '' %}
+
+
+{% if collection and collection.all_products_count > 1 %}
+  {% assign col = collection.handle %}
+{% else %}
+  {% assign col = product.collections.last.handle %}
+{% endif %}
+
+{% for tag in product.tags %}
+  {% if tag contains 'meta-related-collection-' %}
+    {% assign col = tag | remove: 'meta-related-collection-' %}
+  {% endif %}
+{% endfor %}
+
+{% if col and collections[col].all_products_count > 0 %}
+  {% include 'products-list', _collection_handle: col, _title: 'Related Products', _limit: 4 %}
+{% endif %}
+
+{% include 'product_template_js' %}

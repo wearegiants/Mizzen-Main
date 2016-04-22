@@ -1,0 +1,63 @@
+<script>
+(function() {
+
+  var testVariation = 1;
+  if (document.location.href.indexOf('the-shirt') !== -1 ) {
+    testVariation = 4;
+  };
+
+  $(document).ready(function() {
+     var button_color = '';
+      var button_text = '';
+
+      switch (testVariation) {
+        case 1: // Variation 1: No call to action buttons
+          // Do nothing. Really this could be left out, but for sake of clarity...
+          break;
+        case 2: // Variation 2: Category Page with copy "see details" blue button
+          var button_color = '#000078';
+          var button_text = 'See Details';
+          break;
+        case 3: // Variation 3: Category Page with copy "view" blue button
+          var button_color = '#000078';
+          var button_text = 'View';
+          break;
+        case 4: // Variation 4: Category Page with copy "see details" green button
+          //var button_color = '#007a87';
+          var button_color = '#000078';
+          var button_text = 'See Details';
+          break;
+        case 5: // Variation 5: Category Page with copy "view" green button
+          //var button_color = '#007a87';
+          var button_color = '#000078';
+          var button_text = 'View';
+          break;
+        default:
+          // statements
+      }// switch
+
+      // if( testVariation !== 1 ) {
+      //   insertButtons();
+      // }
+
+      // function insertButtons() {
+      //   var $thumbnails = $('.thumbnail');
+      //   for (var i = 0; i < $thumbnails.length; i++) {
+      //     var $thumbnail = $( $thumbnails[i] );
+      //     var $button = $('<button class="action_button">' + button_text + '</button>');
+      //     $button.css({
+      //       backgroundColor: button_color,
+      //       color: '#FFF',
+      //       maxWidth: '200px',
+      //       display: 'block',
+      //       margin: '0 auto',
+      //       width: '100%',
+      //       marginTop: '10px'
+      //     });
+      //     $thumbnail.children('a').append($button);
+      //   };
+      // }
+  });
+
+}());
+</script>

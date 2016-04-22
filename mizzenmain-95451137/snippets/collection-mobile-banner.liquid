@@ -1,0 +1,42 @@
+  {% if settings.display_collection_title %}
+    <div class="sixteen columns">
+      <h1 class="center">{{ collection.title }}</h1>
+      <div class="feature_divider"></div>
+    </div>
+  {% endif %}
+
+{% assign banner_text_position = '' %}
+{% if collection.description contains '<!-- position:left -->' %}
+  {% assign banner_text_position = 'snap-left' %}
+{% elsif collection.description contains '<!-- position:right -->' %}
+  {% assign banner_text_position = 'snap-right' %}
+{% endif %}
+
+{% assign collection_title_condition = '' %}
+{% if collection.handle contains '-collection' %}
+  {% assign collection_title_condition = 'downsize' %}
+{% endif %}
+
+{% assign banner_text_width = '40%' }
+{% assign description = collection.description | split: '<!-- width:' %}
+{% assign description = collection.description | split: '<!-- width:' %}
+{% for width in description %}
+  {% if width contains '% -->' %}
+    {% assign new_width = width | split: '% -->' %}
+  {% endif %}
+{% endfor %}
+
+{% assign description-background-x = collection.description | split: '<!-- background-x:' %}
+{% assign description-background-x = collection.description | split: '<!-- background-x:' %}
+{% for width in description-background-x %}
+  {% if width contains '% -->' %}
+    {% assign new_background-x = width | split: '% -->' | first %}
+  {% endif %}
+{% endfor %}
+
+
+<div class="mobile-banner-background {% if collection.description contains '<p>' %}{% else %}no-description{% endif %}" style="background-image:url('{{ collection.image.src | img_url: '2048x2048' }}');background-position-x:{{ new_background-x }}% ;">
+  <div style="background: white;">
+  <div class="collection-banner-text-mobile {{ banner_text_position }} {{ collection_title_condition }} {{ no_description }}" style="width: {{ new_width | first }}%;" >{{ collection.description }}</div>
+  </div>
+</div>

@@ -1,0 +1,293 @@
+{% include 'collection-sizes-availability' %}
+
+{% paginate collection.products by settings.pagination_limit %}
+
+  {% if settings.display_collection_title %}
+    <div class="sixteen columns">
+      <h1 class="center">{{ collection.title }}</h1>
+      <div class="feature_divider"></div>
+    </div>
+  {% endif %}
+
+
+
+{% if collection.handle contains 'leeward' %}
+  {% assign coltext = 'LEEWARD' %}
+  <div class="collection-banner-kr center">
+      <img src="{{ collection.image.src | collection_img_url: 'original' }}" />
+      <div class="content leeward">
+        <h1>{{coltext}} Collection</h1>
+        <p>{{ collection.description }}</p>
+      </div>
+    <a href="#" class="more-button">+ MORE ABOUT THE {{coltext}}</a>
+  </div>
+  {% endif %}
+
+  <div id="less-btn-poss" class="info-container">
+      <div class="row icons">
+        <div class="columns">
+          <img src="{{ 'icon-moisture-wicking.png' | asset_url }}" alt="">
+          <h4>Moisture Wicking</h4>
+        </div>
+        <div class="columns">
+          <img src="{{ 'icon-machine-washable.png' | asset_url }}" alt="">
+          <h4>Machine Washable</h4>
+        </div>
+        <div class="columns">
+          <img src="{{ 'icon-four-way-stretch.png' | asset_url }}" alt="">
+          <h4>Four Way Stretch</h4>
+        </div>
+        <div class="columns">
+          <img src="{{ 'icon-superior-fit.png' | asset_url }}" alt="">
+          <h4>Superior Fit</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns left featimg">
+          {% assign infoprod = all_products['montauk-blue-check-dress-shirt'] %}
+          <a href="{{infoprod.url}}"><img src="{{ infoprod.featured_image.src | product_img_url: 'master' }}" /></a>
+        </div>
+        <div class="columns right product-info">
+          <ul>
+            <li>
+              <h3>Maintenance</h3>
+              <p>Machine washable and requires no ironing</p>
+              <div class="bar">
+                <span></span>
+              </div>
+            </li>
+            <li>
+              <h3>Quick dry</h3>
+              <p>Moisture wicking fabric lets you breathe</p>
+              <div class="bar">
+                <span></span>
+              </div>
+            </li>
+            <li>
+              <h3>Four-way Stretch</h3>
+              <p>Moisture wicking fabric lets you breathe</p>
+              <div class="bar">
+                <span></span>
+              </div>
+            </li>
+            <li>
+              <h3>Weight</h3>
+              <p>Lightweight and comfortable to keep you cool</p>
+              <div class="bar">
+                <span></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row linkholder">
+        <a href="#" class="less-button">- LESS</a>
+      </div>
+  </div>
+
+
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+          $('.info-button').click(function(){
+            $('.info-container').toggle(function(){
+              if ($('.info-button').text() == '+ MORE ABOUT THE LEEWARD') {
+                $('.info-button').text('- SHOW LESS');
+              }
+              else {
+                $('.info-button').text('+ MORE ABOUT THE LEEWARD');
+              }
+            });
+          });
+        console.log('{{collection.id}}');
+
+            $('.info-button').click(function(){
+              $('.info-container').toggle(function(){
+                if ($('.info-button').text() == '+ MORE ABOUT THE SPINNAKER') {
+                  $('.info-button').text('- SHOW LESS');
+                }
+                else {
+                  $('.info-button').text('+ MORE ABOUT THE SPINNAKER');
+                }
+              });
+            });
+        });
+    </script>
+  <div class="section clearfix breadcrumb-wrapper">
+    {% comment %}<div class="sixteen columns breadcrumb">
+
+      <div class="eight columns breadcrumb_text alpha">
+        {% if settings.collection_breadcrumb %}
+          <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span class="filter-category" itemprop="title">Home</span></a></span>
+          &nbsp;<span class="icon-right-arrow"></span>
+          <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="active"><a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="url"><span class="filter-category"itemprop="title">{{ collection.title }}</span></a></span>
+          {% if paginate.pages != 0 %}
+            &nbsp;<span class="icon-right-arrow hide-mobile"></span> <span class="hide-mobile">Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>{% endcomment %}
+
+    {% comment %}{% if collection.description != blank %}
+      <div class="section clearfix collection_description">
+        {{ collection.description }}
+      </div>
+    {% endif %}{% endcomment %}
+
+
+    <div class="sixteen columns breadcrumb filters">
+
+
+      {% assign collection_linklist = '' %}
+      {% assign color_linklist = '' %}
+      {% assign size_linklist = '' %}
+      {% if collection.handle == 'the-rest' %}
+        {% assign collection_linklist = 'shop-the-rest-collections' %}
+        {% assign color_linklist = 'shop-the-rest-colors' %}
+        {% assign size_linklist = 'shop-the-rest-sizes' %}
+      {% elsif collection.handle == 'the-shirt' %}
+        {% assign collection_linklist = 'shop-dress-shirts-collections' %}
+        {% assign color_linklist = 'shop-dress-shirts-colors' %}
+        {% assign size_linklist = 'shop-dress-shirts-sizes' %}
+      {% endif %}
+
+      <div class="four columns section_select tag alpha">
+        <label for="filter-by-collection" class="inline">Collection: </label>
+        <select id="filter-by-collection">
+          <option value="">All</option>
+          {% for link in linklists[collection_linklist].links %}
+            {% assign selected_attribute = '' %}
+            {% if current_tags contains link.title %}
+              {% assign selected_attribute = ' selected="selected"' %}
+            {% endif %}
+            <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="four columns section_select tag">
+        <label for="filter-by-color" class="inline">Color: </label>
+        <select id="filter-by-color">
+          <option value="">All</option>
+          {% for link in linklists[color_linklist].links %}
+            {% assign selected_attribute = '' %}
+            {% if current_tags contains link.title %}
+              {% assign selected_attribute = ' selected="selected"' %}
+            {% endif %}
+            <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="four columns section_select tag">
+        <label for="filter-by-size" class="inline">Size: </label>
+        <select id="filter-by-size">
+          <option value="">All</option>
+          {% for link in linklists[size_linklist].links %}
+            {% assign selected_attribute = '' %}
+            {% if current_tags contains link.title %}
+              {% assign selected_attribute = ' selected="selected"' %}
+            {% endif %}
+            <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="four columns section_select omega">
+        <label for="sort-by" class="inline">Sort by: </label>
+        <select id="sort-by">
+          <option value="manual">Featured</option>
+          <option value="price-ascending">Price: Low to High</option>
+          <option value="price-descending">Price: High to Low</option>
+          <option value="title-ascending">A-Z</option>
+          <option value="title-descending">Z-A</option>
+          <option value="created-ascending">Oldest to Newest</option>
+          <option value="created-descending">Newest to Oldest</option>
+          <option value="best-selling">Best Selling</option>
+        </select>
+      </div>
+
+      <script type="text/javascript">
+        // <![CDATA[
+          (function() {
+
+            var handleize = function(t) {
+              return t=t.toLowerCase(),t=t.replace(/'|\"|\(|\)|\[|\]/g,""),t=t.replace(/\W+/g,"-"),"-"===t.slice(-1)&&(t=t.replace(/-+$/,"")),"-"===t.slice(0,1)&&(t=t.replace(/^-+/,"")),t
+            };
+           $('#sort-by')
+              .val('{{ collection.sort_by | default: collection.default_sort_by  }}')
+              .bind('change', function() {
+                Shopify.queryParams.sort_by = $(this).val();
+                location.search = $.param(Shopify.queryParams);
+            });
+            $('.section_select.tag select').bind('change', function() {
+
+              var url = "/collections/{{ collection.handle }}";
+              var $tag_selects = $('.section_select.tag > select');
+              var appended_tags_count = 0;
+              for (var i = 0; i < $tag_selects.length; i++) {
+                var $select = $($tag_selects[i]);
+
+                if (appended_tags_count === 0 && $select.val()) {
+                  url+= '/' + handleize($select.val());
+                  appended_tags_count++;
+                } else if (appended_tags_count > 0 && $select.val()) {
+                  url+= '+' + handleize($select.val());
+                  appended_tags_count++;
+                } else {
+                  // <select> with value of "", do nothing.
+                }
+              };
+              var query_params = location.search.replace( /&variant\=[0-9]{10}/, '' );
+              document.location.href = url + query_params;
+            });
+
+          }());
+      </script>
+
+    </div><!-- .columns.sixteen.breadcrumb -->
+  </div><!-- .section.clearfix.breadcrumb-wrapper -->
+
+  {% if settings.collection_sidebar %}
+    {% include 'sidebar' %}
+    <div class="twelve columns">
+  {% else %}
+    <div class="sixteen columns product-grid grid-container">
+  {% endif %}
+
+    {% if collection.products.size == 0 %}
+      <div class="section clearfix">
+        <p class="quote">No matching products found.</p>
+      </div>
+    {% else %}
+      {% assign products = collection.products %}
+      {% assign products_per_row = settings.products_per_row %}
+      {% include 'product-loop' with settings.collection_sidebar %}
+    {% endif %}
+
+    {% include 'pagination' with settings.collection_sidebar %}
+  </div>
+{% endpaginate %}
+
+<script type="text/javascript">
+$.fn.scrollView = function () {
+    return this.each(function () {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top
+        }, 1000);
+    });
+}
+$( document ).ready(function() {
+    $( "a.more-button" ).click(function() {
+      $( ".info-container" ).addClass('active');
+      $('#less-btn-poss').scrollView();
+      return false;
+    });
+    $( "a.less-button" ).click(function() {
+      $( ".info-container" ).removeClass('active');
+      return false;
+    });
+});
+</script>

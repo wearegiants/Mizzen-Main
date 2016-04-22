@@ -1,0 +1,9 @@
+{% assign my_content = page.content | split: '<!-- split -->' %}
+<div class="section typeset standardpage landing-page">
+	<div class="rte landing-container">
+		<h1>{{ my_content[0] }}</h1>
+		{{ my_content[1] }}
+		<h4>{{ my_content[2] }}</h4>
+		<h4>{{ my_content[3] }}</h4>		
+	</div>
+</div>

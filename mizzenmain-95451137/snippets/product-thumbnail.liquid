@@ -1,0 +1,154 @@
+{% assign even_odd_count = forloop.index0 | modulo: 2 %}
+{% assign alpha_omega_count = forloop.index0 | modulo: 3 %}
+
+{% if even_odd_count == 0 %}
+  {% assign even_odd_class = 'even' %}
+{% else %}
+  {% assign even_odd_class = 'odd' %}
+{% endif %}
+
+{% if alpha_omega_count == 0 %}
+  {% assign alpha_omega_class = 'alpha' %}
+{% elsif alpha_omega_count == 1 %}
+  {% assign alpha_omega_class = '' %}
+{% else %}
+  {% assign alpha_omega_class = 'omega' %}
+{% endif %}
+
+{% assign sold_out = true %}
+{% if product.available %}
+  {% assign sold_out = false %}
+{% endif %}
+
+{% if product-thumbnail %}
+
+  <div data-product-id="{{ product.id }}" class="{% if sold_out %} is-sold-out{% endif %} {% if products_per_row == "2" %}six columns {% cycle 'alpha', 'omega' %}{% elsif products_per_row == "3" %}four columns {{ alpha_omega_class }}{% else %}three columns {% cycle 'alpha', '', '', 'omega' %}{% endif %} thumbnail {{ even_odd_class }}">
+{% else %}
+
+  <div data-product-id="{{ product.id }}" class="{% if sold_out %} is-sold-out{% endif %} {% if products_per_row == "2" %}eight columns {% cycle 'alpha', 'omega' %}{% elsif products_per_row == "3" %}one-third column {{ alpha_omega_class }}{% else %}four columns {% cycle 'alpha', '', '', 'omega' %}{% endif %} thumbnail {{ even_odd_class }}">
+{% endif %}
+
+  {% if product.featured_image.alt contains 'youtube' or image.alt contains 'vimeo' %}
+    {% assign alt_text = product.title %}
+  {% else %}
+    {% assign alt_text = product.featured_image.alt %}
+  {% endif %}
+
+  <a href="{{ product.url | within: collection }}">
+    <div class="relative product_image">
+      <img {% if settings.align_height %}style="max-height:{{ settings.collection_height }}px"{% endif %} src="{{ 'loader.gif' | asset_url }}" data-src="{{ product.featured_image | product_img_url: 'grande' }}" data-src-retina="{{ product.featured_image | product_img_url: '1024x1024' }}" alt="{{ alt_text | escape }}" />
+      <img {% if settings.align_height %}style="max-height:{{ settings.collection_height }}px"{% endif %} src="{{ 'loader.gif' | asset_url }}" data-src="{{ product.images[1] | product_img_url: 'grande' }}" data-src-retina="{{ product.images[1] | product_img_url: '1024x1024' }}" alt="{{ alt_text | escape }}" />
+
+      {% if settings.quick_shop_enabled %}
+        <span data-fancybox-href="#product-{{ product.id }}" class="quick_shop ss-icon" data-gallery="product-{{ product.id }}-gallery">
+          &#x002B;
+        </span>
+      {% endif %}
+      {% if settings.sale_banner_enabled and product.compare_at_price_max > product.price %}
+        <div class="sale_banner">Sale</div>
+      {% endif %}
+      {% for col in product.collections %}
+        {% if col.handle == 'new' %}
+          <div class="new_banner">New</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% assign h1 = '' %}
+    {% assign h3 = '' %}
+    {% assign a = product.title | split: '"' %}
+    {% if a.size == 3 %}
+      {% assign h1 = a[1] %}
+      {% assign h3 = a[2] %}
+    {% else %}
+      {% assign h1 = {{ product.title }} %}
+    {% endif %}
+    <div class="info">
+      {% if product.title contains 'gift card' %}
+      <h6 class="split-title">{{ product.title }}</h6>
+      {% else %}
+      <h6 class="split-title">{{ h1 }}</h6>
+      <span class="title">{{ h3 }}</span>
+      {% endif %}
+      <span class="price {% if product.compare_at_price_max > product.price %}sale{% endif %}">
+        {% if product.available %}
+          {% if product.price_varies %}
+            <small><em>from</em></small>
+          {% endif %}
+            {% if product.price_min > 0 %}
+              {{ product.price_min | money }}
+            {% else %}
+              {{ settings.free_price_text }}
+            {% endif %}
+        {% else %}
+          <span class="sold_out">{{ settings.sold_out_text }} - </span>{{ product.price_min | money }}
+        {% endif %}
+        {% if product.compare_at_price_max > product.price %}
+          <span class="was_price">{{ product.compare_at_price_max | money }}</span>
+        {% endif %}
+      </span>
+    </div>
+  </a>
+</div>
+
+{% if settings.quick_shop_enabled %}
+  <div id="product-{{ product.id }}" class="modal">
+    <div class="container section" style="width: inherit">
+
+      <div class="eight columns" style="padding-left: 15px">
+        {% include 'product-images' with 'modal' %}
+      </div>
+
+      <div class="six columns">
+        <h3>{{ product.title }}</h3>
+
+        <p class="modal_price">
+          <span class="sold_out">{% if product.available == false %}{{ settings.sold_out_text }} - {% endif %}</span>
+          <span class="current_price {% if product.compare_at_price_max > product.price %}sale{% endif %}">
+            {% if product.price > 0 %}
+              {{ product.price | money }}
+            {% else %}
+              {{ settings.free_price_text }}
+            {% endif %}
+          </span>
+          <span class="was_price">
+            {% if product.price < product.compare_at_price_max %}
+              {{ product.compare_at_price | money }}
+            {% endif %}
+          </span>
+        </p>
+
+        {% comment %}{% include 'product-notify-me' %}{% endcomment %}
+
+        {% if settings.product_description_position == "top" %}
+          {% if settings.quick_shop_full_description %}
+            {{ product.description }}
+          {% else %}
+            <p>
+              {{ product.description | strip_html | truncatewords: settings.description_words | replace: 'Description', '' | replace: 'Dimensions', '' | replace: 'Details', '' | replace: 'Specs', '' | replace: 'Shipping', ''  }}
+
+              <a href="{{ product.url | within: collection }}" class="view_product_info" title="View {{ product.title | escape }} Details">Read More <span class="icon-right-arrow"></span></a>
+            </p>
+          {% endif %}
+          <hr />
+        {% endif %}
+
+        {% include 'product-form' %}
+
+        {% if settings.product_description_position == "bottom" %}
+          <hr />
+          {% if settings.quick_shop_full_description %}
+            {{ product.description | split: '<!-- split -->' | first }}
+          {% else %}
+            <p>
+              {{ product.description | strip_html | truncatewords: settings.description_words | replace: 'Description', '' | replace: 'Dimensions', '' | replace: 'Details', '' | replace: 'Specs', '' | replace: 'Shipping', ''  }}
+
+              <a href="{{ product.url | within: collection }}" class="view_product_info" title="View {{ product.title | escape }} Details">Read More <span class="icon-right-arrow"></span></a>
+            </p>
+          {% endif %}
+        {% endif %}
+        <a class="continue">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+{% endif %}
