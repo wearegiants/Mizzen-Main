@@ -117,7 +117,7 @@ img.rounded {
 }
 
 .wrapper {
-  padding: @spaced/1.5;
+  padding: @spaced;
   &--extra {
     padding: @spaced*2
   }
@@ -132,6 +132,15 @@ img.rounded {
 .bg {
   &--black {
     background: @black;
+    &-25 {
+      background: @white25;
+    }
+    &-50 {
+      background: @white50;
+    }
+  }
+  &--blue {
+    background-color: @blue;
   }
   &--white {
     background: @white;
@@ -159,6 +168,18 @@ img.rounded {
   }
   &--gray {
     color: @textGray
+  }
+  &--blue {
+    color: @blue;
+    &-25 {
+      color: fade(@blue, 25%);
+    }
+    &-50 {
+      color: fade(@blue, 50%);
+    }
+    &-75 {
+      color: fade(@blue, 75%);
+    }
   }
 }
 

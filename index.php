@@ -58,7 +58,7 @@
   <div class="fs-row">
     <div class="fs-cell fs-all-full">
       <div class="fs-cell fs-all-full fs-contained">
-        <div class="hero hero--sm bg--bgGray relative">
+        <div class="hero hero--sm bg--black relative">
           <div class='centered text-center'>
             <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
           </div>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="fs-cell fs-lg-third fs-md-full fs-sm-full fs-contained">
-        <div class="hero hero--xs bg--black relative">
+        <div class="hero hero--xs bg--bgGray relative">
           <div class='centered text-center'>
             <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
           </div>
