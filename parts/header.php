@@ -32,10 +32,10 @@
     <div class="fs-cell fs-lg-third fs-centered text-center">
       <a id="header__logo" class="btn btn--nav" href="#"><img src="/assets/mizzenmain-logo_white.png" class="img-responsive" /></a>
     </div>
-    <div class="fs-cell fs-lg-fourth">
+    <div class="fs-cell fs-lg-fourth fs-sm-hide">
       <a class="btn btn--nav btn--first" href="#">Join Email List</a>
     </div>
-    <div class="fs-cell fs-lg-half text-center">
+    <div class="fs-cell fs-lg-half fs-sm-hide text-center">
       <a class="btn btn--nav swap" data-swap-target="#header__dropdown" href="#">Shop</a>
       <a class="btn btn--nav" href="#">Lookbooks</a>
       <a class="btn btn--nav" href="#">About Us</a>

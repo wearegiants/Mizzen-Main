@@ -3,7 +3,6 @@
 #cart {
   &-sidebar {
     position: fixed;
-    width: @width;
     top: 0;
     right: 0;
     height: 100%;
@@ -11,7 +10,15 @@
     background: @bgGray;
     transition: 300ms ease;
     line-height: 1;
-    transform: translateX(@width);
+    @media @min {
+      transform: translateX(@width - 100);
+      width: @width - 100;
+    }
+    @media @mobile {
+      transform: translateX(@width);  
+      width: @width;
+    }
+    
     &.fs-swap {
       &-active {
         transform: translateX(0);
@@ -52,7 +59,13 @@
     &-active {
       height: 100%;
       overflow: hidden;
-      transform: translateX(-@width);
+      @media @min {
+        transform: translateX(-@width - 100);
+      }
+      @media @mobile {
+        transform: translateX(-@width);
+      }
+      
       position: relative;
       z-index: 100;
     }

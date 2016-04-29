@@ -5001,7 +5001,6 @@ input[type=button] {
 }
 #cart-sidebar {
   position: fixed;
-  width: 420px;
   top: 0;
   right: 0;
   height: 100%;
@@ -5010,8 +5009,20 @@ input[type=button] {
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
   line-height: 1;
-  -webkit-transform: translateX(420px);
-          transform: translateX(420px);
+}
+@media screen and (min-width: 300px) {
+  #cart-sidebar {
+    -webkit-transform: translateX(320px);
+            transform: translateX(320px);
+    width: 320px;
+  }
+}
+@media screen and (min-width: 500px) {
+  #cart-sidebar {
+    -webkit-transform: translateX(420px);
+            transform: translateX(420px);
+    width: 420px;
+  }
 }
 #cart-sidebar.fs-swap-active {
   -webkit-transform: translateX(0);
@@ -5056,10 +5067,20 @@ input[type=button] {
 #wrapper.fs-swap-active {
   height: 100%;
   overflow: hidden;
-  -webkit-transform: translateX(-420px);
-          transform: translateX(-420px);
   position: relative;
   z-index: 100;
+}
+@media screen and (min-width: 300px) {
+  #wrapper.fs-swap-active {
+    -webkit-transform: translateX(-520px);
+            transform: translateX(-520px);
+  }
+}
+@media screen and (min-width: 500px) {
+  #wrapper.fs-swap-active {
+    -webkit-transform: translateX(-420px);
+            transform: translateX(-420px);
+  }
 }
 .cart-item {
   font-size: 15px;
