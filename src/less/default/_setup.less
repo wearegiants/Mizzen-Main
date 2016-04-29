@@ -18,7 +18,7 @@
 @yellow:      #FED406;
 @green:       #32B375;
 @darkgreen:   #0A693A;
-@blue:        #1CA4DE;
+@blue:        #112D51;
 @brown:       #9E6927;
 
 // UI
@@ -119,7 +119,7 @@ img.rounded {
 .wrapper {
   padding: @spaced/1.5;
   &--extra {
-    padding: @spaced*1.5
+    padding: @spaced*2
   }
 }
 
@@ -135,6 +135,12 @@ img.rounded {
   }
   &--white {
     background: @white;
+    &-25 {
+      background: @white25;
+    }
+    &-50 {
+      background: @white50;
+    }
   }
   &--gray, &--grey {
     background: @gray
@@ -214,11 +220,16 @@ img.rounded {
   width: 100%;
   z-index: 1;
 
-  &__bottom {
-    top: 65%
+  &--bottom {
+    top: auto;
+    bottom: 0;
   }
-  &__top {
+  &--top {
     top: 35%
   }
   
+}
+
+.nomargin {
+  margin: 0;
 }

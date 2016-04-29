@@ -1,3 +1,4 @@
+@hero__xs : 350px;
 @hero__sm : 500px;
 @hero     : 600px;
 @hero__md : 700px;
@@ -15,6 +16,18 @@
 	@media @desktop {
 		height: @hero
 	}
+
+  &--xs {
+    @media @min {
+      height: @hero__xs - 200;
+    }
+    @media @tablet {
+      height: @hero__xs - 50;
+    }
+    @media @desktop {
+      height: @hero__xs
+    }
+  }
 
   &--sm {
   	@media @min {

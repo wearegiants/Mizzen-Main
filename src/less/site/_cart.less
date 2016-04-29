@@ -1,0 +1,34 @@
+@width : 400px;
+
+#cart {
+  &-sidebar {
+    position: fixed;
+    width: @width;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 99;
+    background: @bgGray;
+    transition: 300ms ease;
+    transform: translateX(@width);
+    &.fs-swap {
+      &-active {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+#wrapper {
+  transition: transform 300ms ease;
+  position: relative;
+  &.fs-swap {
+    &-active {
+      height: 100%;
+      overflow: hidden;
+      transform: translateX(-@width);
+      position: relative;
+      z-index: 100;
+    }
+  }
+}

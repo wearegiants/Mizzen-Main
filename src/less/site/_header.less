@@ -1,0 +1,48 @@
+#header {
+
+  .btn {
+    &--nav {
+      .font_size(14);
+      letter-spacing: 1px;
+      &:not(.btn--cart) {
+        &.fs-swap {
+          &-active {
+            background: @white;
+            color: @blue;
+          }
+        }
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    img {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+
+  &__bottom {
+    height: 1px;
+    background: @white50;
+    margin-bottom: -1px;
+  }
+
+  &__dropdown {
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+
+    &.fs-swap {
+      &-active {
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: 0 @spaced/2 @spaced/2 rgba(0,0,0,.05);
+      }
+    }
+
+  }
+
+}
