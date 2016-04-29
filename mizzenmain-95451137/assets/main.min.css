@@ -4041,6 +4041,7 @@ h6 {
   font-weight: regular;
   color: #404040;
   line-height: inherit;
+  font-weight: normal;
   margin: 2% 0;
 }
 h1:first-child,
@@ -4998,6 +4999,17 @@ input[type=button] {
   opacity: 1;
   pointer-events: auto;
   box-shadow: 0 12.5px 12.5px rgba(0, 0, 0, 0.05);
+}
+#header__dropdown .header__item {
+  cursor: pointer;
+}
+#header__dropdown .header__item img {
+  -webkit-transition: 400ms ease;
+  transition: 400ms ease;
+}
+#header__dropdown .header__item:hover img {
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
 }
 #cart-sidebar {
   position: fixed;

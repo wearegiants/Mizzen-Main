@@ -51,7 +51,19 @@
     <div class="fs-row">
       <div class="fs-cell fs-all-full color--black">
         <hr class="invisible compact">
-          Hey girl
+        <div class="fs-row">
+          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="/assets/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
+          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="/assets/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
+          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="/assets/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
+          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="/assets/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
+          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="/assets/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
+          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="/assets/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
+        </div>
+        <hr class="divider compact">
+        <div class="text-center">
+          <h1 class="emphasized accent nomargin">Discover your perfect fit.</h1>
+          <a href="#" class="color--blue">Explore our fit guide</a>
+        </div>
         <hr class="invisible compact">
       </div>
     </div>
