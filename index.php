@@ -57,32 +57,31 @@
 <div class="home__shop">
   <div class="fs-row">
     <div class="fs-cell fs-all-full">
-      <div class="fs-cell fs-all-full fs-contained">
-        <div class="hero hero--sm bg--black relative">
-          <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
-          </div>
+      <div class="hero hero--sm bg--black relative">
+        <div class='centered text-center'>
+          <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
         </div>
       </div>
-      <div class="fs-cell fs-lg-third fs-md-full fs-sm-full fs-contained">
-        <div class="hero hero--xs bg--gray relative">
-          <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
-          </div>
+    </div>
+    <hr class="invisible compact fs-cell fs-all-full">
+    <div class="fs-cell fs-lg-third fs-md-full fs-sm-full">
+      <div class="hero hero--xs bg--gray relative">
+        <div class='centered text-center'>
+          <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
         </div>
       </div>
-      <div class="fs-cell fs-lg-third fs-md-full fs-sm-full fs-contained">
-        <div class="hero hero--xs bg--bgGray relative">
-          <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
-          </div>
+    </div>
+    <div class="fs-cell fs-lg-third fs-md-full fs-sm-full">
+      <div class="hero hero--xs bg--bgGray relative">
+        <div class='centered text-center'>
+          <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
         </div>
       </div>
-      <div class="fs-cell fs-lg-third fs-md-full fs-sm-full fs-contained">
-        <div class="hero hero--xs bg--gray relative">
-          <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
-          </div>
+    </div>
+    <div class="fs-cell fs-lg-third fs-md-full fs-sm-full">
+      <div class="hero hero--xs bg--gray relative">
+        <div class='centered text-center'>
+          <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
         </div>
       </div>
     </div>
@@ -112,23 +111,26 @@
 
 <div class="home__magazine">
   <div class="fs-row">
-    <div class="fs-cell fs-all-full">
-      <div class="fs-cell fs-lg-half fs-md-half fs-sm-full fs-contained">
-        <div class="hero hero--md bg--bgGray relative">
-          <div class="centered">
-            <div class="wrapper--extra">
-              <h1>What is Mizzen+Main?</h1>
-              <p>Learn more about us and here's a second line to explain that</p>
-              <a href="#" class="btn bg--black color--white">Learn More</a>
-            </div>
+    <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
+      <div class="hero hero--md bg--bgGray relative">
+        <div class="centered">
+          <div class="wrapper--extra">
+            <h1>What is Mizzen+Main?</h1>
+            <p>Learn more about us and here's a second line to explain that</p>
+            <a href="#" class="btn bg--black color--white">Learn More</a>
           </div>
         </div>
       </div>
-      <div class="fs-cell fs-lg-half fs-md-half fs-sm-full fs-contained">
-        <div class="hero hero--xs bg--gray"></div>
-      </div>
-      <div class="fs-cell fs-lg-half fs-md-half fs-sm-full fs-contained">
-        <div class="hero hero--xs bg--black"></div>
+    </div>
+    <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full">
+          <div class="hero hero--xs bg--gray"></div>
+        </div>
+        <hr class="invisible compact fs-cell fs-all-full">
+        <div class="fs-cell fs-all-full">
+          <div class="hero hero--xs bg--black"></div>
+        </div>
       </div>
     </div>
   </div>

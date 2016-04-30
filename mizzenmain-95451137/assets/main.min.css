@@ -4846,17 +4846,17 @@ input[type=button] {
 }
 @media screen and (min-width: 300px) {
   .hero--md {
-    height: 500px;
+    height: 525px;
   }
 }
 @media screen and (min-width: 740px) {
   .hero--md {
-    height: 600px;
+    height: 625px;
   }
 }
 @media screen and (min-width: 980px) {
   .hero--md {
-    height: 700px;
+    height: 725px;
   }
 }
 @media screen and (min-width: 300px) {
