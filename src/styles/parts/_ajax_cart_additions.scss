@@ -1,0 +1,32 @@
+#cart p.promotion {
+  padding: 0 27px;
+}
+
+@media only screen and (max-width: 600px) {
+  form#cart {
+    #note {
+      display: block;
+      float: none;
+      margin: 0 auto;
+      width: 284px;
+    }
+    a.action_button.right.checkout {
+      width: auto;
+      margin-top: 20px;
+      max-width: 279px;
+    }
+    a.action_button.edit_cart.right {
+      margin-bottom: 10px !important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  form#cart {
+    a.action_button.right.checkout {
+      margin-top: 25px;
+    }
+    a.action_button.edit_cart.ccontinue {
+      width: 180px !important;
+    }
+  }
+}

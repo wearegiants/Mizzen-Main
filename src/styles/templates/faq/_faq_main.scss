@@ -1,0 +1,102 @@
+body.page-faq .container.main.content {
+
+  .contactus {
+    background-color: #F1F1F1;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    padding: 1.5em 1.5em 2em 1.5em;
+    .phone:first-of-type {
+      > div {
+        display: inline-block;
+        margin: 0 20px;
+      }
+    }
+  }
+
+  h2.faqh2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    font-weight: 100;
+  }
+
+  .phone {
+    margin: 1em 0em 2em 0em;
+  }
+
+  span.faqheader {
+    font-size: 12px;
+    letter-spacing: 2px;
+      color: #909090;
+      text-transform: uppercase;
+  }
+
+  span.faqheader-left {
+    font-size: 12px;
+    letter-spacing: 2px;
+      color: #909090;
+      text-transform: uppercase;
+      margin-bottom: 1em;
+  }
+
+  span.email {
+    font-weight: 100;
+  }
+
+  .faq {
+    background-color: #fff;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    padding: 1.5em 0;
+  }
+
+  .question {
+    margin: 1em 0;
+    width: 90%;
+    a {
+      color: #000;
+      font-family: 'Conv_Bryant';
+    }
+  }
+
+  .emails {
+    width: 100%;
+  }
+
+  .one-third.column.faq {
+      width: 32.6%;
+      text-align: left !important;
+      color: #909090;
+      margin: 0 0 0 8px !important;
+      @media only screen and (max-width: 959px) {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+  }
+
+  .container .one-third.column {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .one-quarter.column {
+    width: 25%;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 959px) and (min-width: 768px) {
+    .one-quarter.column {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+   .one-quarter.column {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+
+}  //body.page-faq .container.main.content

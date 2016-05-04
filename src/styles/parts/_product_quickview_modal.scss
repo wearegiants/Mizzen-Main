@@ -1,0 +1,195 @@
+.test290384028 {
+  display: none;
+  // display: block;
+}
+
+.fancybox-overlay {
+  background-image: none;
+  background: rgba(0,0,0,0.4) !important;
+}
+
+.fancybox-skin {
+  border-radius: 4px;
+}
+.fancybox-skin a.fancybox-close {
+  @mixin css_arrow( $direction, $diameter, $stroke ) {
+
+    @if $direction == down {
+      -ms-transform:     rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+      transform:         rotate(45deg);
+    }
+    @if $direction == left {
+      -ms-transform:     rotate(135deg); /* IE 9 */
+      -webkit-transform: rotate(135deg); /* Chrome, Safari, Opera */
+      transform:         rotate(135deg);
+    }
+    @if $direction == up {
+      -ms-transform:     rotate(225deg); /* IE 9 */
+      -webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
+      transform:         rotate(225deg);
+    }
+    @if $direction == right {
+      -ms-transform:     rotate(315deg); /* IE 9 */
+      -webkit-transform: rotate(315deg); /* Chrome, Safari, Opera */
+      transform:         rotate(315deg);
+    }
+
+
+    -webkit-font-smoothing: antialiased;
+    content: '';
+    display: block;
+    width: $diameter;
+    height: $diameter;
+    position: relative;
+    border: $stroke;
+    background: rgba(0, 0, 0, 0);
+    border-left: 0;
+    border-top: 0;
+    outline: 0;
+    //-webkit-transform: rotate($angle);
+    cursor: pointer;
+    top: 50%;
+    margin-top: 0 - $diameter / 2;
+  }// @mixin
+
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 0 !important;
+
+  &:before {
+    @include css_arrow( left, 10px, 2px solid #231f20 );
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    left: 14px;
+  }
+  &:after {
+    @include css_arrow( right, 10px, 2px solid #231f20 );
+    border-left: 0;
+    border-top: 0;
+    right: 5px;
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.fancybox-inner [id*="product"].modal {
+
+  a.continue {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: Conv_Bryant;
+    text-align: center;
+    color: #080808;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button.add_to_cart {
+    color: #FFF;
+    width: 100%;
+    border-radius: 0;
+    padding-top: 13px;
+    background-color: #002855;
+  }
+
+  h3 {
+    text-transform: none;
+    font-size: 16px;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #777;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    font-family: HelveticaNeue-Light;
+    line-height: 1.6;
+  }
+
+  .current_price {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  hr {
+    display: none;
+  }
+
+  select {
+    border-radius: 0;
+  }
+
+  a.view_product_info {
+    display: none;
+  }
+
+  p {
+    // display: none;
+  }
+  hr + p {
+    display: none;
+  }
+
+  label[for="contact[email]"] {
+    font-family: 'Conv_Bryant';
+    color: #56565a;
+  }
+  .notify_input {
+    width: 70%;
+    margin: 0;
+    input[type="email"] {
+      font-family: 'Conv_Bryant';
+      color: #56565a;
+      // width: 210px !important;
+      width: 100% !important;
+    }
+  }
+  .notify_button {
+  width: 30%;
+  margin: 0; 
+    input[type="submit"] {
+      margin-bottom: 0;
+      color: #FFF!important;
+      display: inline-block;
+      line-height: 23px;
+      padding-left: 19px!important;
+      padding-right: 19px!important;
+      border-radius: 0;
+      background-color: #002855;
+      width: 100% !important;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .eight.columns {
+      width: 46%;
+    }
+    .six.columns {
+      width: 45%;
+    }
+    .flex-direction-nav {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .flex-direction-nav {
+      display: none;
+    }
+    .view-sizing-chart {
+      display: none;
+    }
+  }
+
+
+}// .fancybox-inner [id*="product"].modal {

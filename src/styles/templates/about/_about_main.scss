@@ -1,0 +1,159 @@
+body.page-about-us .container.main.content{
+
+
+  .center {
+    text-align: center;
+  }
+
+  // headers
+
+  .headertext {
+    text-align: center;
+    h4 {
+      font-size: 15px;
+      color: #0e2145;
+      font-family: Bryant;
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0px;
+    }
+  }
+
+  span.headersecond {
+    font-size: 30px;
+    color: #0e2145;
+    font-family: Bryant;
+    text-transform: uppercase;
+    margin: 1.5em 0;
+    display: block;
+    letter-spacing: 5px;
+  }
+
+  // "who we are" - story + photo
+
+  .story {
+    width: 560px; //490px;
+    text-align: center;
+    font-size: 15px;
+    color: #0e2145;
+    font-family: Bryant;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .story {
+      width: 85% !important;
+    }
+  }
+
+  .sailpic {
+    text-align: center;
+    margin-top: 4em;
+    img  {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2em;
+    }
+  }
+
+  // "why we're great" - shirt chart //
+
+  .shirticons {
+    margin: 0 auto;
+    width: 78%; //64%;
+  }
+
+  span.shirttop {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  span.shirtbottom {
+    color: #9A9A9A;
+    margin-bottom: 2em;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .shirtchart {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .mobileshirt {
+      display: none;
+    }
+  }
+
+  // "who's talking" - press quotes mm
+
+  // .row {
+  //  text-align: center;
+  // } //
+
+  .press {
+    text-align: center;
+    //margin-bottom: 1em;
+    width: 78%;
+    margin: 0 auto 1em auto;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 1em;
+    }
+    p {
+      font-style: italic;
+      font-size: 14px; //16px;
+      color: #828282;
+      margin-top: 0;
+      font-family: 'bryant'; //'Open Sans', sans-serif;
+      font-weight: 100;
+      letter-spacing: 1px;
+    }
+  }
+
+  .presscolumn {
+    width: 260px;
+    margin: 0 1.2em !important;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .pressimage img {
+    margin: 0 auto;
+  }
+
+  .container .one-third.column {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .container .offset-by-three {
+    padding-left: 200px !important;
+  }
+
+  .container .one-quarter.column {
+   width: 25%;
+   margin: 0;
+  }
+
+  @media only screen and (max-width: 959px) and (min-width: 768px) {
+    .container .one-quarter.column {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container .one-quarter.column {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+   .container .offset-by-one {
+      padding-left: 0px !important;
+    }
+  }
+
+} // body.page-about-us .container.main.content

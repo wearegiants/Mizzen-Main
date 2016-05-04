@@ -1,0 +1,198 @@
+.alksjdflkjasldkjfalksdfjasldjfkjas {
+  display: none;
+  // display: block;
+}
+
+$breakpoint: 500px;
+$blue: #002955;
+$grey: #575658;
+
+body.blog-new .main.content, body.article-new .main.content {
+
+  h1 {
+    display: block;
+    text-align: center;
+    color: $blue;
+    -webkit-font-smoothing: antialiased;
+    font-size: 42px;
+    font-family: $bryant;
+    margin-bottom: 22px;
+
+    @media only screen and (max-width: $breakpoint) {
+      font-size: 29px;
+    }
+  }
+
+  ol.articles {
+    list-style: none;
+    margin-left: 0;
+
+    @media only screen and (min-width: 1200px) {
+      width: 1074px;
+      margin: 0 auto;
+    }
+
+    @media only screen and (max-width: $breakpoint) {
+
+    }
+
+    li {
+      list-style: none;
+      padding-bottom: 32px;
+      margin-bottom: 37px;
+      border-bottom: 1px solid;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+
+    article {
+      text-align: center;
+
+      // Featured Image and Date
+      figure {
+        img {
+          width: 100%;
+        }
+        figcaption {
+          text-align: center;
+        }
+        figcaption time {
+          color: $blue;
+          font-style: italic;
+          font-family: $archer;
+          font-size: 12px;
+        }
+
+      }
+
+
+      h2 {
+        text-align: center;
+        color: $blue;
+      }
+
+      .excerpt {
+        max-width: 612px;
+        display: block;
+        margin: 0 auto;
+        p {
+          font-size: 19px;
+          color: $blue;
+          font-family: $bryant;
+          @media only screen and (max-width: $breakpoint) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .full {
+        display: none;
+
+        img {
+          width: 100%;
+        }
+        p, ul, ol {
+          font-size: 19px;
+          color: $blue;
+          font-family: $bryant;
+          @media only screen and (max-width: $breakpoint) {
+            font-size: 14px;
+          }
+        }
+        blockquote, blockquote * {
+          border: none;
+          margin-top: 0;
+          padding-top: 0;
+          color: #002955;
+          font-size: 14px;
+        }
+      }
+
+      button, .archive {
+        width: 100px;
+        height: 36px;
+        background: $blue;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 0;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 12px;
+        font-family: $bryant;
+        margin: 0 auto;
+
+        // @at-root { ol.articles > li.active & {
+        //   content: '-Less';
+        // } }
+
+        &:hover {
+          background-color: $grey;
+          -webkit-transition: background-color 0.1s ease;
+          -moz-transition:    background-color 0.1s ease;
+          -o-transition:      background-color 0.1s ease;
+          transition:         background-color 0.1s ease;
+        }
+      }
+
+
+
+    }// article
+
+    /**
+     * Yes the below structure is functionally redundant, but I'd like to be explicit
+     */
+
+    /*
+    li.active {
+      .full {
+        display: block;
+      }
+
+      article button.more {
+        display: none;
+      }
+      article button.less {
+        display: block;
+      }
+    }
+    */
+    li:not(.active) {
+      .full {
+        display: none;
+      }
+
+      // article button.more {
+      //   display: block;
+      // }
+      // article button.less {
+      //   display: none;
+      // }
+    }
+
+
+  }// ol.articles
+
+}// body.blog-new .main.content {
+
+body.article-new .main.content {
+
+  .breadcrumb > * {
+    color: $blue;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .breadcrumb a {
+    text-decoration: underline;
+  }
+
+  li.active > article .full {
+    display: block;
+  }
+
+  article button {
+    display: none !important;
+  }
+
+}

@@ -1,0 +1,58 @@
+$darkblue: #002855;
+$gray: #9B9B9B;
+$lightgray: #F2F2F2;
+
+
+#header, #template, #footer {
+
+  @include legacy_reset;
+
+  .bbutton {
+    height: 40px;
+    border-radius: 0;
+    line-height: 43px;
+    padding: 0 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    background: $darkblue;
+    color: #FFF;
+    font-family: $bryant;
+    letter-spacing: 1px;
+    //font-weight: normal;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition:    all 0.4s ease;
+    -o-transition:      all 0.4s ease;
+    transition:         all 0.4s ease;
+
+    &:hover {
+      background: $darkbluehover;
+    }
+  }
+
+}
+
+.archive {
+  height: 40px;
+  border-radius: 0;
+  line-height: 43px;
+  padding: 0 18px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  background: #002955;
+  color: #FFF !important;
+  font-family: $bryant;
+  letter-spacing: 1px;
+  //font-weight: normal;
+
+  -webkit-transition: all 0.4s ease;
+  -moz-transition:    all 0.4s ease;
+  -o-transition:      all 0.4s ease;
+  transition:         all 0.4s ease;
+
+  &:hover {
+    background: #575658;
+  }
+}

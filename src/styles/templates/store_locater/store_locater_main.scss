@@ -1,0 +1,207 @@
+#col-main { // this div seems to be a unique wrapper for the bold apps store locater markup
+
+  //-----------------------
+  // Top Area / Search Bar
+  //-----------------------
+  h2 {
+    text-align: center;
+  }
+  .search_bar {
+    background: transparent;
+    border: none;
+    text-align: right;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 50px;
+  }
+  .search_bar { .main_search_bar, .search_within_distance, .search_limit,  {
+    width: 25%;
+    float: left;
+    text-align: left;
+  }}
+  .search_bar { .search_within_distance, .search_limit {
+    text-align: center;
+  }}
+
+  span.main_search_label, span.distance_label, span.search_limit_label {
+    width: auto;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  #address_search {
+    border: 1px solid #dfdfdf;
+    width: auto;
+    display: inline-block;
+    font-size: 12px;
+    min-height: initial;
+    height: 38px;
+    padding: 9px 11px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .search_bar { #within_distance, #limit {
+    display: inline-block;
+    width: 128px;
+  }}
+
+  .search_bar button {
+    height: 40px;
+    border-radius: 0;
+    line-height: 43px;
+    padding: 0 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    background: $darkblue;
+    color: #FFF;
+    font-family: $bryant;
+    letter-spacing: 1px;
+    border: 0;
+    width: 221px;
+    font-size: 16px;
+    padding-top: 1px;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition:    all 0.4s ease;
+    -o-transition:      all 0.4s ease;
+    transition:         all 0.4s ease;
+
+    &:hover {
+      background: $darkbluehover;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1230px) {
+    .search_bar { .main_search_bar, .search_within_distance, .search_limit,  {
+      width: 50%;
+      float: left;
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }}
+
+
+    .search_bar #limit {
+      width: 150px;
+    }
+
+    .search_bar .search_within_distance {
+      text-align: right;
+    }
+
+
+    .main_search_bar, .search_within_distance {
+      margin-bottom: 10px;
+    }
+
+    span.main_search_label, span.search_limit_label {
+      width: 100px;
+      display: inline-block;
+    }
+
+    .main_search_label {
+      margin-right: 0;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .search_bar {
+      text-align: center;
+    }
+    .search_bar #limit, .search_bar #within_distance {
+      width: 150px;
+    }
+    .search_bar { .main_search_bar, .search_within_distance, .search_limit,  {
+      width: 100%;
+      float: left;
+      text-align: left;
+    }}
+    .search_bar .main_search_label {
+      margin-right: 0;
+    }
+    span.main_search_label, span.distance_label, span.search_limit_label {
+      width: 100px;
+      display: inline-block;
+    }
+    .search_bar button {
+      margin-top: 20px;
+    }
+    .search_bar .search_within_distance {
+      margin-bottom: 10px;
+    }
+    .addresses#addresses_list {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 651px) and (max-width: 767px) {
+    #store_map {
+      width: 100%;
+    }
+  }
+
+
+  //---------
+  // Results
+  //---------
+  .addresses {
+    width: 28%;
+  }
+   #directions_text  #direction_destination {
+    padding-left: 59px;
+    padding-bottom: 20px;
+
+  }
+  #directions_text #direction_destination, .addresses li {
+    background-image: url('google-maps-pin.png');
+    border-top: 1px solid #DDD;
+    background-position: 12px 25px;
+    padding-top: 21px;
+    padding-bottom: 0;
+  }
+  .addresses .distance {
+    margin-top: 55px;
+    color: #CCC;
+  }
+  .addresses li a span, #direction_destination span, #directions_text #direction_destination .name {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.9;
+      font-weight: normal;
+  }
+  .addresses li a .prov_state:first-child, #direction_destination .prov_state:first-child {
+    color: #002855;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .addresses .store_website {
+    display: none;
+  }
+  .addresses .directions {
+    padding-top: 0;
+    color: #333;
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 66px;
+  }
+
+  .addresses > ul > li > a {
+    margin-left: 15px;
+  }
+
+  .footer_html {
+    margin-top: 65px;
+    margin-bottom: 38px;
+  }
+
+
+}
+
+
+
+
+

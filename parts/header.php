@@ -16,7 +16,7 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="<?php echo $assets; ?>main.min.css">
+<link rel="stylesheet" href="<?php echo $assets; ?>wag.min.css">
 
 <?php include('lib/config.fonts.php' ); ?>
 <?php include('lib/config.menus.php' ); ?>
