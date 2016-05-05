@@ -2,7 +2,7 @@
 
 #cart {
   &-sidebar {
-    position: fixed;
+    //position: fixed;
     top: 0;
     right: 0;
     height: 100%;
@@ -10,13 +10,17 @@
     background: @bgGray;
     transition: 300ms ease;
     line-height: 1;
-    @media @min {
-      transform: translateX(@width - 100);
-      width: @width - 100;
-    }
-    @media @mobile {
-      transform: translateX(@width);  
-      width: @width;
+    //@media @min {
+    //  transform: translateX(@width - 100);
+    //  width: @width - 100;
+    //}
+    //@media @mobile {
+    //  transform: translateX(@width);  
+    //  width: @width;
+    //}
+
+    .close-cart {
+      cursor: pointer;
     }
     
     &.fs-swap {
@@ -48,6 +52,9 @@
     }
     .fs-row {
       max-width: 100%;
+    }
+    .wrapper {
+      padding: @spaced/1.5;
     }
   }
 }
@@ -97,10 +104,97 @@
   }
   &__footer {
     margin-bottom: 5px;
+    input {
+      max-width: 100%;
+      color: @textGray;
+    }
   }
   &:not(:first-child) {
     border-top: 1px solid @lighterGray;
     padding-top: @spaced/2;
     margin-top: @spaced/2
+  }
+}
+
+@cartWidthMin : 320px;
+@cartWidthMax : 320px;
+
+.mfp-cart {
+
+  .mfp {
+
+    &-close {
+      color: @white;
+    }
+
+    &-content {
+      //padding: 0 @spaced/2;
+    }
+
+    &-container {
+
+      background: @bgGray;
+      right: 0;
+      left: auto;
+      padding: 0;
+      transform: translateX(100%);
+      transition: 300ms ease;
+      color: @white;
+      overflow-y: scroll; /* has to be scroll, not auto */
+      -webkit-overflow-scrolling: touch;
+
+      @media @min {
+        width: @cartWidthMin;
+      }
+      @media @tablet {
+        width: @cartWidthMax;
+      }
+
+      .cart {
+        &-form {
+          margin: 0;
+        }
+        &-row {
+          max-width: 100%;
+        }
+        &-title {
+          color: @white;
+          margin: 0;
+          margin-bottom: 2px;
+          line-height: 1.2;
+          text-transform: uppercase;
+          .font_size(28);
+        }
+      }
+
+    }
+
+  }
+
+  &.mfp {
+    &-bg {
+      background: none;
+    }
+  }
+
+}
+
+.is-viewing--cart {
+  overflow: hidden;
+  height: 100%;
+
+  #wrapper {
+    @media @min {
+      transform: translateX(-@cartWidthMax);
+    }
+    @media @tablet {
+      transform: translateX(-@cartWidthMax);
+    }
+  }
+
+  .mfp-cart {
+    .mfp-container {
+      transform: translateX(0%);
+    }
   }
 }

@@ -16,10 +16,34 @@ function openModal(){
 		preloader: false,
 		modal: true
 	});
+	$('.cart-link').magnificPopup({
+		type: 'ajax',
+		midClick: true,
+		removalDelay: 1000,
+		alignTop: true,
+		overflowY: 'scroll',
+		modal: true,
+		mainClass: 'mfp-cart fs-grid',
+		callbacks: {
+		  parseAjax: function(mfpResponse) {
+		    mfpResponse.data = $(mfpResponse.data).find('#cart-sidebar');
+		  },
+		  ajaxContentAdded: function() {
+		  	$('body').addClass('is-viewing--cart');
+		  	cartSize();
+		  },
+		  beforeClose: function() {
+		  	$('body').removeClass('is-viewing--cart');	
+		  }
+		}
+	});
 	$(document).on('click', '.popup-modal-dismiss', function (e) {
 		e.preventDefault();
 		$.magnificPopup.close();
 	});
+}
+function closePopup() {
+  $.magnificPopup.close();
 }
 
 $(document).ready(function(){

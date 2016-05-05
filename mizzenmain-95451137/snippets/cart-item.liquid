@@ -1,0 +1,25 @@
+<div class="cart-item">
+  <div class="fs-row">
+    <div class="fs-cell fs-all-third cart-item__image">
+      <img class="img-responsive" src="{{ item | img_url: 'large' }}"  alt="{{ item.title | escape }}" />
+    </div>
+    <div class="fs-cell fs-lg-8 fs-md-4 fs-sm-2 relative">
+      <div class="text-right pinned pinned--top"><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="color--blue cart__remove"><span class="ss-gizmo ss-delete"></span></a></div>
+      <a href="{{ product.url }}">
+        <span class="cart-item__title color--blue">{{ item.product.title }}</span>
+        {% capture dashvariant %}{{ item.product.title }}{% endcapture %}
+        <span class="cart-item__desc accent color--blue-75">{{ item.variant.title }}</span>
+      </a>
+    </div>
+    <div class="pinned pinned--bottom">
+      <div class="fs-cell fs-lg-8 fs-lg-push-4 fs-md-4 fs-md-push-2 fs-sm-push-1">
+        <div class="cart-item__footer">
+          <div class="fs-row">
+            <div class="fs-cell fs-all-half"><input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0"></div>
+            <div class="fs-cell fs-all-half text-right color--blue">{{ item.price | money }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

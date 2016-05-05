@@ -106,7 +106,9 @@ FastClick.attach(document.body);
 
 <body class="fs-grid {{ body_class }}{% if collection.handle %} {{ collection.handle }}{% endif %}">
 
+{% comment %}
 {% include 'mm-analytics' %}
+{% endcomment %}
 
 {% if template contains "index" and settings.promo_text != blank %}
 <div class="promo_banner">
@@ -114,17 +116,14 @@ FastClick.attach(document.body);
 </div>
 {% endif %}
 
-{% include 'v2_header' %}
-
 <div id="wrapper">
+  {% include 'v2_header' %}
   {{ content_for_layout }}
+  {% include 'footer' %}
 </div>
-
-{% include 'footer' %}
 
 {{ 'vendor.min.js' | asset_url | script_tag }}
 {{ 'main.min.js' | asset_url | script_tag }}
-
 
 
 {% include 'newsletter-popup' %}

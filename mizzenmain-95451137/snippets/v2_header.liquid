@@ -2,7 +2,7 @@
   <br>
   <div class="fs-row">
     <div class="fs-cell fs-lg-third fs-centered text-center">
-      <a id="header__logo" class="btn btn--nav" href="#"><img src="mizzenmain-logo_white.png" class="img-responsive" /></a>
+      <a id="header__logo" class="btn btn--nav" href="#"><img src="{{ 'mizzenmain-logo_white.png' | asset_url }}" class="img-responsive" /></a>
     </div>
     <div class="fs-cell fs-lg-fourth fs-sm-hide">
       <a class="btn btn--nav btn--first" href="#">Join Email List</a>
@@ -15,7 +15,7 @@
     </div>
     <div class="fs-cell fs-lg-fourth text-right">
       <a class="btn btn--nav" href="#">Sign In</a>
-      <a class="btn btn--nav btn--last swap btn--cart" data-swap-target=".cart-toggle" href="#">(0) Bag</a>
+      <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
     </div>
     <div id="header__bottom" class="fs-cell fs-all-full"></div>
   </div>
