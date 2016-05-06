@@ -2409,8 +2409,8 @@ img.mfp-img {
 */
 @font-face {
   font-family: "SSSocial";
-  src: url('/assets/fonts/ss-social-circle.eot');
-  src: url('/assets/fonts/ss-social-circle-.eot#iefix') format('embedded-opentype'), url('/assets/fonts/ss-social-circle.woff') format('woff'), url('/assets/fonts/ss-social-circle.ttf') format('truetype'), url('/assets/fonts/ss-social-circle.svg#SSSocialCircle') format('svg');
+  src: url('ss-social-circle.eot');
+  src: url('ss-social-circle-.eot#iefix') format('embedded-opentype'), url('ss-social-circle.woff') format('woff'), url('ss-social-circle.ttf') format('truetype'), url('ss-social-circle.svg#SSSocialCircle') format('svg');
   font-weight: bold;
   font-style: normal;
 }
@@ -2571,8 +2571,8 @@ img.mfp-img {
 */
 @font-face {
   font-family: "SSGizmo";
-  src: url('/assets/fonts/ss-gizmo.eot');
-  src: url('/assets/fonts/ss-gizmo.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/ss-gizmo.woff') format('woff'), url('/assets/fonts/ss-gizmo.ttf') format('truetype'), url('/assets/fonts/ss-gizmo.svg#SSGizmo') format('svg');
+  src: url('ss-gizmo.eot');
+  src: url('ss-gizmo.eot?#iefix') format('embedded-opentype'), url('ss-gizmo.woff') format('woff'), url('ss-gizmo.ttf') format('truetype'), url('ss-gizmo.svg#SSGizmo') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -5050,6 +5050,17 @@ input[type=button] {
 }
 #cart-sidebar .close-cart {
   cursor: pointer;
+}
+@media screen and (min-width: 300px) {
+  #cart-sidebar .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 740px) {
+  #cart-sidebar .wrapper {
+    padding: 25px;
+  }
 }
 #cart-sidebar.fs-swap-active {
   -webkit-transform: translateX(0);

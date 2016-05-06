@@ -19,8 +19,11 @@
       {% include 'cart-item' %}
       {% endfor %}
       {% else %}
-      <div class="color--blue">Your cart is currently empty.</div>
-      <div class="color--blue">You can continue browsing <a href="/collections/all">here</a>.</div>
+      <div class="fs-row">
+        <div class='fs-cell fs-all-full'>
+          <div class="color--blue">Your cart is currently empty.</div>
+        </div>
+      </div>
       {% endif %}
     </div>
   </div>
@@ -28,10 +31,14 @@
   <!-- Footer -->
   <div id="cart-sidebar__footer" class="pinned pinned--bottom">
     <hr class="divider nomargin bg--black-25">
-    <div class="wrapper">
-      <a href="#" class="message-toggle color--blue" data-swap-target="#cart-sidebar__gift">Add a gift message</a>
-      <div id="cart-sidebar__gift">
-        <textarea placeholder="Add your gift message here."></textarea>
+    <div class="fs-row">
+      <div class='fs-cell fs-all-full'>
+        <div class="wrapper">
+          <a href="#" class="message-toggle color--blue" data-swap-target="#cart-sidebar__gift">Add a gift message</a>
+          <div id="cart-sidebar__gift">
+            <textarea placeholder="Add your gift message here."></textarea>
+          </div>
+        </div>
       </div>
     </div>
     <hr class="divider nomargin bg--black-25">
