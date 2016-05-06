@@ -1,5 +1,17 @@
 {% layout 'wearegiants' %}
 
+{% assign shop_1 = "Shop Dress Shirts" %}
+{% assign shop_1_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-shop-by-collection-1.jpg" %}
+
+{% assign shop_2 = "Shop Chinos" %}
+{% assign shop_2_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/Chinos_2048x2048_small.jpg" %}
+
+{% assign shop_3 = "Shop Polos" %}
+{% assign shop_3_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-shop-by-collection-2.jpg" %}
+
+{% assign shop_4 = "Shop Outerwear" %}
+{% assign shop_4_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/Outerwear_2048x2048.jpg" %}
+
 <div id="index" class="fs-grid">
 
   <!-- Hero -->
@@ -11,8 +23,8 @@
             <div class="fs-row">
               <div class="fs-cell fs-all-full">
                 <div class="text-right">
-                  <h1>Diamond in the Scruff</h1>
-                  <a href="#" class="btn btn--primary bg--white">Shop the Norfolk</a>
+                  <h1 class="color--blue">DIAMOND IN<br> THE SCRUFF</h1>
+                  <a href="#" class="btn btn--primary bg--white color--blue">Shop the Norfolk</a>
                 </div>
               </div>
             </div>
@@ -26,7 +38,7 @@
               <div class="fs-cell fs-all-full">
                 <div class="text-right">
                   <h1>Diamond in the Scruff</h1>
-                  <a href="#" class="btn btn--primary bg--white">Shop the Norfolk</a>
+                  <a href="#" class="btn btn--primary bg--white color--blue">Shop the Norfolk</a>
                 </div>
               </div>
             </div>
@@ -57,32 +69,36 @@
 
   <div class="home__shop">
     <div class="fs-row">
-      <div class="fs-cell fs-all-full">
-        <div class="hero hero--sm bg--black relative">
+      <div class="home__shop-thumb fs-cell fs-lg-full fs-md-full fs-sm-full relative">
+        <div class="home__shop-image hero hero--sm relative wallpaper" data-background-options='{"source":"{{ shop_1_image }}"}'>
+          <a href="#" class="covered"></a>
           <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
+            <span href="#" class="btn bg--blue color--white">{{ shop_1 }}</span>
           </div>
         </div>
       </div>
       <hr class="invisible compact fs-cell fs-all-full">
-      <div class="fs-cell fs-lg-third fs-md-full fs-sm-full">
-        <div class="hero hero--xs bg--gray relative">
+      <div class="home__shop-thumb fs-cell fs-lg-third fs-md-full fs-sm-full relative">
+        <a href="#" class="covered"></a>
+        <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_2_image }}"}'>
           <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
+            <span href="#" class="btn bg--blue color--white">{{ shop_2 }}</span>
           </div>
         </div>
       </div>
-      <div class="fs-cell fs-lg-third fs-md-full fs-sm-full">
-        <div class="hero hero--xs bg--bgGray relative">
+      <div class="home__shop-thumb fs-cell fs-lg-third fs-md-full fs-sm-full relative">
+        <a href="#" class="covered"></a>
+        <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_3_image }}"}'>
           <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
+            <span href="#" class="btn bg--blue color--white">{{ shop_3 }}</span>
           </div>
         </div>
       </div>
-      <div class="fs-cell fs-lg-third fs-md-full fs-sm-full">
-        <div class="hero hero--xs bg--gray relative">
+      <div class="home__shop-thumb fs-cell fs-lg-third fs-md-full fs-sm-full relative">
+        <a href="#" class="covered"></a>
+        <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_4_image }}"}'>
           <div class='centered text-center'>
-            <a href="#" class="btn bg--black color--white">Shop Dress Shirts</a>
+            <span href="#" class="btn bg--blue color--white">{{ shop_4 }}</span>
           </div>
         </div>
       </div>
@@ -113,24 +129,42 @@
   <div class="home__magazine">
     <div class="fs-row">
       <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
-        <div class="hero hero--md bg--bgGray relative">
-          <div class="centered">
-            <div class="wrapper--extra">
-              <h1>What is Mizzen+Main?</h1>
-              <p>Learn more about us and here's a second line to explain that</p>
-              <a href="#" class="btn bg--black color--white">Learn More</a>
+        <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sail_pic.jpg"}'>
+          <!--<div class="hero--xs pinned pinned--top">-->
+            <div class="centered">
+              <div class="wrapper--extra">
+                <h1>WHAT IS MIZZEN+MAIN?</h1>
+                <p>We are tradition evolved.</p>
+                <a href="#" class="btn bg--blue color--white">Learn More</a>
+              </div>
             </div>
-          </div>
+          <!--</div>-->
         </div>
       </div>
       <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
         <div class="fs-row">
           <div class="fs-cell fs-all-full">
-            <div class="hero hero--xs bg--gray"></div>
+            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/lookbook.jpg"}'>
+              <div class="centered">
+                <div class="wrapper--extra text-center">
+                  <h1>OUR LATEST LOOK BOOK</h1>
+                  <p>See the best styles from Fall 2016.</p>
+                  <a href="#" class="btn bg--blue color--white">Learn More</a>
+                </div>
+              </div>
+            </div>
           </div>
           <hr class="invisible compact fs-cell fs-all-full">
           <div class="fs-cell fs-all-full">
-            <div class="hero hero--xs bg--black"></div>
+            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sleeward-hero-img_2048x2048.jpg"}'>
+              <div class="centered">
+                <div class="wrapper--extra text-center">
+                  <h1>EXPLORE THE M+M FIT</h1>
+                  <p>What kind of fit works best for you? Learn more about our lorem ipusm.</p>
+                  <a href="#" class="btn bg--blue color--white">Learn More</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

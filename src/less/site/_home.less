@@ -1,8 +1,53 @@
 .home {
 
+  &__shop {
+    &-thumb {
+      overflow: hidden;
+      &:hover {
+        .fs-background-container {
+          transform: scale(1.05,1.05);
+        }
+      }
+    }
+
+    &-image, .fs-background-container {
+      transition: 1200ms ease;
+    }
+  }
+
+  &__magazine {
+    h1 {
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: @blue;
+      margin-bottom: 0;
+      line-height: 1.3;
+    }
+    p {
+      font-weight: 400;
+      margin: 0 0 10px;
+      line-height: 1.4;
+      .font_size(24);
+    }
+    .btn {
+      margin-bottom: 0;
+    }
+    &--large {
+      h1 {
+        .font_size(50);
+      }
+    }
+  }
+
   &-carousel {
     
     position: relative;
+
+    h1 {
+      .font_size(62);
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
 
     .fs-carousel {
 
