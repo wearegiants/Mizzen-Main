@@ -1,19 +1,23 @@
 <div id="header" class="header header--lg pinned pinned--top fs-grid color--white">
   <br>
   <div class="fs-row">
-    <div class="fs-cell fs-lg-third fs-centered text-center">
+    <div class="fs-cell fs-xl-third fs-lg-5 fs-md-4 fs-sm-2 fs-centered text-center">
       <a id="header__logo" class="btn btn--nav" href="#"><img src="{{ 'mizzenmain-logo_white.png' | asset_url }}" class="img-responsive" /></a>
     </div>
-    <div class="fs-cell fs-lg-fourth fs-sm-hide">
+    <hr class="invisible fs-lg-hide fs-md-full fs-md-full fs-sm-hide nomargin">
+    <div class="header-nav__join fs-cell fs-lg-fourth fs-md-hide fs-sm-hide">
       <a class="btn btn--nav btn--first" href="#">Join Email List</a>
     </div>
-    <div class="fs-cell fs-lg-half fs-sm-hide text-center">
+    <div class="header-nav__join fs-cell fs-lg-hide fs-md-hide fs-sm-half">
+      <a class="btn btn--nav btn--first" href="#">Menu</a>
+    </div>
+    <nav class="header-nav__menu fs-cell fs-lg-half fs-md-4 fs-sm-hide">
       <a class="btn btn--nav swap" data-swap-target="#header__dropdown" href="#">Shop</a>
       <a class="btn btn--nav" href="#">Lookbooks</a>
       <a class="btn btn--nav" href="#">About Us</a>
       <a class="btn btn--nav" href="#">Blog</a>
-    </div>
-    <div class="fs-cell fs-lg-fourth text-right">
+    </nav>
+    <div class="header-nav__cart fs-cell fs-lg-fourth fs-md-2 fs-sm-half text-right">
       <a class="btn btn--nav" href="#">Sign In</a>
       <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
     </div>

@@ -17,7 +17,7 @@
   <!-- Hero -->
   <div class="home-carousel">
     <div class="carousel">
-      <div class="carousel__slide">
+      <div class="carousel__slide" data-shade="dark">
         <div class="home__hero hero hero--md bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-slide-1-desktop.jpg"}'>
           <div class="centered centered--full">
             <div class="fs-row">
@@ -31,13 +31,13 @@
           </div>
         </div>
       </div>
-      <div class="carousel__slide">
+      <div class="carousel__slide" data-shade="light">
         <div class="home__hero hero hero--md bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/Chinos_2048x2048.jpg"}'>
           <div class="centered centered--full">
             <div class="fs-row">
               <div class="fs-cell fs-all-full">
                 <div class="text-right">
-                  <h1>Diamond in the Scruff</h1>
+                  <h1 class="color--blue">DIAMOND IN<br> THE SCRUFF</h1>
                   <a href="#" class="btn btn--primary bg--white color--blue">Shop the Norfolk</a>
                 </div>
               </div>
@@ -57,7 +57,7 @@
       <div class="fs-cell fs-lg-10 fs-lg-push-1 fs-md-4 fs-md-push-1 fs-sm-3">
         <div class="text-center">
           <h2>Peformance Fabric Menswear</h2>
-          <p>Our performance fabric apparel has the traditional look of menswear, but feels like the most comfortable athletic gear.</p>
+          <p>Our performance fabric apparel has the traditional look of<br> menswear, but feels like the most comfortable athletic gear.</p>
         </div>
       </div>
     </div>
@@ -78,15 +78,7 @@
         </div>
       </div>
       <hr class="invisible compact fs-cell fs-all-full">
-      <div class="home__shop-thumb fs-cell fs-lg-third fs-md-full fs-sm-full relative">
-        <a href="#" class="covered"></a>
-        <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_2_image }}"}'>
-          <div class='centered text-center'>
-            <span href="#" class="btn bg--blue color--white">{{ shop_2 }}</span>
-          </div>
-        </div>
-      </div>
-      <div class="home__shop-thumb fs-cell fs-lg-third fs-md-full fs-sm-full relative">
+      <div class="home__shop-thumb fs-cell fs-lg-half fs-md-full fs-sm-full relative">
         <a href="#" class="covered"></a>
         <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_3_image }}"}'>
           <div class='centered text-center'>
@@ -94,7 +86,7 @@
           </div>
         </div>
       </div>
-      <div class="home__shop-thumb fs-cell fs-lg-third fs-md-full fs-sm-full relative">
+      <div class="home__shop-thumb fs-cell fs-lg-half fs-md-full fs-sm-full relative">
         <a href="#" class="covered"></a>
         <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_4_image }}"}'>
           <div class='centered text-center'>
@@ -114,8 +106,16 @@
       <div class="fs-cell fs-all-full">
         <div class="carousel">
           <div class="carousel__slide text-center">
-            <h1><em>Some press quote</em></h1>
-            <span>NYTimes</span>
+            <h1 class="home__press-quote"><em>"The evolution of performance menswear."</em></h1>
+            <img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/logo.png" class="img-responsive" />
+          </div>
+          <div class="carousel__slide text-center">
+            <h1 class="home__press-quote"><em>"The evolution of performance menswear."</em></h1>
+            <span class="home__press-source">NYTimes</span>
+          </div>
+          <div class="carousel__slide text-center">
+            <h1 class="home__press-quote"><em>"The evolution of performance menswear."</em></h1>
+            <span class="home__press-source">NYTimes</span>
           </div>
         </div>
       </div>
@@ -141,6 +141,7 @@
           <!--</div>-->
         </div>
       </div>
+      <hr class="invisible compact fs-cell fs-lg-hide fs-md-full fs-sm-full">
       <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
         <div class="fs-row">
           <div class="fs-cell fs-all-full">
