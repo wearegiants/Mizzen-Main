@@ -119,7 +119,7 @@ FastClick.attach(document.body);
 <div id="wrapper">
   {% include 'v2_header' %}
   {{ content_for_layout }}
-  {% include 'footer' %}
+  {% comment %}{% include 'footer' %}{% endcomment %}
 </div>
 
 {{ 'vendor.min.js' | asset_url | script_tag }}

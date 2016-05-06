@@ -201,13 +201,21 @@ form {
   & input[type=tel],
   & input[type=url],
   & textarea {
-    cursor: auto;
     text-align: left;
     width: 100%;
     margin: 0 0 10px;
     background: @bgGray;
     .button();
+    cursor: auto;
     text-align: left;
+    color: @textGray;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  & textarea {
+    line-height: 1.3;
+    padding: 10px;
   }
 }
 

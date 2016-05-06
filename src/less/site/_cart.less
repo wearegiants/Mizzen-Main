@@ -28,6 +28,23 @@
         transform: translateX(0);
       }
     }
+    &__gift {
+
+      max-height: 0;
+      overflow: hidden;
+      transition: 300ms ease;
+
+      &.fs-swap-active {
+        max-height: 999px;
+      }
+
+      textarea {
+        height: 100px;
+        background: @white;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+    }
     &__note {
       display: block;
       margin: @spaced/2 0;
@@ -42,6 +59,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       .font_size(14);
+      font-weight: 500;
       .btn {
         margin-bottom: 0;
       }
@@ -89,6 +107,7 @@
     letter-spacing: 1px;
     margin-bottom: 5px;
     margin-top: 5px;
+    font-weight: 500;
   }
   &__desc {
     font-style: italic;
@@ -117,7 +136,7 @@
 }
 
 @cartWidthMin : 320px;
-@cartWidthMax : 320px;
+@cartWidthMax : 400px;
 
 .mfp-cart {
 
@@ -185,7 +204,7 @@
 
   #wrapper {
     @media @min {
-      transform: translateX(-@cartWidthMax);
+      transform: translateX(-@cartWidthMin);
     }
     @media @tablet {
       transform: translateX(-@cartWidthMax);

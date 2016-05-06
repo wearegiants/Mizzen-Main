@@ -31,6 +31,7 @@ function openModal(){
 		  ajaxContentAdded: function() {
 		  	$('body').addClass('is-viewing--cart');
 		  	cartSize();
+		  	$(".message-toggle").swap();
 		  },
 		  beforeClose: function() {
 		  	$('body').removeClass('is-viewing--cart');	
