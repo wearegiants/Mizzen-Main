@@ -12,13 +12,13 @@
 {% assign shop_4 = "Shop Outerwear" %}
 {% assign shop_4_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/Outerwear_2048x2048.jpg" %}
 
-<div id="index" class="fs-grid">
+<div id="index" class="fs-grid fs-grid-fluid">
 
   <!-- Hero -->
   <div class="home-carousel">
     <div class="carousel">
       <div class="carousel__slide" data-shade="dark">
-        <div class="home__hero hero hero--md bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-slide-1-desktop.jpg"}'>
+        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-slide-1-desktop.jpg"}'>
           <div class="centered centered--full">
             <div class="fs-row">
               <div class="fs-cell fs-all-full">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="carousel__slide" data-shade="light">
-        <div class="home__hero hero hero--md bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/Chinos_2048x2048.jpg"}'>
+        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/Chinos_2048x2048.jpg"}'>
           <div class="centered centered--full">
             <div class="fs-row">
               <div class="fs-cell fs-all-full">
@@ -67,7 +67,7 @@
 
   <!-- Shop Section -->
 
-  <div class="home__shop">
+  <div class="home__shop" style="display: none;">
     <div class="fs-row">
       <div class="home__shop-thumb fs-cell fs-lg-full fs-md-full fs-sm-full relative">
         <div class="home__shop-image hero hero--sm relative wallpaper" data-background-options='{"source":"{{ shop_1_image }}"}'>
@@ -100,6 +100,57 @@
 
   <hr class="invisible">
 
+  <!-- Magazine -->
+
+  <div class="home__magazine">
+    <div class="fs-row">
+      <div class="fs-cell fs-all-full">
+        <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sail_pic.jpg"}'>
+          <!--<div class="hero--xs pinned pinned--top">-->
+            <div class="centered">
+              <div class="wrapper--extra">
+                <h1>WHAT IS MIZZEN+MAIN?</h1>
+                <p>We are tradition evolved.</p>
+                <a href="#" class="btn bg--blue color--white">Learn More</a>
+              </div>
+            </div>
+          <!--</div>-->
+        </div>
+      </div>
+      <hr class="invisible compact fs-cell fs-lg-full fs-md-full fs-sm-full">
+      <div class="fs-cell fs-all-full">
+        <div class="fs-row">
+          <div class="fs-cell fs-all-half">
+            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/lookbook.jpg"}'>
+              <div class="centered">
+                <div class="wrapper--extra text-left">
+                  <h1>OUR LATEST LOOK BOOK</h1>
+                  <p>See the best styles from Fall 2016.</p>
+                  <a href="#" class="btn bg--blue color--white">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="invisible compact fs-cell fs-all-full fs-lg-hide">
+          <div class="fs-cell fs-all-half">
+            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sleeward-hero-img_2048x2048.jpg"}'>
+              <div class="centered">
+                <div class="wrapper--extra text-left">
+                  <h1>EXPLORE THE M+M FIT</h1>
+                  <p>What kind of fit works best for you? Learn more about our lorem ipusm.</p>
+                  <a href="#" class="btn bg--blue color--white">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="invisible">
+
   <!-- Press -->
 
   <div class="home__press">
@@ -117,56 +168,6 @@
           <div class="carousel__slide text-center">
             <h1 class="home__press-quote"><em>"The evolution of performance menswear."</em></h1>
             <span class="home__press-source">NYTimes</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="invisible">
-
-  <!-- Magazine -->
-
-  <div class="home__magazine">
-    <div class="fs-row">
-      <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
-        <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sail_pic.jpg"}'>
-          <!--<div class="hero--xs pinned pinned--top">-->
-            <div class="centered">
-              <div class="wrapper--extra">
-                <h1>WHAT IS MIZZEN+MAIN?</h1>
-                <p>We are tradition evolved.</p>
-                <a href="#" class="btn bg--blue color--white">Learn More</a>
-              </div>
-            </div>
-          <!--</div>-->
-        </div>
-      </div>
-      <hr class="invisible compact fs-cell fs-lg-hide fs-md-full fs-sm-full">
-      <div class="fs-cell fs-lg-half fs-md-half fs-sm-full">
-        <div class="fs-row">
-          <div class="fs-cell fs-all-full">
-            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/lookbook.jpg"}'>
-              <div class="centered">
-                <div class="wrapper--extra text-center">
-                  <h1>OUR LATEST LOOK BOOK</h1>
-                  <p>See the best styles from Fall 2016.</p>
-                  <a href="#" class="btn bg--blue color--white">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="invisible compact fs-cell fs-all-full">
-          <div class="fs-cell fs-all-full">
-            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sleeward-hero-img_2048x2048.jpg"}'>
-              <div class="centered">
-                <div class="wrapper--extra text-center">
-                  <h1>EXPLORE THE M+M FIT</h1>
-                  <p>What kind of fit works best for you? Learn more about our lorem ipusm.</p>
-                  <a href="#" class="btn bg--blue color--white">Learn More</a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
