@@ -17,34 +17,36 @@
   <!-- Hero -->
   <div class="home-carousel">
     <div class="carousel">
-      <div class="carousel__slide" data-shade="dark">
-        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-slide-1-desktop.jpg"}'>
+
+      {% for i in (1..6) %}
+      {% capture slide %}home-carousel-{{ i }}__enable{% endcapture %}
+      {% capture slide_shade %}home-carousel-{{ i }}__shade{% endcapture %}
+      {% capture slide_image %}home-carousel-{{ i }}__image.jpg{% endcapture %}
+      {% capture slide_image-mobile %}home-carousel-{{ i }}__image-mobile.jpg{% endcapture %}
+      {% capture slide_title %}home-carousel-{{ i }}__title{% endcapture %}
+      {% capture slide_button %}home-carousel-{{ i }}__button{% endcapture %}
+      {% capture slide_url %}home-carousel-{{ i }}__url{% endcapture %}
+      {% capture slide_align %}home-carousel-{{ i }}__textalign{% endcapture %}
+      {% if settings[slide] %}
+
+      <div class="carousel__slide" data-shade="{{ settings[slide_shade] }}">
+        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":{"0px":"{{ slide_image-mobile | asset_url }}","980px":"{{ slide_image | asset_url }}"}}'>
           <div class="centered centered--full">
             <div class="fs-row">
               <div class="fs-cell fs-all-full">
-                <div class="text-right">
-                  <h1 class="color--blue">DIAMOND IN<br> THE SCRUFF</h1>
-                  <a href="#" class="btn btn--primary bg--white color--blue">Shop the Norfolk</a>
+                <div class="{{ settings[slide_align] }}">
+                  <h1 class="color--blue">{{ settings[slide_title] }}</h1>
+                  <a href="{{ settings[slide_url] }}" class="btn btn--primary bg--white color--blue">{{ settings[slide_button] }}</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="carousel__slide" data-shade="light">
-        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/Chinos_2048x2048.jpg"}'>
-          <div class="centered centered--full">
-            <div class="fs-row">
-              <div class="fs-cell fs-all-full">
-                <div class="text-right">
-                  <h1 class="color--blue">DIAMOND IN<br> THE SCRUFF</h1>
-                  <a href="#" class="btn btn--primary bg--white color--blue">Shop the Norfolk</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      {% endif %}
+      {% endfor %}
+
     </div>
   </div>
 
@@ -104,47 +106,41 @@
 
   <div class="home__magazine">
     <div class="fs-row">
-      <div class="fs-cell fs-all-full">
-        <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sail_pic.jpg"}'>
-          <!--<div class="hero--xs pinned pinned--top">-->
-            <div class="centered">
-              <div class="wrapper--extra">
-                <h1>WHAT IS MIZZEN+MAIN?</h1>
-                <p>We are tradition evolved.</p>
-                <a href="#" class="btn bg--blue color--white">Learn More</a>
-              </div>
-            </div>
-          <!--</div>-->
-        </div>
-      </div>
-      <hr class="invisible compact fs-cell fs-lg-full fs-md-full fs-sm-full">
-      <div class="fs-cell fs-all-full">
-        <div class="fs-row">
-          <div class="fs-cell fs-all-half">
-            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/lookbook.jpg"}'>
-              <div class="centered">
-                <div class="wrapper--extra text-left">
-                  <h1>OUR LATEST LOOK BOOK</h1>
-                  <p>See the best styles from Fall 2016.</p>
-                  <a href="#" class="btn bg--blue color--white">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="invisible compact fs-cell fs-all-full fs-lg-hide">
-          <div class="fs-cell fs-all-half">
-            <div class="hero hero--xs relative wallpaper" data-background-options='{"source":"https://dl.dropboxusercontent.com/u/2280055/Mizzen/sleeward-hero-img_2048x2048.jpg"}'>
-              <div class="centered">
-                <div class="wrapper--extra text-left">
-                  <h1>EXPLORE THE M+M FIT</h1>
-                  <p>What kind of fit works best for you? Learn more about our lorem ipusm.</p>
-                  <a href="#" class="btn bg--blue color--white">Learn More</a>
-                </div>
-              </div>
+      {% for i in (1..6) %}
+      {% capture mag %}home-mag-{{ i }}__enable{% endcapture %}
+      {% capture mag_shade %}home-mag-{{ i }}__shade{% endcapture %}
+      {% capture mag_image %}home-mag-{{ i }}__image.jpg{% endcapture %}
+      {% capture mag_image-mobile %}home-mag-{{ i }}__image-mobile.jpg{% endcapture %}
+      {% capture mag_title %}home-mag-{{ i }}__title{% endcapture %}
+      {% capture mag_desc %}home-mag-{{ i }}__desc{% endcapture %}
+      {% capture mag_button %}home-mag-{{ i }}__button{% endcapture %}
+      {% capture mag_url %}home-mag-{{ i }}__url{% endcapture %}
+      {% capture mag_align %}home-mag-{{ i }}__textalign{% endcapture %}
+      {% if settings[mag] %}
+
+      {% if forloop.first == true %}
+      {% capture mag_size %}home__magazine--large hero hero--md{% endcapture %}
+      {% capture mag_width %}fs-all-full{% endcapture %}
+      {% else %}
+      {% capture mag_size %}hero hero--xs{% endcapture %}
+      {% capture mag_width %}fs-lg-half fs-md-half fs-sm-3{% endcapture %}
+      {% endif %}
+
+      <div class="fs-cell {{ mag_width }}">
+        <div class="{{ mag_size }} relative wallpaper" data-background-options='{"source":{"0px":"{{ mag_image-mobile | asset_url }}","980px":"{{ mag_image | asset_url }}"}}'>
+          <div class="centered">
+            <div class="wrapper--extra text-left">
+              <h1>{{ settings[mag_title] }}</h1>
+              <p>{{ settings[mag_desc] }}</p>
+              <a href="#" class="btn bg--blue color--white">{{ settings[mag_button] }}</a>
             </div>
           </div>
         </div>
       </div>
+      <hr class="invisible compact fs-cell fs-all-full">
+
+      {% endif %}
+      {% endfor %}
     </div>
   </div>
 
