@@ -32,8 +32,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- Stylesheets -->
-{{ 'wag.min.css' | asset_url | stylesheet_tag }}
+{{ 'styles.scss.css' | asset_url | stylesheet_tag }}
+{{ 'main.css' | asset_url | stylesheet_tag }}
 {{ 'theme-settings.scss.css' | asset_url | stylesheet_tag }}
+{{ 'wag.min.css' | asset_url | stylesheet_tag }}
 
 <!-- Icons -->
 <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
@@ -119,12 +121,25 @@ FastClick.attach(document.body);
 <div id="wrapper">
   {% include 'v2_header' %}
   {{ content_for_layout }}
-  {% comment %}{% include 'footer' %}{% endcomment %}
+  {% include 'v2-footer' %}
+  <div id="search" class="animated">
+    <div class="container">
+      <div class="ten columns offset-by-three center">
+        <form action="/search">
+          {% if settings.search_option != 'everything' %}
+            <input type="hidden" name="type" value="product" />
+          {% endif %}
+          <div class="search-close ss-icon">&#x2421;</div>
+          <span class="icon-search search-submit"></span>
+          <input type="text" name="q" placeholder="Search {{ shop.name }}..." value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+        </form>
+      </div>
+    </div>
+  </div><!-- #search -->
 </div>
 
 {{ 'vendor.min.js' | asset_url | script_tag }}
 {{ 'main.min.js' | asset_url | script_tag }}
-
 
 {% include 'newsletter-popup' %}
 {% include 'currencies' %}

@@ -1,5 +1,15 @@
 .home {
 
+  &-page {
+    h1,h2,h3,h4,h5 {
+      display: block!important;
+      .headerFont();
+    }
+    p {
+      .accentFont();
+    }
+  }
+
   &__press {
     img {
       display: block;
@@ -176,6 +186,7 @@
     }
 
     h1 {
+      color: @white;
       @media @min {
         .font_size(40);
       }

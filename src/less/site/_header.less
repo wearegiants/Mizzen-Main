@@ -1,26 +1,18 @@
 #header {
 
-  &-nav {
-    &__menu {
-      @media @tablet {
-        text-align: left;
-      }
-      @media @desktop {
-        text-align: center;
-      }
-    }
-  }
-
-  .btn {
-    &--nav {
-      .font_size(14);
-      font-weight: 500;
-      letter-spacing: 1px;
-      &:not(.btn--cart) {
-        &.fs-swap {
-          &-active {
-            background: @white;
-            color: @blue;
+  &-main {
+    .btn {
+      &--nav {
+        color: @white;
+        .font_size(14);
+        font-weight: 500;
+        letter-spacing: 1px;
+        &:not(.btn--cart) {
+          &.fs-swap {
+            &-active {
+              background: @white;
+              color: @blue;
+            }
           }
         }
       }
@@ -71,4 +63,17 @@
 
   }
 
+}
+
+.header {
+  &-nav {
+    &__menu {
+      @media @tablet {
+        text-align: left;
+      }
+      @media @desktop {
+        text-align: center;
+      }
+    }
+  }
 }

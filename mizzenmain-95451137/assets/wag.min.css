@@ -2044,10 +2044,12 @@ th {
 }
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 .mfp-zoom {
   cursor: pointer;
+  cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 .mfp-auto-cursor .mfp-content {
@@ -3993,108 +3995,6 @@ img.rounded {
 .nomargin {
   margin: 0;
 }
-*:link,
-*:visited,
-*:active,
-*:focus {
-  -webkit-transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, opacity 0.1s linear;
-  transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, opacity 0.1s linear;
-}
-*:focus,
-*:hover,
-*:active {
-  outline: none;
-}
-html,
-body {
-  height: 100%;
-}
-body {
-  font-family: 'Bryant', sans-serif;
-  font-weight: regular;
-  -webkit-font-smoothing: antialiased;
-  color: #666666;
-  line-height: 1.5;
-}
-body * {
-  word-wrap: break-word;
-}
-::-moz-selection,
-::-moz-selection {
-  background: #eee;
-  text-shadow: none;
-}
-::selection,
-::-moz-selection {
-  background: #eee;
-  text-shadow: none;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Bryant', sans-serif;
-  font-weight: regular;
-  color: #404040;
-  line-height: inherit;
-  font-weight: normal;
-  margin: 2% 0;
-}
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  text-decoration: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-p {
-  color: inherit;
-  margin: 0 0 10px;
-}
-p.emphasized {
-  font-size: 20px;
-  font-size: 1.25rem;
-  margin: 15px 0;
-}
-ol,
-ul {
-  margin: 0 0 20px 0;
-  padding: 0 0 0 20px;
-}
-li {
-  position: relative;
-  display: block;
-  color: inherit;
-}
-li a {
-  color: inherit;
-}
-li:before {
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  top: 10px;
-  left: -15px;
-  background: #ccc;
-  border-radius: 100%;
-  content: '';
-  display: block;
-}
 hr {
   width: 100%;
   height: 1px;
@@ -4114,43 +4014,6 @@ hr.big {
 }
 hr.nomargin {
   margin: 0;
-}
-iframe {
-  border: none;
-}
-audio,
-canvas,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-figure {
-  margin: 0;
-}
-fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-input,
-textarea {
-  border: none;
-  border-radius: 0;
-  padding: 0;
-}
-textarea {
-  resize: vertical;
-}
-menu {
-  margin: 0;
-  padding: 0;
-}
-menu .btn:last-child {
-  padding-right: 0;
-}
-menu .btn:first-child {
-  padding-left: 0;
 }
 button {
   background: none;
@@ -4457,31 +4320,6 @@ select {
 select option {
   font-weight: 400!important;
   -webkit-font-smoothing: antialiased;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-table tr:nth-child(odd) {
-  background-color: #F2F2F2;
-}
-table tr:nth-child(even) {
-  background-color: #fff;
-}
-table tr td,
-table tr th {
-  vertical-align: middle;
-  border: 1px solid #CBCBD2;
-  text-align: left;
-  padding: 7px;
-  font-weight: 400;
-}
-table tr th {
-  text-align: center;
 }
 .title--bold {
   font-weight: bold;
@@ -4984,23 +4822,14 @@ input[type=button] {
 .widget-area .xoxo {
   padding-left: 0;
 }
-@media screen and (min-width: 740px) {
-  #header-nav__menu {
-    text-align: left;
-  }
-}
-@media screen and (min-width: 980px) {
-  #header-nav__menu {
-    text-align: center;
-  }
-}
-#header .btn--nav {
+#header-main .btn--nav {
+  color: #fff;
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 1px;
 }
-#header .btn--nav:not(.btn--cart).fs-swap-active {
+#header-main .btn--nav:not(.btn--cart).fs-swap-active {
   background: #fff;
   color: #112D51;
 }
@@ -5037,6 +4866,16 @@ input[type=button] {
 #header__dropdown .header__item:hover img {
   -webkit-transform: rotate(-2deg);
           transform: rotate(-2deg);
+}
+@media screen and (min-width: 740px) {
+  .header-nav__menu {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 980px) {
+  .header-nav__menu {
+    text-align: center;
+  }
 }
 #cart-sidebar {
   top: 0;
@@ -5241,6 +5080,18 @@ input[type=button] {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
 }
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page h5 {
+  display: block!important;
+  font-family: 'Bryant', sans-serif;
+  font-weight: regular;
+}
+.home-page p {
+  font-family: 'Archer', serif;
+}
 .home__press img {
   display: block;
   height: auto;
@@ -5442,6 +5293,7 @@ input[type=button] {
   }
 }
 .home-carousel h1 {
+  color: #fff;
   letter-spacing: 1px;
   line-height: 1.3;
 }
