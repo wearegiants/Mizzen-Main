@@ -2044,12 +2044,10 @@ th {
 }
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
-  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 .mfp-zoom {
   cursor: pointer;
-  cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 .mfp-auto-cursor .mfp-content {
@@ -3843,14 +3841,14 @@ img.mfp-img {
   content: '';
 }
 @font-face {
-  font-family: "Bryant";
+  font-family: "Bryant Web Font";
   src: url('bryant-medium-webfont.eot');
   src: url('bryant-medium-webfont.eot?#iefix') format('embedded-opentype'), url('bryant-medium-webfont.woff') format('woff'), url('bryant-medium-webfont.ttf') format('truetype'), url('bryant-medium-webfont.svg#SSGizmo') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Archer";
+  font-family: "Archer Web Font";
   src: url('Archer-XLightItal-Pro.eot');
   src: url('Archer-XLightItal-Pro.eot?#iefix') format('embedded-opentype'), url('Archer-XLightItal-Pro.woff') format('woff'), url('Archer-XLightItal-Pro.ttf') format('truetype'), url('Archer-XLightItal-Pro.svg#SSGizmo') format('svg');
   font-weight: normal;
@@ -4036,7 +4034,7 @@ form textarea {
   width: 100%;
   margin: 0 0 10px;
   background: #F2F2F2;
-  font-family: 'Bryant', sans-serif;
+  font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
   cursor: pointer;
   display: inline-block;
@@ -4293,7 +4291,7 @@ select {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
-  font-family: 'Bryant', sans-serif;
+  font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
   cursor: pointer;
   display: inline-block;
@@ -4349,13 +4347,13 @@ select option {
   }
 }
 .accent {
-  font-family: 'Archer', serif;
+  font-family: 'Archer Web Font', serif;
 }
 button,
 input[type=submit],
 input[type=search],
 input[type=button] {
-  font-family: 'Bryant', sans-serif;
+  font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
   cursor: pointer;
   display: inline-block;
@@ -4378,7 +4376,7 @@ input[type=button] {
 .btn,
 .button,
 .epm-submit-chimp {
-  font-family: 'Bryant', sans-serif;
+  font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
   cursor: pointer;
   display: inline-block;
@@ -4808,6 +4806,12 @@ input[type=button] {
 .pinned--bottom {
   bottom: 0;
 }
+.header--sm {
+  padding: 12.5px 0;
+}
+.header--md {
+  padding: 18.75px 0;
+}
 .header--lg {
   padding: 25px 0;
 }
@@ -4822,6 +4826,10 @@ input[type=button] {
 .widget-area .xoxo {
   padding-left: 0;
 }
+#header-main {
+  -webkit-transition: background 300ms ease;
+  transition: background 300ms ease;
+}
 #header-main .btn--nav {
   color: #fff;
   font-size: 14px;
@@ -4833,12 +4841,42 @@ input[type=button] {
   background: #fff;
   color: #112D51;
 }
+#header-main:hover,
+#header-main.active {
+  background: #fff;
+}
+#header-main:hover .btn--nav,
+#header-main.active .btn--nav {
+  color: #112D51;
+}
+#header-main:hover #header__logo,
+#header-main.active #header__logo {
+  background-image: url('mizzen-logo--blue.svg');
+}
 #header__logo {
   display: block;
+  background-image: url('mizzen-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media screen and (min-width: 300px) {
+  #header__logo {
+    background-size: 100% auto;
+  }
+}
+@media screen and (min-width: 980px) {
+  #header__logo {
+    background-size: 65% auto;
+  }
 }
 #header__logo img {
   display: block;
-  margin-bottom: 0;
+  margin: auto;
+  width: 80%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 #header__bottom {
   height: 1px;
@@ -5086,11 +5124,11 @@ input[type=button] {
 .home-page h4,
 .home-page h5 {
   display: block!important;
-  font-family: 'Bryant', sans-serif;
+  font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
 }
 .home-page p {
-  font-family: 'Archer', serif;
+  font-family: 'Archer Web Font', serif;
 }
 .home__press img {
   display: block;
@@ -5108,7 +5146,7 @@ input[type=button] {
   }
 }
 .home__press-quote {
-  font-family: 'Archer', serif;
+  font-family: 'Archer Web Font', serif;
   margin-bottom: 0;
   font-weight: 300;
   color: #666666;

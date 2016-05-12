@@ -1,15 +1,24 @@
-<div id="header-main" class="header header--lg pinned pinned--top fs-grid fs-grid-fluid color--white">
-  <br>
+<div id="header-main" class="header pinned pinned--top pinned--fixed fs-grid fs-grid-fluid color--white">
   <div class="fs-row">
-    <div class="fs-cell fs-xl-third fs-lg-5 fs-md-4 fs-sm-3 fs-centered text-center">
-      <a id="header__logo" href="/"><img src="{{ 'mizzenmain-logo_white.png' | asset_url }}" class="img-responsive" /></a>
+    <div class="fs-cell fs-lg-4 fs-md-third fs-sm-3">
+      <a class="btn btn--nav btn--first swap" data-swap-target="#header__dropdown" href="#">Shop</a>
+      <a class="btn btn--nav" href="#">Lookbooks</a>
+      <a class="btn btn--nav" href="#">About Us</a>
     </div>
-    <hr class="invisible fs-lg-hide fs-md-full fs-md-full fs-sm-hide nomargin">
+    <div class="fs-cell fs-lg-4 fs-md-third fs-sm-3 text-center">
+      <a id="header__logo" class="btn btn--nav btn--full" title="Mizzen+Main" href="/"></a>
+    </div>
+    <div class="fs-cell fs-lg-4 fs-md-third fs-sm-3 text-right">
+      <a class="btn btn--nav" href="#">Blog</a>
+      <a class="btn btn--nav" href="#">Sign In</a>
+      <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
+    </div>
+    <!--
     <div class="header-nav__join fs-cell fs-lg-fourth fs-md-hide fs-sm-hide">
       <a class="btn btn--nav btn--first" href="#">Join Email List</a>
     </div>
-    <div class="header-nav__join fs-cell fs-lg-hide fs-md-hide fs-sm-half">
-      <a class="btn btn--nav btn--first" href="#">Menu</a>
+    <div class="fs-cell fs-xl-third fs-lg-5 fs-md-4 fs-sm-3 fs-centered text-center">
+      <a id="header__logo" href="/"><img src="{{ 'mizzenmain-logo_white.png' | asset_url }}" class="img-responsive" /></a>
     </div>
     <nav class="header-nav__menu fs-cell fs-lg-half fs-md-4 fs-sm-hide">
       <a class="btn btn--nav swap" data-swap-target="#header__dropdown" href="#">Shop</a>
@@ -21,27 +30,9 @@
       <a class="btn btn--nav" href="#">Sign In</a>
       <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
     </div>
-    <div id="header__bottom" class="fs-cell fs-all-full"></div>
-  </div>
-  <div id="header__dropdown" class="header pinned bg--white">
-    <div class="fs-row">
-      <div class="fs-cell fs-all-full color--black">
-        <hr class="invisible compact">
-        <div class="fs-row">
-          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
-          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
-          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
-          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
-          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
-          <div class="header__item fs-cell fs-lg-2 fs-md-fifth fs-sm-fourth text-center color--blue"><img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/shirt.png" class="img-responsive" /><span class="">Leeward <br>Collection</span></div>
-        </div>
-        <hr class="divider compact">
-        <div class="text-center">
-          <h1 class="emphasized accent nomargin">Discover your perfect fit.</h1>
-          <a href="#" class="color--blue">Explore our fit guide</a>
-        </div>
-        <hr class="invisible compact">
-      </div>
+    <div class="header-nav__join fs-cell fs-lg-hide fs-md-hide fs-sm-half">
+      <a class="btn btn--nav btn--first" href="#">Menu</a>
     </div>
+    -->
   </div>
 </div>

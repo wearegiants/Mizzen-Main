@@ -47,7 +47,21 @@ function closePopup() {
   $.magnificPopup.close();
 }
 
+function headerScroll(){
+	$(window).scroll(function() {    
+		var scroll = $(window).scrollTop();
+		//>=, not <=
+		if (scroll >= 50) {
+		//clearHeader, not clearheader - caps H
+			$("#header-main").addClass("active");
+		} else {
+			$("#header-main").removeClass("active");
+		}
+	});
+}
+
 $(document).ready(function(){
 	mobileMenu();
 	openModal();
+	headerScroll();
 });

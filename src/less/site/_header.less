@@ -1,6 +1,9 @@
 #header {
 
   &-main {
+
+    transition: background 300ms ease;
+
     .btn {
       &--nav {
         color: @white;
@@ -17,13 +20,42 @@
         }
       }
     }
+
+    &:hover, &.active {
+      background: @white;
+      .btn--nav {
+        color: @blue;
+      }
+      #header__logo {
+        background-image: url('mizzen-logo--blue.svg');
+      }
+    }
+
   }
 
   &__logo {
+
     display: block;
+    background-image: url('mizzen-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @media @min {
+      background-size: 100% auto;  
+    }
+
+    @media @desktop {
+      background-size: 65% auto;  
+    }
+    
+
     img {
       display: block;
-      margin-bottom: 0;
+      margin: auto;
+      width: 80%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
