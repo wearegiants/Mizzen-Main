@@ -4829,6 +4829,7 @@ input[type=button] {
 #header-main {
   -webkit-transition: background 300ms ease;
   transition: background 300ms ease;
+  display: block;
 }
 #header-main .btn--nav {
   color: #fff;
@@ -4841,17 +4842,30 @@ input[type=button] {
   background: #fff;
   color: #112D51;
 }
-#header-main:hover,
-#header-main.active {
+#header-main:hover #header-main__inner,
+#header-main.active #header-main__inner,
+#header-main.fs-swap-active #header-main__inner {
   background: #fff;
 }
 #header-main:hover .btn--nav,
-#header-main.active .btn--nav {
+#header-main.active .btn--nav,
+#header-main.fs-swap-active .btn--nav {
   color: #112D51;
 }
 #header-main:hover #header__logo,
-#header-main.active #header__logo {
+#header-main.active #header__logo,
+#header-main.fs-swap-active #header__logo {
   background-image: url('mizzen-logo--blue.svg');
+}
+@media screen and (min-width: 300px) {
+  #header__mobile {
+    display: block!important;
+  }
+}
+@media screen and (min-width: 500px) {
+  #header__mobile {
+    display: none!important;
+  }
 }
 #header__logo {
   display: block;
@@ -4884,15 +4898,53 @@ input[type=button] {
   margin-bottom: -1px;
 }
 #header__dropdown {
-  opacity: 0;
+  display: none;
   pointer-events: none;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
 }
 #header__dropdown.fs-swap-active {
-  opacity: 1;
+  background: rgba(255, 255, 255, 0.9);
+  display: block;
   pointer-events: auto;
   box-shadow: 0 12.5px 12.5px rgba(0, 0, 0, 0.05);
+}
+#header__dropdown .section {
+  margin-bottom: 12.5px;
+  margin-top: 0;
+}
+#header__dropdown .section:last-child {
+  margin-bottom: 0;
+}
+#header__dropdown h4 {
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  padding: 0;
+  line-height: 1;
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #112D51;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+#header__dropdown ul {
+  padding: 0;
+  margin: 0;
+}
+#header__dropdown ul li {
+  margin: 0;
+  line-height: 1.3;
+  list-style: none;
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+}
+#header__dropdown ul li a {
+  color: #999999;
+}
+#header__dropdown ul li a:hover {
+  color: #112D51;
 }
 #header__dropdown .header__item {
   cursor: pointer;

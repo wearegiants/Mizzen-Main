@@ -1,38 +1,83 @@
 <div id="header-main" class="header pinned pinned--top pinned--fixed fs-grid fs-grid-fluid color--white">
-  <div class="fs-row">
-    <div class="fs-cell fs-lg-4 fs-md-third fs-sm-3">
-      <a class="btn btn--nav btn--first swap" data-swap-target="#header__dropdown" href="#">Shop</a>
-      <a class="btn btn--nav" href="#">Lookbooks</a>
-      <a class="btn btn--nav" href="#">About Us</a>
+  <div id="header-main__inner">
+    <div class="fs-row">
+      <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-hide">
+        <a class="btn btn--nav btn--first swap" data-swap-target="#header__dropdown, #header-main" href="#">Shop</a>
+        <a class="btn btn--nav fs-md-hide fs-sm-hide" href="#">Lookbooks</a>
+        <a class="btn btn--nav" href="#">About Us</a>
+      </div>
+      <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-half text-center">
+        <a id="header__logo" class="btn btn--nav btn--full" title="Mizzen+Main" href="/"></a>
+      </div>
+      <div id="header__mobile" class="fs-cell fs-lg-hide fs-md-hide fs-sm-1 text-right">
+        <a class="btn btn--nav btn--last" href="#">Menu</a>
+      </div>
+      <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-hide text-right">
+        <a class="btn btn--nav fs-md-hide fs-sm-hide" href="#">Blog</a>
+        <a class="btn btn--nav" href="#">Sign In</a>
+        <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
+      </div>
+      <!--
+      <div class="header-nav__join fs-cell fs-lg-fourth fs-md-hide fs-sm-hide">
+        <a class="btn btn--nav btn--first" href="#">Join Email List</a>
+      </div>
+      <div class="fs-cell fs-xl-third fs-lg-5 fs-md-4 fs-sm-3 fs-centered text-center">
+        <a id="header__logo" href="/"><img src="{{ 'mizzenmain-logo_white.png' | asset_url }}" class="img-responsive" /></a>
+      </div>
+      <nav class="header-nav__menu fs-cell fs-lg-half fs-md-4 fs-sm-hide">
+        <a class="btn btn--nav swap" data-swap-target="#header__dropdown" href="#">Shop</a>
+        <a class="btn btn--nav" href="#">Lookbooks</a>
+        <a class="btn btn--nav" href="#">About Us</a>
+        <a class="btn btn--nav" href="#">Blog</a>
+      </nav>
+      <div class="header-nav__cart fs-cell fs-lg-fourth fs-md-2 fs-sm-half text-right">
+        <a class="btn btn--nav" href="#">Sign In</a>
+        <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
+      </div>
+      <div class="header-nav__join fs-cell fs-lg-hide fs-md-hide fs-sm-half">
+        <a class="btn btn--nav btn--first" href="#">Menu</a>
+      </div>
+      -->
     </div>
-    <div class="fs-cell fs-lg-4 fs-md-third fs-sm-3 text-center">
-      <a id="header__logo" class="btn btn--nav btn--full" title="Mizzen+Main" href="/"></a>
+  </div><!-- Inner -->
+  <div id="header__dropdown" class="header header--lg">
+    <div class="fs-row">
+      {% assign width = "fs-lg-sixth fs-md-third fs-sm-3 section" %}
+      <div class="fs-cell {{ width }}">
+        <h4>Dress Shirts</h4>
+        <ul>
+          <li><a href="#">Spinnaker Collection</a></li>
+          <li><a href="#">Leeward Collection</a></li>
+          <li><a href="#">All Dress Shirts</a></li>
+        </ul>
+      </div><!-- Section -->
+      <div class="fs-cell {{ width }}">
+        <h4>Tops</h4>
+        <ul>
+          <li><a href="#">Polos</a></li>
+          <li><a href="#">Henleys</a></li>
+          <li><a href="#">Tees</a></li>
+        </ul>
+      </div><!-- Section -->
+      <div class="fs-cell {{ width }}">
+        <h4>Sweaters</h4>
+        <ul>
+          <li><a href="#">Sweaters</a></li>
+          <li><a href="#">Quarter Zips</a></li>
+        </ul>
+      </div><!-- Section -->
+      <div class="fs-cell {{ width }}">
+        <h4>Pants</h4>
+        <ul>
+          <li><a href="#">Chinos</a></li>
+        </ul>
+      </div><!-- Section-->
+      <div class="fs-cell {{ width }}">
+        <h4>Accessories</h4>
+        <ul>
+          <li><a href="#">Hats</a></li>
+        </ul>
+      </div><!-- Section -->
     </div>
-    <div class="fs-cell fs-lg-4 fs-md-third fs-sm-3 text-right">
-      <a class="btn btn--nav" href="#">Blog</a>
-      <a class="btn btn--nav" href="#">Sign In</a>
-      <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
-    </div>
-    <!--
-    <div class="header-nav__join fs-cell fs-lg-fourth fs-md-hide fs-sm-hide">
-      <a class="btn btn--nav btn--first" href="#">Join Email List</a>
-    </div>
-    <div class="fs-cell fs-xl-third fs-lg-5 fs-md-4 fs-sm-3 fs-centered text-center">
-      <a id="header__logo" href="/"><img src="{{ 'mizzenmain-logo_white.png' | asset_url }}" class="img-responsive" /></a>
-    </div>
-    <nav class="header-nav__menu fs-cell fs-lg-half fs-md-4 fs-sm-hide">
-      <a class="btn btn--nav swap" data-swap-target="#header__dropdown" href="#">Shop</a>
-      <a class="btn btn--nav" href="#">Lookbooks</a>
-      <a class="btn btn--nav" href="#">About Us</a>
-      <a class="btn btn--nav" href="#">Blog</a>
-    </nav>
-    <div class="header-nav__cart fs-cell fs-lg-fourth fs-md-2 fs-sm-half text-right">
-      <a class="btn btn--nav" href="#">Sign In</a>
-      <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
-    </div>
-    <div class="header-nav__join fs-cell fs-lg-hide fs-md-hide fs-sm-half">
-      <a class="btn btn--nav btn--first" href="#">Menu</a>
-    </div>
-    -->
-  </div>
+  </div><!-- Dropdown -->
 </div>
