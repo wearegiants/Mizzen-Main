@@ -6,6 +6,6 @@ $(".swap").swap();
 
 //console.log($('.carousel').carousel());
 
-var slider = $(".carousel").data('carousel');
+var slider = $.carousel;
 
-console.log($('.carousel').carousel());
+console.log(slider);

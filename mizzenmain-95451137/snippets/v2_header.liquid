@@ -1,4 +1,4 @@
-<div id="header-main" class="header fs-grid fs-grid-fluid color--white {% if template != 'index' %}active{% endif %} {% if template == 'index' %}pinned pinned--top pinned--fixed{% endif %}">
+<div id="header-main" class="header fs-grid fs-grid-fluid color--white pinned pinned--top pinned--fixed {% if template != 'index' %}active{% endif %} {% if template == 'index' %}index-page{% endif %}">
   <div id="header-main__inner">
     <div class="fs-row">
       <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-hide">
@@ -44,3 +44,6 @@
     </div>
   </div><!-- Dropdown -->
 </div>
+{% if template != 'index' %}
+<div id="header-main--spacer"></div>
+{% endif %}

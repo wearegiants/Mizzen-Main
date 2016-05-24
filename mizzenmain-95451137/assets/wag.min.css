@@ -1689,10 +1689,12 @@
 }
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 .mfp-zoom {
   cursor: pointer;
+  cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 .mfp-auto-cursor .mfp-content {
@@ -4409,6 +4411,9 @@ input[type=button] {
   transition: background 300ms ease;
   display: block;
 }
+#header-main--spacer {
+  height: 51px;
+}
 #header-main__inner {
   -webkit-transition: background 500ms ease;
   transition: background 500ms ease;
@@ -4530,10 +4535,21 @@ input[type=button] {
 }
 #header__dropdown .section {
   margin-top: 0;
-  display: inline-block;
-  padding-right: 50px;
   vertical-align: top;
   text-align: left;
+}
+@media screen and (min-width: 740px) {
+  #header__dropdown .section {
+    float: none;
+    display: inline-block;
+    padding-right: 25px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 980px) {
+  #header__dropdown .section {
+    padding-right: 50px;
+  }
 }
 #header__dropdown .section:last-child {
   margin-bottom: 0;

@@ -54,9 +54,13 @@ function headerScroll(){
 		//>=, not <=
 		if (scroll >= 50) {
 		//clearHeader, not clearheader - caps H
-			$("#header-main").addClass("active");
+			if ($("#header-main").hasClass("index-page")) {
+				$("#header-main").addClass("active");
+			}
 		} else {
-			$("#header-main").removeClass("active");
+			if ($("#header-main").hasClass("index-page")) {
+				$("#header-main").removeClass("active");
+			}
 		}
 	});
 }
