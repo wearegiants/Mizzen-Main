@@ -66,6 +66,11 @@
         "label": "Headline"
       },
       {
+        "type": "checkbox",
+        "id": "home-carousel-1__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
         "type": "text",
         "id": "home-carousel-1__button",
         "label": "Button Text"
@@ -137,6 +142,11 @@
         "type": "text",
         "id": "home-carousel-2__title",
         "label": "Headline"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-2__title-shadow",
+        "label": "Enable Title Shadow"
       },
       {
         "type": "text",
@@ -212,6 +222,11 @@
         "label": "Headline"
       },
       {
+        "type": "checkbox",
+        "id": "home-carousel-3__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
         "type": "text",
         "id": "home-carousel-3__button",
         "label": "Button Text"
@@ -285,6 +300,11 @@
         "label": "Headline"
       },
       {
+        "type": "checkbox",
+        "id": "home-carousel-4__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
         "type": "text",
         "id": "home-carousel-4__button",
         "label": "Button Text"
@@ -356,6 +376,11 @@
         "type": "text",
         "id": "home-carousel-5__title",
         "label": "Headline"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-5__title-shadow",
+        "label": "Enable Title Shadow"
       },
       {
         "type": "text",

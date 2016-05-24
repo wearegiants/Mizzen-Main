@@ -128,10 +128,10 @@
       margin-bottom: 0;
       line-height: 1.3;
       @media @min {
-        .font_size(26);  
+        .font_size(32)!important;  
       }
       @media @tablet {
-        .font_size(32);
+        .font_size(32)!important;
       }
     }
     p {
@@ -150,6 +150,22 @@
     }
     .btn {
       margin-bottom: 0;
+      color: @white;
+      &:hover, &:visited {
+        color: @white;
+      }
+    }
+    .wrapper {
+      &--extra {
+        @media @min {
+          padding-left: @spaced;  
+          padding-right: @spaced;  
+        }
+        @media @tablet {
+          padding-left: @spaced*2;   
+          padding-right: @spaced*2;  
+        }
+      }
     }
     &--large {
       h1 {
@@ -187,6 +203,18 @@
 
     h1 {
       color: @white;
+      .byantReg();
+
+      &.has {
+        &-shadow {
+          text-shadow: 0 0 15px @black25;
+        }
+      }
+
+      strong,b {
+        .headerFont();
+      } 
+
       @media @min {
         .font_size(40);
       }
@@ -202,10 +230,10 @@
 
     .centered {
       @media @min {
-        top: 65%;
+        top: 55%;
       }
       @media @tablet {
-        top: 60%;
+        top: 55%;
       }
       @media @desktop {
         top: 50%;

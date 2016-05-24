@@ -16,6 +16,7 @@
 
   <!-- Hero -->
   <div class="home-carousel">
+    <!--<div class="slider royalslider rsMinW">-->
     <div class="carousel">
 
       {% for i in (1..6) %}
@@ -24,18 +25,19 @@
       {% capture slide_image %}home-carousel-{{ i }}__image.jpg{% endcapture %}
       {% capture slide_image-mobile %}home-carousel-{{ i }}__image-mobile.jpg{% endcapture %}
       {% capture slide_title %}home-carousel-{{ i }}__title{% endcapture %}
+      {% capture slide_title-shadow %}home-carousel-{{ i }}__title-shadow{% endcapture %}
       {% capture slide_button %}home-carousel-{{ i }}__button{% endcapture %}
       {% capture slide_url %}home-carousel-{{ i }}__url{% endcapture %}
       {% capture slide_align %}home-carousel-{{ i }}__textalign{% endcapture %}
       {% if settings[slide] %}
 
-      <div class="carousel__slide" data-shade="{{ settings[slide_shade] }}">
-        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":{"0px":"{{ slide_image-mobile | asset_url }}","980px":"{{ slide_image | asset_url }}"}}'>
+      <div class="carousel__slide relative" data-shade="{{ settings[slide_shade] }}">
+        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":{"300px":"{{ slide_image-mobile | asset_url }}","700px":"{{ slide_image | asset_url }}"}}'>
           <div class="centered centered--full">
             <div class="fs-row">
               <div class="fs-cell fs-all-full">
                 <div class="{{ settings[slide_align] }}">
-                  <h1 class="color--blue">{{ settings[slide_title] }}</h1>
+                  <h1 class="color--blue {% if settings[slide_title-shadow] %}has-shadow{% endif %}">{{ settings[slide_title] }}</h1>
                   <a href="{{ settings[slide_url] }}" class="btn btn--primary bg--white color--blue">{{ settings[slide_button] }}</a>
                 </div>
               </div>
@@ -126,10 +128,10 @@
       {% capture mag_width %}fs-lg-half fs-md-half fs-sm-3{% endcapture %}
       {% endif %}
 
-      <div class="fs-cell {{ mag_width }}">
-        <div class="{{ mag_size }} relative wallpaper" data-background-options='{"source":{"0px":"{{ mag_image-mobile | asset_url }}","980px":"{{ mag_image | asset_url }}"}}'>
+      <div class="carousel__slide fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
+        <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":{"0px":"{{ mag_image-mobile | asset_url }}","980px":"{{ mag_image | asset_url }}"}}'>
           <div class="centered">
-            <div class="wrapper--extra text-left">
+            <div class="wrapper--extra text-center">
               <h1>{{ settings[mag_title] }}</h1>
               <p>{{ settings[mag_desc] }}</p>
               <a href="#" class="btn bg--blue color--white">{{ settings[mag_button] }}</a>
@@ -137,18 +139,17 @@
           </div>
         </div>
       </div>
-      <hr class="invisible compact fs-cell fs-all-full">
+
+      <hr class="invisible compact">
 
       {% endif %}
       {% endfor %}
     </div>
   </div>
 
-
-  <hr class="invisible">
-
   <!-- Press -->
 
+  <!--
   <div class="home__press">
     <div class="fs-row">
       <div class="fs-cell fs-all-full">
@@ -163,5 +164,6 @@
       </div>
     </div>
   </div>
+  -->
 
 </div>

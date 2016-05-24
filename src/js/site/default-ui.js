@@ -3,3 +3,9 @@ $('.wallpaper').background();
 $('.carousel').carousel();
 $(".swap").swap();
 //$("input[type=number]").number();
+
+//console.log($('.carousel').carousel());
+
+var slider = $(".carousel").data('carousel');
+
+console.log($('.carousel').carousel());

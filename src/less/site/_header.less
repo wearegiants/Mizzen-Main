@@ -7,7 +7,17 @@
     transition: background 300ms ease;
     display: block;
 
+    &__inner {
+      transition: background 500ms ease;
+      border-bottom: 1px solid @white25;
+    }
+
     .btn {
+      &--icon {
+        &.alt {
+          display: none;
+        }
+      }
       &--nav {
         color: @white;
         .font_size(14);
@@ -24,10 +34,17 @@
       }
     }
 
-    &:hover, &.active, &.fs-swap-active {
+    &:hover, &.active, &.fs-swap-active, &.is-dark {
       
       #header-main__inner {
         background: @white;  
+      }
+
+      .btn--icon {
+        display: none;
+        &.alt {
+          display: inline-block;
+        }
       }
       
       .btn--nav {
@@ -47,6 +64,28 @@
     @media @mobile {
       display: none!important;
     }
+    &-shop {
+      display: none;
+      &.fs-swap {
+        &-active {
+          display: block;
+        }
+      }
+    }
+    &-drop {
+      background: fade(@white, 90%);
+      display: none;
+      .btn {
+        @size: 40px;
+        height: @size;
+        line-height: @size;
+      }
+      &.fs-swap {
+        &-active {
+          display: block;
+        }
+      }
+    }
   }
 
   &__logo {
@@ -55,6 +94,7 @@
     background-image: url('mizzen-logo.svg');
     background-repeat: no-repeat;
     background-position: center center;
+    //transition: background-image 500ms ease;
 
     @media @min {
       background-size: 100% auto;  
@@ -86,6 +126,7 @@
     display: none;
     pointer-events: none;
     transition: opacity 200ms ease;
+    text-align: center;
 
     &.fs-swap {
       &-active {
@@ -97,10 +138,18 @@
     }
 
     .section {
-      margin-bottom: @spaced/2;
+      //margin-bottom: @spaced/2;
+      //margin-top: 0;
+      
       margin-top: 0;
+      display: inline-block;
+      padding-right: @spaced*2;
+      vertical-align:top;
+      text-align: left;
+
       &:last-child {
         margin-bottom: 0;
+        padding-right: 0;
       }
     }
 
@@ -121,9 +170,10 @@
       margin: 0;
       li {
         margin: 0;
+        margin-bottom: 3px;
         line-height: 1.3;
         list-style: none;
-        .headerFont();
+        .byantReg();
         a {
           color: @gray;
           &:hover {
