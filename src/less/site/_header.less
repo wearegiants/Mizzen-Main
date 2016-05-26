@@ -130,12 +130,19 @@
     transition: opacity 200ms ease;
     text-align: center;
 
+    @media @min {
+      padding: @spaced 0;
+    }
+    @media @desktop {
+      padding: @spaced*1.75 0;
+    }
+
     &.fs-swap {
       &-active {
-        background: rgba(255,255,255,.9);
+        background: rgba(255,255,255,.95);
         display: block;
         pointer-events: auto;
-        box-shadow: 0 @spaced/2 @spaced/2 rgba(0,0,0,.05);
+        //box-shadow: 0 @spaced/2 @spaced/2 rgba(0,0,0,.05);
       }
     }
 
@@ -144,19 +151,18 @@
       //margin-top: 0;
       
       margin-top: 0;
-      
-      
       vertical-align:top;
-      text-align: left;
 
-      @media @tablet {
+      @media @min {
+        text-align: center;
+      }
+      @media @desktop {
+        text-align: left;
+        padding-right: @spaced*2;
         float: none;
         display: inline-block;
         padding-right: @spaced;
         width: auto;
-      }
-      @media @desktop {
-        padding-right: @spaced*2;
       }
 
       &:last-child {
@@ -170,7 +176,13 @@
       padding: 0;
       line-height:1;
       margin: 0;
-      margin-bottom: 8px;
+      @media @min {
+        margin-bottom: @spaced*.5;
+      }
+      @media @desktop {
+        margin-bottom: @spaced;  
+      }
+      
       font-weight: 400;
       letter-spacing: 1px;
       color: @blue;
@@ -182,12 +194,19 @@
       margin: 0;
       li {
         margin: 0;
-        margin-bottom: 3px;
+        margin-bottom: @spaced*.5;
         line-height: 1.3;
+        .font_size(13);
+        letter-spacing: 1px;
         list-style: none;
-        .byantReg();
+        text-transform: uppercase;
+        .mainFont();
+        -webkit-font-smoothing: antialiased;
+        &:last-child {
+          margin-bottom: 0;
+        }
         a {
-          color: @gray;
+          color: lighten(@blue, 10%);
           &:hover {
             color: @blue;
           }

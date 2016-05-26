@@ -6,14 +6,16 @@
         <a class="btn btn--nav fs-md-hide fs-sm-hide" href="#">Lookbooks</a>
         <a class="btn btn--nav" href="#">About Us</a>
       </div>
+      <div id="header__mobile" class="fs-cell fs-lg-hide fs-md-hide fs-sm-1 fs-xs-fourth">
+        <a class="btn btn--nav btn--icon btn--icon__menu alt swap" data-swap-target="#header__mobile-drop" href="#">{{ '1463631382_Menu1.svg' | asset_url | img_tag }}</a>
+        <a class="btn btn--nav btn--icon btn--icon__menu swap" data-swap-target="#header__mobile-drop" href="#">{{ '1463631382_Menu1_white.svg' | asset_url | img_tag }}</a>
+      </div>
       <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-half text-center">
         <a id="header__logo" class="btn btn--nav btn--full" title="Mizzen+Main" href="/"></a>
       </div>
-      <div id="header__mobile" class="fs-cell fs-lg-hide fs-md-hide fs-sm-1 text-right">
-        <a class="btn btn--nav btn--icon btn--icon__menu alt swap" data-swap-target="#header__mobile-drop" href="#">{{ '1463631382_Menu1.svg' | asset_url | img_tag }}</a>
-        <a class="btn btn--nav btn--icon btn--last btn--icon__cart cart-link alt" href="/cart">{{ '1463630496_shopping.svg' | asset_url | img_tag }}</a>
-        <a class="btn btn--nav btn--icon btn--icon__menu swap" data-swap-target="#header__mobile-drop" href="#">{{ '1463631382_Menu1_white.svg' | asset_url | img_tag }}</a>
-        <a class="btn btn--nav btn--icon btn--last btn--icon__cart cart-link" href="/cart">{{ '1463630496_shopping_white.svg' | asset_url | img_tag }}</a>
+      <div id="header__mobile" class="fs-cell fs-lg-hide fs-md-hide fs-sm-fourth text-right">
+        <a class="btn btn--nav btn--icon btn--last btn--icon__cart cart-link alt" href="/cart">{{ '1464315436_shopping_bag-01.svg' | asset_url | img_tag }}</a>
+        <a class="btn btn--nav btn--icon btn--last btn--icon__cart cart-link" href="/cart">{{ '1464315436_shopping_bag-01_white.svg' | asset_url | img_tag }}</a>
       </div>
       <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-hide text-right">
         <a class="btn btn--nav fs-md-hide fs-sm-hide" href="#">Blog</a>
@@ -34,9 +36,9 @@
       <a class="btn btn--nav btn--full" href="#">Sign In</a>
     </div>
   </div>
-  <div id="header__dropdown" class="header header--lg">
+  <div id="header__dropdown" class="">
     <div class="fs-row">
-      <div class="fs-cell fs-xl-8 fs-lg-8 fs-md-6 fs-sm-3 fs-centered">
+      <div class="fs-cell fs-xl-10 fs-lg-10 fs-md-6 fs-sm-3 fs-centered">
         <div class="fs-row">
           {% include 'v2_header-sub' %}
         </div>

@@ -1,4 +1,25 @@
 [
+  {
+    "name": "WAG | Home Text",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Main copy"
+      },
+      {
+        "type": "text",
+        "id": "home_welcome_message_title",
+        "default": "Performance Fabric Menswear",
+        "label": "Main title"
+      },
+      {
+        "type": "textarea",
+        "id": "home_welcome_message",
+        "default": "Our performance fabric apparel has the traditional look of menswear, but feels like the most comfortable athletic gear.",
+        "label": "Main body"
+      }
+    ]
+  },
   // Home Carousel Start
   {
     "name": "WAG | Home Carousel",

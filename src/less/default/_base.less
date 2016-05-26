@@ -4,7 +4,12 @@ hr {
   background: @white;
   border: none;
   clear: both;
-  margin: @spaced 0;
+  @media @min {
+    margin: @spaced/2 0;
+  }
+  @media @desktop {
+    margin: @spaced 0;
+  }
   &.thin {
     background: @lighterGray;
   }

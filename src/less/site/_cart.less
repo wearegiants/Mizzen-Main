@@ -10,6 +10,8 @@
     background: @bgGray;
     transition: 300ms ease;
     line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    .mainFont();
     //@media @min {
     //  transform: translateX(@width - 100);
     //  width: @width - 100;
@@ -19,8 +21,17 @@
     //  width: @width;
     //}
 
+    .cart {
+      position: absolute;
+      width: 100%;
+    }
+
     .close-cart {
       cursor: pointer;
+      &:before {
+        margin: 0;
+        .font_size(14);
+      }
     }
 
     .wrapper {
@@ -75,6 +86,7 @@
       }
     }
     &__content {
+      position: relative;
       overflow-y: scroll; /* has to be scroll, not auto */
       -webkit-overflow-scrolling: touch;
     }

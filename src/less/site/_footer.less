@@ -1,0 +1,51 @@
+#footer {
+
+  .headerFont();
+  -webkit-font-smoothing: antialiased;
+
+  h4 {
+    .headerFont();
+    line-height: 1;
+    margin-bottom: @spaced/2;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media @min {
+    text-align: left;
+  }
+
+  @media @tablet {
+    text-align: left;
+  }
+
+  .nav,.newsletter {
+    ul {
+      li {
+        a {
+          .headerFont();
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    h4 {
+      @media @desktop {
+        text-align: center;
+      }
+    }
+    .list-inline {
+      @media @min {
+        text-align: left;
+      }
+      @media @tablet {
+        text-align: left;
+      }
+      @media @desktop {
+        text-align: center;
+      }
+    }
+  }
+
+}
