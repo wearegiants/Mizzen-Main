@@ -5441,6 +5441,78 @@ input[type=button] {
     opacity: 0.0;
   }
 }
+.fit-grid {
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  color: #112D51;
+  -webkit-font-smoothing: antialiased;
+}
+@media screen and (min-width: 300px) {
+  .fit-grid {
+    font-size: 13px;
+    font-size: 0.8125rem;
+  }
+}
+@media screen and (min-width: 740px) {
+  .fit-grid {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+.fit-grid__row {
+  border-right: 2px solid #112D51;
+  border-left: 2px solid #112D51;
+  border-bottom: 2px solid #112D51;
+}
+.fit-grid__row--top {
+  border-top: 2px solid #112D51;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 300px) {
+  .fit-grid__row--top {
+    font-size: 10px;
+    font-size: 0.625rem;
+  }
+}
+@media screen and (min-width: 740px) {
+  .fit-grid__row--top {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+.fit-grid__cell {
+  position: relative;
+}
+@media screen and (min-width: 300px) {
+  .fit-grid__cell {
+    height: 32px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .fit-grid__cell {
+    height: 48px;
+  }
+}
+.fit-grid__cell span {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 95%;
+}
+.fit-grid__cell:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 2px;
+  background: #112D51;
+  position: absolute;
+  right: 0;
+}
+.fit-grid__cell--last:before {
+  display: none;
+}
 #bag {
   position: relative;
 }

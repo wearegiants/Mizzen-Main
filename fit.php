@@ -60,4 +60,77 @@
   </div>
 </div>
 
+<hr class="invisible">
+
+<div class="fit-grid fs-grid text-center">
+  <div class="fs-row">
+    <div class="fs-cell fs-lg-9 fs-md-5 fs-sm-3 fs-centered">
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row fit-grid__row--top">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>&nbsp;</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>THIGH</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>PANT LEG OPENING</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>INSEAM (UNFINISHED)</span></div>
+        </div>
+      </div>
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>28</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>23 3/4"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>14"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>37"</span></div>
+        </div>
+      </div>
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>30</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>24 3/8"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>14 1/2"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>37"</span></div>
+        </div>
+      </div>
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>32</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>24 1/2"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>15"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>37"</span></div>
+        </div>
+      </div>
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>34</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>25 1/8"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>15 1/2"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>37"</span></div>
+        </div>
+      </div>
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>36</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>25 3/4"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>16"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>37"</span></div>
+        </div>
+      </div>
+
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fit-grid__row">
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>38</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>26 3/8"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell"><span>16 1/2"</span></div>
+          <div class="fs-cell fs-all-fourth fs-contained fit-grid__cell fit-grid__cell--last"><span>37"</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <?php include('parts/footer.php'); ?>
