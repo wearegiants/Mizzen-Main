@@ -1,7 +1,7 @@
 // @codekit-prepend "site/default-ui.js"
 // @codekit-prepend "site/hero.js"
 // @codekit-prepend "site/cartsize.js"
-// @codekit-prepend "site/royalsliders.js"
+// @codekit-prepend "site/royalslider.js"
 
 function mobileMenu(){
 	// Clone that thing

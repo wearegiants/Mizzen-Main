@@ -26,7 +26,7 @@
 
 <div id="wrapper"  class="cart-toggle">
 
-<div id="header" class="header header--lg pinned pinned--top fs-grid color--white">
+<div id="header" class="header header--lg pinned pinned--top fs-grid color--white" style="display:none">
   <br>
   <div class="fs-row">
     <div class="fs-cell fs-lg-third fs-centered text-center">
@@ -71,8 +71,3 @@
 </div>
 
 <div id="content">
-
-
-
-
-

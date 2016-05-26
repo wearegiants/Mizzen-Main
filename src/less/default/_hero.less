@@ -77,6 +77,18 @@
     }
   }
 
+  &--pants {
+    @media @min {
+      height: @hero__xl - 315;
+    }
+    @media @tablet {
+      height: @hero__xl - 200;
+    }
+    @media @desktop {
+      height: @hero__xl
+    }
+  }
+
   &__bg {
   	&--covered {
   		background-size: cover;
