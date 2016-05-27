@@ -5236,6 +5236,39 @@ input[type=button] {
 .fit-guide__bg {
   position: relative;
 }
+.fit-guide__mobile ul {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+.fit-guide__mobile ul li {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  list-style: none;
+  border-bottom: 1px solid #F2F2F2;
+}
+.fit-guide__mobile ul li h4 {
+  margin: 0;
+  color: #112D51;
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.fit-guide__mobile ul li h4 span {
+  float: none;
+}
+.fit-guide__mobile ul li p {
+  margin: 0;
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  line-height: 1.3;
+  color: #666666;
+  -webkit-font-smoothing: antialiased;
+}
 .fit-guide__desc {
   position: absolute;
   z-index: 24;
@@ -5250,10 +5283,12 @@ input[type=button] {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
 }
 .fit-guide__desc h4 span {
   position: relative;
+  float: none;
 }
 .fit-guide__desc h4 span:before {
   display: block;
@@ -5282,6 +5317,7 @@ input[type=button] {
   color: #666666;
   font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
+  line-height: 1.3;
   -webkit-font-smoothing: antialiased;
 }
 .fit-guide__desc hr {
@@ -5292,13 +5328,13 @@ input[type=button] {
 @media screen and (min-width: 300px) {
   .fit-guide__desc.waist {
     top: 25px;
-    left: 8%;
+    left: 15%;
   }
 }
 @media screen and (min-width: 500px) {
   .fit-guide__desc.waist {
     top: 25px;
-    left: 85px;
+    left: 115px;
   }
 }
 @media screen and (min-width: 740px) {
@@ -5329,14 +5365,14 @@ input[type=button] {
 }
 @media screen and (min-width: 300px) {
   .fit-guide__desc.trim {
-    top: 330px;
-    left: 8%;
+    top: 145px;
+    left: 15%;
   }
 }
 @media screen and (min-width: 500px) {
   .fit-guide__desc.trim {
-    top: 330px;
-    left: 85px;
+    top: 145px;
+    left: 115px;
   }
 }
 @media screen and (min-width: 740px) {
@@ -5370,26 +5406,26 @@ input[type=button] {
 }
 @media screen and (min-width: 300px) {
   .fit-guide__desc.hem {
-    top: 480px;
-    left: 8%;
+    top: 295px;
+    left: 15%;
   }
   .fit-guide__desc.hem span:before {
     width: 130px;
   }
   .fit-guide__desc.hem span.mobile:before {
-    width: 62px;
+    width: 53px;
   }
 }
 @media screen and (min-width: 500px) {
   .fit-guide__desc.hem {
-    top: 480px;
-    left: 85px;
+    top: 295px;
+    left: 115px;
   }
   .fit-guide__desc.hem span:before {
     width: 130px;
   }
   .fit-guide__desc.hem span.mobile:before {
-    width: 62px;
+    width: 53px;
   }
 }
 @media screen and (min-width: 740px) {
@@ -5423,20 +5459,20 @@ input[type=button] {
 }
 @media screen and (min-width: 300px) {
   .fit-guide__desc.rise {
-    top: 142px;
-    right: 8%;
+    top: 90px;
+    right: 15%;
   }
   .fit-guide__desc.rise span.mobile:before {
-    width: 100px;
+    width: 84px;
   }
 }
 @media screen and (min-width: 500px) {
   .fit-guide__desc.rise {
-    top: 142px;
-    right: 85px;
+    top: 90px;
+    right: 115px;
   }
   .fit-guide__desc.rise span.mobile:before {
-    width: 100px;
+    width: 90px;
   }
 }
 @media screen and (min-width: 740px) {
@@ -5470,20 +5506,20 @@ input[type=button] {
 }
 @media screen and (min-width: 300px) {
   .fit-guide__desc.cut {
-    top: 350px;
-    right: 8%;
+    top: 238px;
+    right: 15%;
   }
   .fit-guide__desc.cut span.mobile:before {
-    width: 25px;
+    width: 28px;
   }
 }
 @media screen and (min-width: 500px) {
   .fit-guide__desc.cut {
-    top: 350px;
-    right: 85px;
+    top: 238px;
+    right: 115px;
   }
   .fit-guide__desc.cut span.mobile:before {
-    width: 25px;
+    width: 32px;
   }
 }
 @media screen and (min-width: 740px) {
