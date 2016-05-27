@@ -118,6 +118,7 @@
       {% capture mag_button %}home-mag-{{ i }}__button{% endcapture %}
       {% capture mag_url %}home-mag-{{ i }}__url{% endcapture %}
       {% capture mag_align %}home-mag-{{ i }}__textalign{% endcapture %}
+      {% capture mag_disable_button %}home-mag-{{ i }}__button-disable{% endcapture %}
       {% if settings[mag] %}
 
       {% if forloop.first == true %}
@@ -131,10 +132,12 @@
       <div class="carousel__slide fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
         <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":{"0px":"{{ mag_image-mobile | asset_url }}","980px":"{{ mag_image | asset_url }}"}}'>
           <div class="centered">
-            <div class="wrapper--extra text-center">
+            <div class="wrapper--extra {{ settings[mag_align] }}">
               <h1>{{ settings[mag_title] }}</h1>
               <p>{{ settings[mag_desc] }}</p>
-              <a href="#" class="btn bg--blue color--white">{{ settings[mag_button] }}</a>
+              {% unless settings[mag_disable_button] %}
+              <a href="{{ settings[mag_url] }}" class="btn bg--blue color--white">{{ settings[mag_button] }}</a>
+              {% endunless %}
             </div>
           </div>
         </div>

@@ -479,6 +479,11 @@
       "label": "Button Text"
     },
     {
+      "type": "checkbox",
+      "id": "home-mag-1__button-disable",
+      "label": "Disable Button"
+    },
+    {
       "type": "text",
       "id": "home-mag-1__url",
       "label": "Link URL"
@@ -539,6 +544,11 @@
       "type": "text",
       "id": "home-mag-2__button",
       "label": "Button Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-2__button-disable",
+      "label": "Disable Button"
     },
     {
       "type": "text",
@@ -603,6 +613,11 @@
       "label": "Button Text"
     },
     {
+      "type": "checkbox",
+      "id": "home-mag-3__button-disable",
+      "label": "Disable Button"
+    },
+    {
       "type": "text",
       "id": "home-mag-3__url",
       "label": "Link URL"
@@ -663,6 +678,11 @@
       "type": "text",
       "id": "home-mag-4__button",
       "label": "Button Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-4__button-disable",
+      "label": "Disable Button"
     },
     {
       "type": "text",
