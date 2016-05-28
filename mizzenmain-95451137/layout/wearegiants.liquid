@@ -120,7 +120,9 @@ FastClick.attach(document.body);
 
 <div id="wrapper">
   {% include 'v2_header' %}
-  {{ content_for_layout }}
+  <div id="wrapper__content">
+    {{ content_for_layout }}
+  </div>
   {% include 'v2-footer' %}
   <div id="search" class="animated">
     <div class="container">

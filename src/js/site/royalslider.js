@@ -3,9 +3,10 @@ $(window).load(function() {
     addActive: true,
     transitionType: 'fade',
     arrowsNav: false,
-    controlNavigation: 'none',
+    controlNavigation: 'bullets',
     transitionSpeed: 500,
     keyboardNavEnabled: true,
+    loop: true,
     //autoHeight: true,
     autoPlay: {
         // autoplay options go gere
@@ -24,5 +25,11 @@ $(window).load(function() {
   slider.ev.on('rsBeforeAnimStart', function() {
     sliderColors();
     //alert('yolo');
+  });
+  $(".home-carousel__nav--next").on('click',function(){
+    slider.next();
+  });
+  $(".home-carousel__nav--prev").on('click',function(){
+    slider.prev();
   });
 });

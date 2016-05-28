@@ -1,13 +1,14 @@
-<hr class="invisible">
+<?php include('parts/header.php'); ?>
+
 <div class="fit-guide fs-grid">
   <div class="fs-row">
     <div class="fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
-      <div class="hero hero--pants hero--pants__shirt fit-guide__bg wallpaper bg--bgGray" data-background-options='{"source":"{{ 'pants-wid.jpg' | asset_url }}"}'>
+      <div class="hero hero--pants fit-guide__bg wallpaper bg--bgGray" data-background-options='{"source":"/assets/pants.jpg"}'>
        
         <div class="fit-guide__desc waist">
           <div class="fs-sm-hide">
-            <h4><span>1) Waist true to size</span></h4>
-            <p>Stick to your usual waist size.</p>
+            <h4><span>1) Waist tru to size</span></h4>
+            <p>Stick to your usual waist size</p>
           </div>
           <div class="fs-md-hide fs-lg-hide">
             <h4><span class="mobile">1<div class="gps_ring"></div></span></h4>
@@ -57,35 +58,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="fit-guide__mobile fs-grid">
-<div class="fs-row">
-<div class="fs-cell fs-md-hide fs-lg-hide fs-sm-3">
-<ul class="text-center">
-<li>
-  <h4><span>1) Waist true to size</span></h4>
-  <p>Stick to your usual waist size.</p>
-</li>
-<li>
-  <h4><span>2) Trim High</span></h4>
-  <p>No baggy extra fabric for a sleeker look.</p>
-</li>
-<li>
-  <h4><span>3) Hem Unfinished</span></h4>
-  <p>Hem is left unfinished to you can achieve your perfect length.</p>
-</li>
-<li>
-  <h4><span class="right">4) Higher Rise</span></h4>
-  <p>Reduced extra fabric in the seat.</p>
-</li>
-<li>
-  <h4><span class="right">5) Tapered Cut</span></h4>
-  <p>Slight taper from the knee down for a more tailored look.</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 
 <hr class="invisible">
@@ -160,3 +132,5 @@
     </div>
   </div>
 </div>
+
+<?php include('parts/footer.php'); ?>

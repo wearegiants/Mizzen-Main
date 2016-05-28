@@ -87,6 +87,12 @@
         "label": "Headline"
       },
       {
+        "type": "text",
+        "id": "home-carousel-1__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
         "type": "checkbox",
         "id": "home-carousel-1__title-shadow",
         "label": "Enable Title Shadow"
@@ -96,7 +102,18 @@
         "id": "home-carousel-1__button",
         "label": "Button Text"
       },
-      
+      {
+        "type": "text",
+        "id": "home-carousel-1__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
       {
         "type": "text",
         "id": "home-carousel-1__url",
@@ -165,6 +182,12 @@
         "label": "Headline"
       },
       {
+        "type": "text",
+        "id": "home-carousel-2__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
         "type": "checkbox",
         "id": "home-carousel-2__title-shadow",
         "label": "Enable Title Shadow"
@@ -174,7 +197,18 @@
         "id": "home-carousel-2__button",
         "label": "Button Text"
       },
-      
+      {
+        "type": "text",
+        "id": "home-carousel-2__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
       {
         "type": "text",
         "id": "home-carousel-2__url",
@@ -243,6 +277,12 @@
         "label": "Headline"
       },
       {
+        "type": "text",
+        "id": "home-carousel-3__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
         "type": "checkbox",
         "id": "home-carousel-3__title-shadow",
         "label": "Enable Title Shadow"
@@ -252,7 +292,18 @@
         "id": "home-carousel-3__button",
         "label": "Button Text"
       },
-      
+      {
+        "type": "text",
+        "id": "home-carousel-3__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
       {
         "type": "text",
         "id": "home-carousel-3__url",
@@ -321,6 +372,12 @@
         "label": "Headline"
       },
       {
+        "type": "text",
+        "id": "home-carousel-4__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
         "type": "checkbox",
         "id": "home-carousel-4__title-shadow",
         "label": "Enable Title Shadow"
@@ -330,7 +387,18 @@
         "id": "home-carousel-4__button",
         "label": "Button Text"
       },
-      
+      {
+        "type": "text",
+        "id": "home-carousel-4__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
       {
         "type": "text",
         "id": "home-carousel-4__url",
@@ -399,6 +467,12 @@
         "label": "Headline"
       },
       {
+        "type": "text",
+        "id": "home-carousel-5__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
         "type": "checkbox",
         "id": "home-carousel-5__title-shadow",
         "label": "Enable Title Shadow"
@@ -408,7 +482,18 @@
         "id": "home-carousel-5__button",
         "label": "Button Text"
       },
-      
+      {
+        "type": "text",
+        "id": "home-carousel-5__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
       {
         "type": "text",
         "id": "home-carousel-5__url",
@@ -479,6 +564,18 @@
       "label": "Button Text"
     },
     {
+      "type": "text",
+      "id": "home-mag-1__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
+    },
+    {
       "type": "checkbox",
       "id": "home-mag-1__button-disable",
       "label": "Disable Button"
@@ -544,6 +641,18 @@
       "type": "text",
       "id": "home-mag-2__button",
       "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
     },
     {
       "type": "checkbox",
@@ -613,6 +722,18 @@
       "label": "Button Text"
     },
     {
+      "type": "text",
+      "id": "home-mag-3__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
+    },
+    {
       "type": "checkbox",
       "id": "home-mag-3__button-disable",
       "label": "Disable Button"
@@ -678,6 +799,18 @@
       "type": "text",
       "id": "home-mag-4__button",
       "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
     },
     {
       "type": "checkbox",

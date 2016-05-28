@@ -25,20 +25,23 @@
       {% capture slide_image %}home-carousel-{{ i }}__image.jpg{% endcapture %}
       {% capture slide_image-mobile %}home-carousel-{{ i }}__image-mobile.jpg{% endcapture %}
       {% capture slide_title %}home-carousel-{{ i }}__title{% endcapture %}
+      {% capture slide_title-color %}home-carousel-{{ i }}__title-color{% endcapture %}
       {% capture slide_title-shadow %}home-carousel-{{ i }}__title-shadow{% endcapture %}
       {% capture slide_button %}home-carousel-{{ i }}__button{% endcapture %}
       {% capture slide_url %}home-carousel-{{ i }}__url{% endcapture %}
       {% capture slide_align %}home-carousel-{{ i }}__textalign{% endcapture %}
+      {% capture slide_button-color %}home-carousel-{{ i }}__button-color{% endcapture %}
+      {% capture slide_button-bg %}home-carousel-{{ i }}__button-bg{% endcapture %}
       {% if settings[slide] %}
 
       <div class="carousel__slide relative" data-shade="{{ settings[slide_shade] }}">
         <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":{"300px":"{{ slide_image-mobile | asset_url }}","700px":"{{ slide_image | asset_url }}"}}'>
           <div class="centered centered--full">
             <div class="fs-row">
-              <div class="fs-cell fs-all-full">
+              <div class="fs-cell fs-lg-10 fs-md-5 fs-sm-3 fs-centered">
                 <div class="{{ settings[slide_align] }}">
-                  <h1 class="color--blue {% if settings[slide_title-shadow] %}has-shadow{% endif %}">{{ settings[slide_title] }}</h1>
-                  <a href="{{ settings[slide_url] }}" class="btn btn--primary bg--white color--blue">{{ settings[slide_button] }}</a>
+                  <h1 style="color:{{ settings[slide_title-color] }}" class="color--blue {% if settings[slide_title-shadow] %}has-shadow{% endif %}">{{ settings[slide_title] }}</h1>
+                  <a href="{{ settings[slide_url] }}" class="btn btn--primary" style="background-color:{{ settings[slide_button-bg] }}; color:{{ settings[slide_button-color] }};">{{ settings[slide_button] }}</a>
                 </div>
               </div>
             </div>
@@ -50,6 +53,8 @@
       {% endfor %}
 
     </div>
+    <div class="home-carousel__nav home-carousel__nav--prev">{{ '1462563615_left.svg' | asset_url | img_tag }}</div>
+    <div class="home-carousel__nav home-carousel__nav--next">{{ '1462563526_right.svg' | asset_url | img_tag }}</div>
   </div>
 
   <hr class="invisible">
@@ -58,16 +63,47 @@
 
   <div class="home__performance">
     <div class="fs-row"> 
-      <div class="fs-cell fs-lg-10 fs-lg-push-1 fs-md-4 fs-md-push-1 fs-sm-3">
+      <div class="fs-cell fs-xl-10 fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
         <div class="text-center">
           <h2 class="color--blue">{{ settings['home_welcome_message_title'] }}</h2>
-          <p>{{ settings['home_welcome_message'] }}</p>
+          <div class="home__performance-icons fs-row">
+            <div class="fs-cell fs-all-fourth fs-sm-half">
+              <div class="relative">
+                <img src="{{ 'gray-01.svg' | asset_url }}" class="icon icon--first img-responsive" />
+                <img src="{{ 'blue-01.svg' | asset_url }}" class="icon icon--second img-responsive" />
+              </div>
+              <h4>MOISTURE <br class="fs-lg-hide fs-md-hide">WICKING</h4>
+              <p>Never let them <br>see you sweat.</p>
+            </div>
+            <div class="fs-cell fs-all-fourth fs-sm-half">
+              <div class="relative">
+                <img src="{{ 'gray-02.svg' | asset_url }}" class="icon icon--first img-responsive" />
+                <img src="{{ 'blue-02.svg' | asset_url }}" class="icon icon--second img-responsive" />
+              </div>
+              <h4>MACHINE <br class="fs-lg-hide fs-md-hide">WASHABLE</h4>
+              <p>Kiss the dry <br>cleaners goobye.</p>
+            </div>
+            <div class="fs-cell fs-all-fourth fs-sm-half">
+              <div class="relative">
+                <img src="{{ 'gray-03.svg' | asset_url }}" class="icon icon--first img-responsive" />
+                <img src="{{ 'blue-03.svg' | asset_url }}" class="icon icon--second img-responsive" />
+              </div>
+              <h4>FOUR WAY <br class="fs-lg-hide fs-md-hide">STRETCH</h4>
+              <p>Throw those hands <br>in the air.</p>
+            </div>
+            <div class="fs-cell fs-all-fourth fs-sm-half">
+              <div class="relative">
+                <img src="{{ 'gray-04.svg' | asset_url }}" class="icon icon--first img-responsive" />
+                <img src="{{ 'blue-04.svg' | asset_url }}" class="icon icon--second img-responsive" />
+              </div>
+              <h4>SUPERIOR <br class="fs-lg-hide fs-md-hide">FIT</h4>
+              <p>Off the rack never <br>looked so good.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <hr class="invisible">
 
   <!-- Shop Section -->
 
@@ -116,9 +152,12 @@
       {% capture mag_title %}home-mag-{{ i }}__title{% endcapture %}
       {% capture mag_desc %}home-mag-{{ i }}__desc{% endcapture %}
       {% capture mag_button %}home-mag-{{ i }}__button{% endcapture %}
+      {% capture mag_button-color %}home-mag-{{ i }}__button-color{% endcapture %}
+      {% capture mag_button-bg %}home-mag-{{ i }}__button-bg{% endcapture %}
       {% capture mag_url %}home-mag-{{ i }}__url{% endcapture %}
       {% capture mag_align %}home-mag-{{ i }}__textalign{% endcapture %}
       {% capture mag_disable_button %}home-mag-{{ i }}__button-disable{% endcapture %}
+
       {% if settings[mag] %}
 
       {% if forloop.first == true %}
@@ -136,7 +175,7 @@
               <h1>{{ settings[mag_title] }}</h1>
               <p>{{ settings[mag_desc] }}</p>
               {% unless settings[mag_disable_button] %}
-              <a href="{{ settings[mag_url] }}" class="btn bg--blue color--white">{{ settings[mag_button] }}</a>
+              <a href="{{ settings[mag_url] }}" class="btn" style="background-color:{{ settings[mag_button-bg] }}; color:{{ settings[mag_button-color] }};">{{ settings[mag_button] }}</a>
               {% endunless %}
             </div>
           </div>

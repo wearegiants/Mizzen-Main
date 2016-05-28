@@ -361,6 +361,167 @@
       }
     }
 
+    &.shirt {
+      @minDist:   10%;
+      @mobDist:   10%;
+      @tabDist:   22px;
+      @deskDist:  30px;
+      @maxDist:   100px;
+      @media @min {
+        left: @minDist;
+      }
+      @media @mobile {
+        left: @mobDist;
+      }
+      @media @tablet {
+        left: @tabDist;
+      }
+      @media @desktop {
+        left: @deskDist;
+      }
+      @media @max {
+        left: @maxDist;
+      }
+      &.right {
+        right: 0;
+        left: auto;
+        @media @min {
+          left: auto;
+          right: @minDist;
+        }
+        @media @mobile {
+          left: auto;
+          right: @mobDist;
+        }
+        @media @tablet {
+          left: auto;
+          right: @tabDist;
+        }
+        @media @desktop {
+          left: auto;
+          right: @deskDist;
+        }
+        @media @max {
+          left: auto;
+          right: @maxDist;
+        }
+      }
+      // 1 Slim Shirt
+      &.slim {
+        @media @min {
+          top: 140px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @mobile {
+          top: 140px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @tablet {
+          top: 215px;
+          span:before{
+            width: 20px
+          }
+        }
+        @media @desktop {
+          top: 245px;
+          span:before{
+            width: 65px
+          }
+        }
+        @media @max {
+          top: 245px;
+          span:before{
+            width: 65px
+          }
+        }
+      }
+      // 2 Length Shirt
+      &.length {
+        @media @min {
+          top: 215px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @mobile {
+          top: 205px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @tablet {
+          top: 365px;
+          span:before{
+            width: 60px
+          }
+        }
+        @media @desktop {
+          top: 415px;
+          span:before{
+            width: 100px
+          }
+        }
+      }
+      // 3 Chest 
+      &.chest {
+        @media @min {
+          top: 140px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @mobile {
+          top: 140px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @tablet {
+          top: 215px;
+          span:before{
+            width: 20px
+          }
+        }
+        @media @desktop {
+          top: 245px;
+          span:before{
+            width: 100px
+          }
+        }
+      }
+      // 4 Tapered 
+      &.waiste {
+        @media @min {
+          top: 215px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @mobile {
+          top: 205px;
+          span:before{
+            width: 100px
+          }
+        }
+        @media @tablet {
+          top: 365px;
+          span:before{
+            width: 65px
+          }
+        }
+        @media @desktop {
+          top: 415px;
+          span:before{
+            width: 100px
+          }
+        }
+      }
+    }
+
   }
 
 }
