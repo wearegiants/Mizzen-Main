@@ -1,5 +1,11 @@
+<header id="header">
 
-  {% if settings.display_collection_title %}
+  <a class="promotion" href="/collections/the-shirt">
+    Use "MAINMAN3" at Checkout <br>for $50 Off 3 Dress Shirts
+  </a>
+</header>
+<br>
+{% if settings.display_collection_title %}
     <div class="sixteen columns">
       <h1 class="center">{{ collection.title }}</h1>
       <div class="feature_divider"></div>
@@ -161,8 +167,6 @@
         // });
       });
     </script>
-
-  <div class="container">
 
   <div class="section clearfix breadcrumb-wrapper">
     <div class="sixteen columns breadcrumb">
@@ -353,5 +357,3 @@ $(document).ready(function(){
 
 });
 </script>
-
-</div>

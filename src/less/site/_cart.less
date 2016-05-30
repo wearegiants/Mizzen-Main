@@ -21,12 +21,17 @@
     //  width: @width;
     //}
 
+    .btn {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     .cart {
       position: absolute;
       width: 100%;
     }
 
-    .close-cart {
+    .close-cart, .cart__remove span {
       cursor: pointer;
       &:before {
         margin: 0;
@@ -128,7 +133,9 @@
     display: block;
     letter-spacing: 1px;
     margin-bottom: 5px;
-    margin-top: 5px;
+    margin-top: 1px;
+    padding-right: @spaced;
+    line-height: 1.2;
     font-weight: 500;
   }
   &__desc {

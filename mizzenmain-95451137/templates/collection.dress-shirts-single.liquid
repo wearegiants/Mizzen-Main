@@ -1,5 +1,3 @@
-<div class="container">
-
 {% paginate collection.products by settings.pagination_limit %}
 
   {% if settings.display_collection_title %}
@@ -106,5 +104,3 @@
     {% include 'pagination' with settings.collection_sidebar %}
   </div>
 {% endpaginate %}
-
-</div>

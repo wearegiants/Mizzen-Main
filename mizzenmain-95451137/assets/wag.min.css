@@ -3913,32 +3913,7 @@ hr.nomargin {
 .accent {
   font-family: 'Archer Web Font', serif;
 }
-button,
-input[type=submit],
-input[type=search],
-input[type=button] {
-  font-family: 'Bryant Web Font', sans-serif;
-  font-weight: regular;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 0 10px 0;
-  text-align: center;
-  padding: 0 20px;
-  text-transform: uppercase;
-  font-weight: normal;
-  letter-spacing: .5px;
-  height: 40px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 43px;
-  -webkit-font-smoothing: antialiased;
-  -webkit-transition: background-color 300ms ease;
-  transition: background-color 300ms ease;
-  background: #666666;
-  color: #fff;
-}
 .btn,
-.button,
 .epm-submit-chimp {
   font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
@@ -3958,27 +3933,23 @@ input[type=button] {
   text-decoration: none;
 }
 .btn--primary:active,
-.button--primary:active,
 .epm-submit-chimp--primary:active {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
   opacity: .9;
 }
 .btn--disabled,
-.button--disabled,
 .epm-submit-chimp--disabled {
   background: #CBCBD2;
   pointer-events: none;
 }
 .btn--outlined,
-.button--outlined,
 .epm-submit-chimp--outlined {
   background: transparent;
   box-shadow: inset 0 0 0 1px #333;
   color: #333;
 }
 .btn--link,
-.button--link,
 .epm-submit-chimp--link {
   background: transparent;
   color: inherit;
@@ -3989,7 +3960,6 @@ input[type=button] {
   margin: 0;
 }
 .btn--nav,
-.button--nav,
 .epm-submit-chimp--nav {
   margin-bottom: 0;
   font-weight: 500;
@@ -3999,27 +3969,23 @@ input[type=button] {
 }
 @media screen and (min-width: 300px) {
   .btn--nav,
-  .button--nav,
   .epm-submit-chimp--nav {
     padding: 0 5px;
   }
 }
 @media screen and (min-width: 740px) {
   .btn--nav,
-  .button--nav,
   .epm-submit-chimp--nav {
     padding: 0 10px;
   }
 }
 @media screen and (min-width: 980px) {
   .btn--nav,
-  .button--nav,
   .epm-submit-chimp--nav {
     padding: 0 12px;
   }
 }
 .btn--logo,
-.button--logo,
 .epm-submit-chimp--logo {
   background: transparent;
   font-weight: 400;
@@ -4027,19 +3993,16 @@ input[type=button] {
   line-height: 50px;
 }
 .btn--logo:hover,
-.button--logo:hover,
 .epm-submit-chimp--logo:hover {
   background: transparent;
   text-decoration: none;
 }
 .btn--hamburg,
-.button--hamburg,
 .epm-submit-chimp--hamburg {
   position: relative;
   padding-left: 1.5em!important;
 }
 .btn--hamburg:before,
-.button--hamburg:before,
 .epm-submit-chimp--hamburg:before {
   content: "";
   position: absolute;
@@ -4052,32 +4015,26 @@ input[type=button] {
   box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.25), 0 8px 0 0 rgba(0, 0, 0, 0.25);
 }
 .btn--hamburg__white,
-.button--hamburg__white,
 .epm-submit-chimp--hamburg__white {
   color: #fff;
 }
 .btn--hamburg__white:after,
-.button--hamburg__white:after,
 .epm-submit-chimp--hamburg__white:after,
 .btn--hamburg__white:before,
-.button--hamburg__white:before,
 .epm-submit-chimp--hamburg__white:before {
   background: #fff;
   box-shadow: 0 4px 0 0 #fff, 0 8px 0 0 #fff;
 }
 .btn--hamburg.right,
-.button--hamburg.right,
 .epm-submit-chimp--hamburg.right {
   padding-right: 1.5em!important;
   padding-left: 0!important;
 }
 .btn--hamburg.right:before,
-.button--hamburg.right:before,
 .epm-submit-chimp--hamburg.right:before {
   display: none;
 }
 .btn--hamburg.right:after,
-.button--hamburg.right:after,
 .epm-submit-chimp--hamburg.right:after {
   content: "";
   position: absolute;
@@ -4090,7 +4047,6 @@ input[type=button] {
   box-shadow: 0 0.25em 0 0 rgba(0, 0, 0, 0.25), 0 0.5em 0 0 rgba(0, 0, 0, 0.25);
 }
 .btn-mobile,
-.button-mobile,
 .epm-submit-chimp-mobile {
   display: block;
   text-align: left;
@@ -4104,22 +4060,18 @@ input[type=button] {
   line-height: 50px;
 }
 .btn--first,
-.button--first,
 .epm-submit-chimp--first {
   padding-left: 0;
 }
 .btn--last,
-.button--last,
 .epm-submit-chimp--last {
   padding-right: 0;
 }
 .btn--full,
-.button--full,
 .epm-submit-chimp--full {
   width: 100%;
 }
 .btn--icon img,
-.button--icon img,
 .epm-submit-chimp--icon img {
   display: inline-block;
   height: 20px;
@@ -4130,7 +4082,6 @@ input[type=button] {
           transform: translateY(-50%);
 }
 .btn--icon__menu img,
-.button--icon__menu img,
 .epm-submit-chimp--icon__menu img {
   height: 15px;
   top: 23%;
@@ -4160,46 +4111,6 @@ input[type=button] {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
-}
-.gform_wrapper {
-  min-width: 100%;
-  background: #fff;
-}
-@media screen and (min-width: 500px) {
-  .gform_wrapper {
-    padding: 0;
-  }
-}
-@media screen and (min-width: 740px) {
-  .gform_wrapper {
-    padding: 10px 0px 10px 17px;
-    box-shadow: 0 1px 4px rgba(51, 51, 51, 0.2);
-  }
-}
-@media screen and (min-width: 980px) {
-  .gform_wrapper {
-    padding: 10px 0px 10px 20px;
-  }
-}
-.gform_body {
-  min-width: 100%;
-}
-.gform_fields .gfield_label {
-  font-weight: 400!important;
-  margin-bottom: 0px !important;
-}
-.gform_fields .gfield_description {
-  padding-top: 0!important;
-}
-.gform_fields .gfield input {
-  margin-bottom: 0;
-}
-.gform_fields .gfield:before {
-  display: none;
-}
-.gform_footer {
-  margin-top: 0!important;
-  padding-bottom: 0!important;
 }
 @-webkit-keyframes fadeIn {
   from {
@@ -4426,17 +4337,6 @@ input[type=button] {
 }
 .header--lg {
   padding: 25px 0;
-}
-.hentry__content {
-  margin-bottom: 75px;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-.widget-title {
-  margin-bottom: 5px;
-}
-.widget-area .xoxo {
-  padding-left: 0;
 }
 #header-main {
   -webkit-transition: background 300ms ease;
@@ -4727,14 +4627,20 @@ input[type=button] {
   font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
 }
+#cart-sidebar .btn {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 #cart-sidebar .cart {
   position: absolute;
   width: 100%;
 }
-#cart-sidebar .close-cart {
+#cart-sidebar .close-cart,
+#cart-sidebar .cart__remove span {
   cursor: pointer;
 }
-#cart-sidebar .close-cart:before {
+#cart-sidebar .close-cart:before,
+#cart-sidebar .cart__remove span:before {
   margin: 0;
   font-size: 14px;
   font-size: 0.875rem;
@@ -4838,7 +4744,9 @@ input[type=button] {
   display: block;
   letter-spacing: 1px;
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 1px;
+  padding-right: 25px;
+  line-height: 1.2;
   font-weight: 500;
 }
 .cart-item__desc {

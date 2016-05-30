@@ -1,40 +1,42 @@
 @hero__xs : 350px;
 @hero__sm : 500px;
 @hero     : 600px;
-@hero__md : 700px + @spaced;
+@hero__md : 725px;
 @hero__lg : 815px;
 @hero__xl : 900px;
 
 .hero {
 
 	@media @min {
-		height: @hero - 200;
+		height: 400px;
 	}
 	@media @tablet {
-		height: @hero - 100;
+		height: 500px;
 	}
 	@media @desktop {
-		height: @hero
+		height: 600px
 	}
 
   &--xs {
     @media @min {
-      height: @hero__xs - 50;
+      //350px
+      height: 300px;
     }
     @media @tablet {
-      height: @hero__xs - 50;
+      height: 300px;
     }
     @media @desktop {
-      height: @hero__xs
+      height: 350px
     }
   }
 
   &--sm {
   	@media @min {
-  		height: @hero__sm - 200;
+      //500px
+  		height: 300px;
   	}
   	@media @tablet {
-  		height: @hero__sm - 100;
+  		height: 400px;
   	}
   	@media @desktop {
   		height: @hero__sm
@@ -46,7 +48,7 @@
       height: 350px;
     }
     @media @tablet {
-      height: @hero__md - 100;
+      height: 625px;
     }
     @media @desktop {
       height: @hero__md
@@ -55,10 +57,10 @@
   
   &--lg {
   	@media @min {
-  		height: @hero__lg - 215;
+  		height: 600px;
   	}
   	@media @tablet {
-  		height: @hero__lg - 100;
+  		height: 715px;
   	}
   	@media @desktop {
   		height: @hero__lg
@@ -67,10 +69,10 @@
 
   &--xl {
     @media @min {
-      height: @hero__xl - 215;
+      height: 685px;
     }
     @media @tablet {
-      height: @hero__xl + 28;
+      height: 928px;
     }
     @media @desktop {
       height: @hero__xl
@@ -79,21 +81,21 @@
 
   &--pants {
     @media @min {
-      height: @hero__xl - 500;
+      height: 400px;
     }
     @media @tablet {
-      height: @hero__xl - 300;
+      height: 600px;
     }
     &__shirt {
       @media @tablet {
-        height: @hero__xl - 350;
+        height: 550px;
       }
     }
     @media @desktop {
-      height: @hero__xl - 200;
+      height: 700px;
     }
     @media @max {
-      height: @hero__xl - 200;
+      height: 700px;
     }
   }
 
