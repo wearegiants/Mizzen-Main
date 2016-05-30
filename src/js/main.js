@@ -17,6 +17,27 @@ function openModal(){
 		preloader: false,
 		modal: true
 	});
+	$('.fit-link').magnificPopup({
+		type: 'ajax',
+		midClick: true,
+		removalDelay: 1000,
+		alignTop: true,
+		overflowY: 'scroll',
+		callbacks: {
+		  parseAjax: function(mfpResponse) {
+		    mfpResponse.data = $(mfpResponse.data).find('#fitguide');
+		  },
+		  ajaxContentAdded: function() {
+		  	$('.wallpaper').background();
+		  	//$('body').addClass('is-viewing--cart');
+		  	//cartSize();
+		  	//$(".message-toggle").swap();
+		  },
+		  beforeClose: function() {
+		  	//$('body').removeClass('is-viewing--cart');	
+		  }
+		}
+	});
 	$('.cart-link').magnificPopup({
 		type: 'ajax',
 		midClick: true,
@@ -69,4 +90,5 @@ $(document).ready(function(){
 	mobileMenu();
 	openModal();
 	headerScroll();
+	$(".fitVids").fitVids();
 });

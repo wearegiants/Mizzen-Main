@@ -119,7 +119,7 @@
         "id": "home-carousel-1__url",
         "label": "Link URL"
       },
-            {
+      {
         "type": "header",
         "content": "Slide 2"
       },
@@ -586,6 +586,11 @@
       "label": "Link URL"
     },
     {
+      "type": "textarea",
+      "id": "home-mag-1__video",
+      "label": "Video Tile"
+    },
+    {
       "type": "header",
       "content": "Magazine module 2"
     },
@@ -663,6 +668,11 @@
       "type": "text",
       "id": "home-mag-2__url",
       "label": "Link URL"
+    },
+    {
+      "type": "textarea",
+      "id": "home-mag-2__video",
+      "label": "Video Tile"
     },
     {
       "type": "header",
@@ -744,6 +754,11 @@
       "label": "Link URL"
     },
     {
+      "type": "textarea",
+      "id": "home-mag-3__video",
+      "label": "Video Tile"
+    },
+    {
       "type": "header",
       "content": "Magazine module 4"
     },
@@ -821,6 +836,11 @@
       "type": "text",
       "id": "home-mag-4__url",
       "label": "Link URL"
+    },
+    {
+      "type": "textarea",
+      "id": "home-mag-4__video",
+      "label": "Video Tile"
     }
   ]
 },

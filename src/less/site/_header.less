@@ -39,7 +39,9 @@
     &:hover, &.active, &.fs-swap-active, &.is-dark {
       
       #header-main__inner {
-        background: @white;  
+        //@media @mobile {
+          background: @white;    
+        //}
       }
 
       .btn--icon {
@@ -68,6 +70,9 @@
     }
     &-shop {
       display: none;
+      padding: @spaced/2 0;
+      border-top: 1px solid @bgGray;
+      border-bottom: 1px solid @bgGray;
       &.fs-swap {
         &-active {
           display: block;
@@ -75,7 +80,7 @@
       }
     }
     &-drop {
-      background: fade(@white, 90%);
+      background: fade(@white, 95%);
       display: none;
       .btn {
         @size: 40px;
@@ -84,7 +89,45 @@
       }
       &.fs-swap {
         &-active {
+          @media @min {
+            display: block;
+          }
+          @media @mobile {
+            display: none;
+          }
+          //display: block;
+        }
+      }
+      ul {
+        display: none;
+        padding: 0;
+        margin: 0;
+        &.fs-swap-active {
           display: block;
+        }
+        li {
+           .headerFont();
+          margin: 0;
+          padding: 0;
+          a {
+            color: @textGray;
+          }
+        }
+      }
+      hr {
+        display: none;
+      }
+      h4 {
+        line-height: 2;
+        padding: 0;
+        margin-bottom: 0;
+        .headerFont();
+        .font_size(14);
+        letter-spacing: 1px;
+
+        a {
+          display: block;
+          color: @blue;
         }
       }
     }

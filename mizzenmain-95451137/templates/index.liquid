@@ -157,6 +157,7 @@
       {% capture mag_url %}home-mag-{{ i }}__url{% endcapture %}
       {% capture mag_align %}home-mag-{{ i }}__textalign{% endcapture %}
       {% capture mag_disable_button %}home-mag-{{ i }}__button-disable{% endcapture %}
+      {% capture mag_video %}home-mag-{{ i }}__video{% endcapture %}
 
       {% if settings[mag] %}
 
@@ -168,6 +169,11 @@
       {% capture mag_width %}fs-lg-half fs-md-half fs-sm-3{% endcapture %}
       {% endif %}
 
+      {% unless settings[mag_video] == '' %}
+      <div class="carousel__slide fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
+        <div class="fitVids">{{ settings[mag_video] }}</div>
+      </div>
+      {% else %}
       <div class="carousel__slide fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
         <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":{"0px":"{{ mag_image-mobile | asset_url }}","980px":"{{ mag_image | asset_url }}"}}'>
           <div class="centered">
@@ -181,6 +187,7 @@
           </div>
         </div>
       </div>
+      {% endunless %}
 
       <hr class="invisible compact">
 

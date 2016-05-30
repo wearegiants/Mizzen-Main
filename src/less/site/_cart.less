@@ -29,6 +29,14 @@
     .cart {
       position: absolute;
       width: 100%;
+
+      &__remove {
+        opacity: .5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
     }
 
     .close-cart, .cart__remove span {
@@ -88,6 +96,7 @@
       font-weight: 500;
       .btn {
         margin-bottom: 0;
+        .headerFont();
       }
     }
     &__content {
@@ -137,9 +146,10 @@
     padding-right: @spaced;
     line-height: 1.2;
     font-weight: 500;
+    .font_size(15);
   }
   &__desc {
-    font-style: italic;
+    //font-style: italic;
   }
   &__image {
     background-color: @white;
@@ -155,6 +165,13 @@
     input {
       max-width: 100%;
       color: @textGray;
+      margin-bottom: 0;
+      color: #666666;
+      margin-bottom: 0;
+      min-height: 0;
+      width: 40%;
+      text-align: center;
+      height: 18px!important;
     }
   }
   &:not(:first-child) {
