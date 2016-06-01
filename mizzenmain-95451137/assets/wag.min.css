@@ -5706,31 +5706,31 @@ hr.nomargin {
 }
 @media screen and (min-width: 740px) {
   .fit-guide__desc.hem {
-    top: 570px;
+    top: 440px;
     left: 15px;
     width: 190px;
   }
   .fit-guide__desc.hem span:before {
-    width: 80px;
+    width: 100px;
   }
 }
 @media screen and (min-width: 980px) {
   .fit-guide__desc.hem {
-    top: 725px;
+    top: 565px;
     left: 40px;
     width: auto;
   }
   .fit-guide__desc.hem span:before {
-    width: 105px;
+    width: 135px;
   }
 }
 @media screen and (min-width: 1220px) {
   .fit-guide__desc.hem {
-    top: 725px;
+    top: 565px;
     left: 140px;
   }
   .fit-guide__desc.hem span:before {
-    width: 110px;
+    width: 144px;
   }
 }
 @media screen and (min-width: 300px) {
@@ -5947,7 +5947,7 @@ hr.nomargin {
     top: 365px;
   }
   .fit-guide__desc.shirt.length span:before {
-    width: 60px;
+    width: 80px;
   }
 }
 @media screen and (min-width: 980px) {
@@ -5955,7 +5955,15 @@ hr.nomargin {
     top: 415px;
   }
   .fit-guide__desc.shirt.length span:before {
-    width: 100px;
+    width: 135px;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .fit-guide__desc.shirt.length {
+    top: 415px;
+  }
+  .fit-guide__desc.shirt.length span:before {
+    width: 170px;
   }
 }
 @media screen and (min-width: 300px) {
@@ -6011,7 +6019,7 @@ hr.nomargin {
     top: 365px;
   }
   .fit-guide__desc.shirt.waiste span:before {
-    width: 65px;
+    width: 68px;
   }
 }
 @media screen and (min-width: 980px) {
@@ -6020,6 +6028,11 @@ hr.nomargin {
   }
   .fit-guide__desc.shirt.waiste span:before {
     width: 100px;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .fit-guide__desc.shirt.waiste span:before {
+    width: 123px;
   }
 }
 .gps_ring {
@@ -6095,11 +6108,23 @@ hr.nomargin {
 @media screen and (min-width: 300px) {
   .fit-grid__cell {
     height: 32px;
+    font-size: 10px;
+    font-size: 0.625rem;
+    letter-spacing: -1px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .fit-grid__cell {
+    font-size: 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0px;
   }
 }
 @media screen and (min-width: 740px) {
   .fit-grid__cell {
     height: 48px;
+    font-size: 15px;
+    font-size: 0.9375rem;
   }
 }
 .fit-grid__cell span {
