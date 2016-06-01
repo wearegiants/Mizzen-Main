@@ -1,0 +1,84 @@
+{% if plus_international_shipping_popup %}
+
+<style>
+  .white-popup-block{
+    background: #FFF;
+    padding: 20px 30px;
+    text-align: left;
+    max-width: 650px;
+    margin: 40px auto;
+    position: relative;
+  }
+
+  .white-popup-block h2{
+    margin-bottom: 0.5em;
+  }
+  
+  .intlShippingMesg a#shippingMessageLink{
+    cursor: pointer;
+  }
+
+</style>
+
+<script>
+
+(function($) {
+  
+  $(document).on('page:load page:change', function() { 
+    
+    var openPopup = function(){
+  
+      $.magnificPopup.open({
+        items: {
+          src: '#shipping-policy-modal',
+        },
+        preloader: false,
+        type: 'inline',
+        modal: true
+      });
+    };
+
+    $('body').on('click', '.js-modal-dismiss', function(e) {
+      
+      e.stopPropagation();
+      e.preventDefault();
+      $.magnificPopup.close();
+      return false; 
+    });
+
+    $('body').on( 'click', '#shippingMessageLink', function(e) {
+      
+      e.stopPropagation();
+      e.preventDefault();
+      openPopup();
+      return false;  
+    });
+    
+    var shippingMethodNotice = "{{ 'shopify.checkout.shipping.shipping_method_notice' | t }}";
+    shippingMethodNotice = shippingMethodNotice.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+     
+    var addIntlShippingMessage = function() {
+        
+      var $target = $(".main__content *:contains(" + shippingMethodNotice + ")").last();
+      $target.addClass('intlShippingMesg').text(shippingMethodNotice).html(shippingMethodNotice);
+      var $targetA = $target.find('a');
+      $targetA.attr('id','shippingMessageLink');
+    };   
+
+    if (Shopify.Checkout.step === 'shipping_method') {  
+      Plus.func( 'shipping-section-text', 'main', function() {
+        
+        addIntlShippingMessage();
+
+        {% unless checkout.shipping_address.country_code == 'US' %}
+          openPopup();
+        {% endunless %}
+      });
+    }
+    
+  });
+  
+})(jQuery, Plus.func);
+
+</script>
+{% endif %}

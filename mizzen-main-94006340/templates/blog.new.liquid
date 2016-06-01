@@ -1,0 +1,64 @@
+<h1>{{ blog.title }}</h1>
+
+
+<ol class="articles">
+
+  {% for article in blog.articles %}
+    {% comment %}
+    Article
+    {% endcomment %}
+    <li>
+      <article>
+        <figure>
+          <img src="{{ article.image | img_url: 'original' }}" alt="{{ image.alt }}">
+          <figcaption><time>{{ article.published_at | date: "%m/%d/%y" }}</time></figcaption>
+        </figure>
+        <h2>{{ article.title }}</h2>
+        <div class="excerpt">
+          <p>
+            {{ article.excerpt | strip_html }}
+          </p>
+        </div><!-- .excerpt -->
+        <div class="full">
+          {{ article.content }}
+        </div><!-- .full-article -->
+        <button class="toggle">+More</button>
+      </article>
+    </li><!-- .active -->
+  {% endfor %}
+
+  <li><a class="archive" href="/blogs/news">Archive</a></li>
+
+</ol>
+
+<script>
+/**
+ * Expand/Collapse full article contents on click
+ */
+$(document).on('click', 'ol.articles article button.toggle', function(event) {
+  event.preventDefault();
+  var $button = $(this);
+  var $article_wrapper = $button.closest('li');
+  var $content = $article_wrapper.find('.full');
+
+  // If already open
+  if ($article_wrapper.hasClass('active')) {
+    $content.slideUp(function() {
+      $article_wrapper.removeClass('active');
+      $button.html('+More');
+    })
+    // Gently scroll back up to top of collapsed article
+    $('html, body').animate({
+      scrollTop: $article_wrapper.offset().top
+    }, 500);
+  // If already closed
+  } else {
+    $content.slideDown(function() {
+      $article_wrapper.addClass('active');
+      $button.html('-Less');
+    })
+  }
+
+});
+
+</script>

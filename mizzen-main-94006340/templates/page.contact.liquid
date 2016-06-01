@@ -1,0 +1,68 @@
+{% if settings.slideshow_contact_enabled %}
+  <div id="slide-contact">
+    <div class="bcg"
+        data-bottom-top="background-position: 50% 200px;"
+        data-top-bottom="background-position: 50% -200px;"
+        data-anchor-target="#slide-contact">
+        <div class="hsContainer">
+            <div class="hsContent {{ settings.image_contact_text_align }}">
+              <div>
+                <h1 class="headline" style="color:{{settings.image_contact_text_color}}">{{ settings.image_contact_headline }}</h1>
+                <p class="subtitle" style="color:{{settings.image_contact_text_color}}">{{ settings.image_contact_subtitle }}</p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container">
+  <br class="clear" />
+{% endif %}
+
+<div class="ten columns offset-by-three page clearfix">
+  {% if settings.slideshow_contact_enabled == false %}
+    <h1 class="center">{{ page.title }}</h1>
+    <div class="feature_divider"></div>
+  {% endif %}
+
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <p class="quote">Thanks for contacting us! We'll get back to you as soon as possible.</p>
+    {% endif %}
+
+    {% if form.errors %}
+      <p class="quote">Not all the fields have been filled in correctly. Please try again.</p>
+    {% endif %}
+
+    {{ page.content }}
+    
+    
+     <br class="clear" />
+     <div class="five columns alpha">
+      <label for="contact_form_name">Name <span class="red">*</span></label>
+      <input type="text" id="contact_form_name" name="contact[name]" required value="{{ contact.fields.name}}" />
+     </div>
+     <div class="five columns omega">
+      <label for="contact_form_email">Email <span class="red">*</span></label>
+      <input type="text" id="contact_form_email" name="contact[email]" required pattern="[^ @]*@[^ @]*"value="{{ contact.fields.email }}"/>
+     </div>
+     <!--
+     <label for="contact_form_phone">Phone Number</label>
+     <input type="text" id="contact_form_phone" name="contact[phone]" value="{{ contact.fields.phone }}" />
+     -->
+    <label for="contact_message">Message <span class="red">*</span></label>       
+    <textarea id="contact_message" name="contact[body]" required rows="5">{{ contact.fields.body }}</textarea>
+    <input type='submit' class="submit action_button add_to_cart" value="Send" />
+
+  {% endform %}
+</div>
+
+  
+{% if settings.contact_address != blank %}
+  <br class="clear" />
+  </div>
+  <div class="embed-container maps">
+    <iframe width="100%" height="220" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q={{ settings.contact_address | replace: ' ', '+' }}&amp;z={{ settings.zoom_level }}&amp;output=embed"></iframe>
+  </div>
+  <div class="container" style="padding:0">
+{% endif %}

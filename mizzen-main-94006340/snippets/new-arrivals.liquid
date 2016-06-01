@@ -1,0 +1,25 @@
+<div id="new-arrivals">
+    <div class="container">
+      <section class="heading">
+        <div class="row">
+          <div class="col">&nbsp;</div>
+          <div class="col"><h2>Shop New Arrivals</h2></div>
+          <div class="col"><a href="/collections/homepage-new-arrivals">View All &gt;&gt;</a></div>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <div class="sixteen columns product-grid">
+        {% assign products = collections.homepage-new-arrivals.products %}
+
+        {% assign products_per_row = 3 %}
+        {% assign product_found = true %}
+        {% assign skip = false %}
+
+        {% for product in products limit: 3 %}
+          {% include 'product-thumbnail' with false %}
+        {% endfor %}
+      </div><!-- .sixteen -->
+    </div><!-- .container -->
+
+</div><!-- #new-arrivals -->

@@ -1,0 +1,9 @@
+{
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "shipping_method_notice": "Please review our <a>international shipping policy<\/a> before proceeding."
+      }
+    }
+  }
+}

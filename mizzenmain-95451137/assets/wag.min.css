@@ -5617,7 +5617,7 @@ hr.nomargin {
     width: 190px;
   }
   .fit-guide__desc.waist span:before {
-    width: 25px;
+    width: 45px;
   }
 }
 @media screen and (min-width: 980px) {
@@ -5627,13 +5627,16 @@ hr.nomargin {
     width: auto;
   }
   .fit-guide__desc.waist span:before {
-    width: 50px;
+    width: 74px;
   }
 }
 @media screen and (min-width: 1220px) {
   .fit-guide__desc.waist {
     top: 38px;
     left: 140px;
+  }
+  .fit-guide__desc.waist span:before {
+    width: 80px;
   }
 }
 @media screen and (min-width: 300px) {
@@ -5655,7 +5658,7 @@ hr.nomargin {
     width: 190px;
   }
   .fit-guide__desc.trim span:before {
-    width: 80px;
+    width: 133px;
   }
 }
 @media screen and (min-width: 980px) {
@@ -5665,7 +5668,7 @@ hr.nomargin {
     width: auto;
   }
   .fit-guide__desc.trim span:before {
-    width: 105px;
+    width: 135px;
   }
 }
 @media screen and (min-width: 1220px) {
@@ -5674,7 +5677,7 @@ hr.nomargin {
     left: 140px;
   }
   .fit-guide__desc.trim span:before {
-    width: 110px;
+    width: 144px;
   }
 }
 @media screen and (min-width: 300px) {
@@ -5802,7 +5805,7 @@ hr.nomargin {
     width: auto;
   }
   .fit-guide__desc.cut span:before {
-    width: 59px;
+    width: 100px;
   }
 }
 @media screen and (min-width: 980px) {
@@ -5812,7 +5815,7 @@ hr.nomargin {
     width: auto;
   }
   .fit-guide__desc.cut span:before {
-    width: 78px;
+    width: 132px;
   }
 }
 @media screen and (min-width: 1220px) {
@@ -5821,7 +5824,7 @@ hr.nomargin {
     right: 140px;
   }
   .fit-guide__desc.cut span:before {
-    width: 82px;
+    width: 142px;
   }
 }
 @media screen and (min-width: 300px) {

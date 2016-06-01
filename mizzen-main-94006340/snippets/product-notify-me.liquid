@@ -1,0 +1,77 @@
+<div class="notify_form notify-form-{{ product.id }}" {% if product.available %}style="display:none"{% endif %}>
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <div class="row">
+        <div class="columns">
+          <p><em>Thanks! We will notify you when this product becomes available!</em></p>
+        </div>
+      </div>
+    {% elsif form.errors %}
+      <div class="row">
+        <div class="columns">
+          <p><em>Please provide a valid email address.</em></p>
+        </div>
+      </div>
+    {% else %}
+      <div class="row">
+        <div class="columns">
+          <label for="contact[email]">Notify me when this product is available:</label>
+        </div>
+      </div><!-- .row -->
+
+      <div class="row">
+        <div class="columns notify_input">
+          {% if customer %}
+            <input type="hidden" name="contact[email]" value="{{ customer.email }}" />
+          {% else %}
+            <input required type="email" name="contact[email]" id="contact[email]" placeholder="Enter your email address..." value="{{ contact.fields.email }}" style="display:inline;margin-bottom:0px;width: 220px;" />
+          {% endif %}
+        </div>
+        <div class="columns notify_button">
+          <input type="hidden" name="contact[body]" class="notify_form_message" data-body="Please notify me when {{ product.title | remove: '"' }} becomes available - {{ shop.url }}{{ product.url }}" value="Please notify me when {{ product.title | remove: '"' }} becomes available - {{ shop.url }}{{ product.url }}" />
+          <input class="submit" type="submit" value="Send" style="margin-bottom:0px" />
+        </div>
+      </div>
+
+    {% endif %}
+  {% endform %}
+  <br><br>
+</div><!-- .notify_form -->
+
+
+
+<script>
+$(document).on('submit', '.notify_form form', function(event) {
+  event.preventDefault();
+  var $form = $(this);
+  var email = $form.find('input[type=email]').val();
+  var variant_id = $('.new_product_form select[name=id]').val();
+  var product_id = '{{ product.id }}';
+
+  if (BIS !== undefined) {
+    BIS.create(email, variant_id, product_id).then(notificationCallback);
+  };
+
+  function notificationCallback(data) {
+    var msg = '';
+    if (data.status == 'OK') {
+      msg = data.message; // just show the success message
+    } else { // it was an error
+      for (var k in data.errors) {  // collect all the error messages into a string
+        msg += data.errors[k].join();
+       }
+    }
+    var html = '' +
+    '<div class="row">' +
+    '  <div class="columns">' +
+    '    <p><em>' + msg + '</em></p>' +
+    '  </div>' +
+    '</div>';
+
+    $form.prepend(html);
+  }
+});
+</script>
+
+
+

@@ -1,0 +1,310 @@
+{% include 'collection-sizes-availability' %}
+
+
+{% comment %}
+Heading
+{% endcomment %}
+<div class="row no-margin">
+  <div class="sixteen columns">
+    <div class="dress-shirt-heading heading">
+      <p>Introducing your new favorite dress shirt.</p>
+      <h1>Performance Fabrics. Professional Style.</h1>
+      <p>Moisture-Wicking | Four-Way Stretch <span class="hide-mobile">|</span> Machine Washable | Superior Fit</p>
+    </div>
+  </div><!-- .sixteen.columns -->
+</div>
+
+<header id="header">
+
+  <a class="promotion" href="/collections/the-shirt">
+    Use "MAINMAN3" at Checkout <br>for $50 Off 3 Dress Shirts
+  </a>
+</header>
+<br>
+{% comment %}
+Leeward Collection
+{% endcomment %}
+    {% assign collection_handle = '' %}
+
+    {% include 'dress-shirt-banner' with 'Leeward' %}
+
+    <div class="section clearfix breadcrumb-wrapper">
+      <div class="sixteen columns breadcrumb filters">
+
+        {% assign collection_linklist = '' %}
+        {% assign color_linklist = '' %}
+        {% assign size_linklist = '' %}
+
+        {% assign collection_linklist = 'shop-dress-shirts-collections' %}
+        {% assign color_linklist = 'shop-dress-shirts-colors' %}
+        {% assign size_linklist = 'shop-dress-shirts-sizes' %}
+
+        <div class="four columns section_select tag">
+          <label for="filter-by-color" class="inline">Color: </label>
+          <select id="filter-by-color">
+            <option value="">All</option>
+            {% for link in linklists[color_linklist].links %}
+              {% assign selected_attribute = '' %}
+              {% if current_tags contains link.title %}
+                {% assign selected_attribute = ' selected="selected"' %}
+              {% endif %}
+              <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="four columns section_select tag">
+          <label for="filter-by-size" class="inline">Size: </label>
+          <select id="filter-by-size">
+            <option value="">All</option>
+            {% for link in linklists[size_linklist].links %}
+              {% assign selected_attribute = '' %}
+              {% if current_tags contains link.title %}
+                {% assign selected_attribute = ' selected="selected"' %}
+              {% endif %}
+              <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="four columns section_select omega">
+          <label for="sort-by" class="inline">Sort by: </label>
+          <select id="sort-by">
+            <option value="manual">Featured</option>
+            <option value="price-ascending">Price: Low to High</option>
+            <option value="price-descending">Price: High to Low</option>
+            <option value="title-ascending">A-Z</option>
+            <option value="title-descending">Z-A</option>
+            <option value="created-ascending">Oldest to Newest</option>
+            <option value="created-descending">Newest to Oldest</option>
+            <option value="best-selling">Best Selling</option>
+          </select>
+        </div>
+
+      </div><!-- .columns.sixteen.breadcrumb -->
+    </div><!-- .section.clearfix.breadcrumb-wrapper -->
+
+
+    {% comment %} Product Listing {% endcomment %}
+  <div class="row">
+    {% assign collection = collections.leeward-collection %}
+    <div class="sixteen columns product-grid grid-container">
+      {% if collection.products.size == 0 %}
+        <div class="section clearfix">
+          <p class="quote">No matching products found.</p>
+        </div>
+      {% else %}
+        {% assign products = collection.products %}
+        {% assign products_per_row = settings.products_per_row %}
+
+        {% assign product_found = false %}
+        {% assign skip = false %}
+
+        {% capture new_row %}
+            <br class="clear product_clear" />
+        {% endcapture %}
+
+        {% for product in products limit: limit %}
+
+          {% if product.id == skip_product.id or skip == true %}
+            {% assign product_found = true %}
+          {% else %}
+            {% if forloop.rindex0 == 0 and product_found == false and forloop.length != products.count and template != 'search' %}
+              {% assign skip = true %}
+            {% else %}
+
+              {% include 'product-thumbnail' with product-loop %}
+
+              {% if products_per_row == "2" %}
+                {% cycle '', new_row %}
+              {% elsif products_per_row == "3" %}
+                {% cycle '', '', new_row %}
+              {% elsif products_per_row == "4" %}
+                {% cycle '', '', '', new_row %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+        {% endfor %}
+
+      {% endif %}
+    </div>
+  </div>
+
+
+
+{% comment %}
+Spinnaker Collection
+{% endcomment %}
+    {% assign collection_handle = '' %}
+
+    {% include 'dress-shirt-banner' with 'Spinnaker' %}
+
+
+    <div class="section breadcrumb-wrapper">
+      <div class="sixteen columns breadcrumb filters spinnaker-filters">
+
+        {% assign collection_linklist = '' %}
+        {% assign color_linklist = '' %}
+        {% assign size_linklist = '' %}
+
+        {% assign collection_linklist = 'shop-dress-shirts-collections' %}
+        {% assign color_linklist = 'shop-dress-shirts-colors' %}
+        {% assign size_linklist = 'shop-dress-shirts-sizes' %}
+
+        <div class="four columns section_select tag">
+          <label for="filter-by-color" class="inline">Color: </label>
+          <select id="filter-by-color">
+            <option value="">All</option>
+            {% for link in linklists[color_linklist].links %}
+              {% assign selected_attribute = '' %}
+              {% if current_tags contains link.title %}
+                {% assign selected_attribute = ' selected="selected"' %}
+              {% endif %}
+              <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="four columns section_select tag">
+          <label for="filter-by-size" class="inline">Size: </label>
+          <select id="filter-by-size">
+            <option value="">All</option>
+            {% for link in linklists[size_linklist].links %}
+              {% assign selected_attribute = '' %}
+              {% if current_tags contains link.title %}
+                {% assign selected_attribute = ' selected="selected"' %}
+              {% endif %}
+              <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="four columns section_select omega">
+          <label for="sort-by" class="inline">Sort by: </label>
+          <select id="sort-by">
+            <option value="manual">Featured</option>
+            <option value="price-ascending">Price: Low to High</option>
+            <option value="price-descending">Price: High to Low</option>
+            <option value="title-ascending">A-Z</option>
+            <option value="title-descending">Z-A</option>
+            <option value="created-ascending">Oldest to Newest</option>
+            <option value="created-descending">Newest to Oldest</option>
+            <option value="best-selling">Best Selling</option>
+          </select>
+        </div>
+
+      </div><!-- .columns.sixteen.breadcrumb -->
+    </div><!-- .section.clearfix.breadcrumb-wrapper -->
+
+
+
+    <div class="row">
+    {% assign collection = collections.spinnaker-collection %}
+    <div class="sixteen columns product-grid grid-container spinnaker-grid">
+      {% if collection.products.size == 0 %}
+        <div class="section clearfix">
+          <p class="quote">No matching products found.</p>
+        </div>
+      {% else %}
+        {% assign products = collection.products %}
+        {% assign products_per_row = settings.products_per_row %}
+
+        {% assign product_found = false %}
+        {% assign skip = false %}
+
+        {% capture new_row %}
+            <br class="clear product_clear" />
+        {% endcapture %}
+
+        {% for product in products limit: limit %}
+
+          {% if product.id == skip_product.id or skip == true %}
+            {% assign product_found = true %}
+          {% else %}
+            {% if forloop.rindex0 == 0 and product_found == false and forloop.length != products.count and template != 'search' %}
+              {% assign skip = true %}
+            {% else %}
+
+              {% include 'product-thumbnail' with product-loop %}
+
+              {% if products_per_row == "2" %}
+                {% cycle '', new_row %}
+              {% elsif products_per_row == "3" %}
+                {% cycle '', '', new_row %}
+              {% elsif products_per_row == "4" %}
+                {% cycle '', '', '', new_row %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+        {% endfor %}
+
+      {% endif %}
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+ $('#sort-by')
+    .val('{{ collection.sort_by | default: collection.default_sort_by  }}')
+    .bind('change', function() {
+      Shopify.queryParams.sort_by = $(this).val();
+      location.search = $.param(Shopify.queryParams);
+  });
+  $('.section_select.tag select').bind('change', function() {
+
+    var url = "/collections/";
+    url += ($(this).closest('.spinnaker-filters').length) ? 'spinnaker-collection' : 'leeward-collection'; // deciding if on spinnaker collection or not
+
+    var $tag_selects = $('.section_select.tag > select');
+    var appended_tags_count = 0;
+    for (var i = 0; i < $tag_selects.length; i++) {
+      var $select = $($tag_selects[i]);
+
+      if (appended_tags_count === 0 && $select.val()) {
+        url+= '/' + handleize($select.val());
+        appended_tags_count++;
+      } else if (appended_tags_count > 0 && $select.val()) {
+        url+= '+' + handleize($select.val());
+        appended_tags_count++;
+      } else {
+        // <select> with value of "", do nothing.
+      }
+    };
+    var query_params = location.search.replace( /&variant\=[0-9]{10}/, '' );
+    document.location.href = url + query_params;
+  });
+  function handleize(t) {
+    return t=t.toLowerCase(),t=t.replace(/'|\"|\(|\)|\[|\]/g,""),t=t.replace(/\W+/g,"-"),"-"===t.slice(-1)&&(t=t.replace(/-+$/,"")),"-"===t.slice(0,1)&&(t=t.replace(/^-+/,"")),t
+  }
+}());
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.info-container').hide();
+
+  $('.info-button').click(function(){
+    $('.info-container').toggle(function(){
+      if ($('.info-button').text() == '+ MORE ABOUT THE LEEWARD') {
+        $('.info-button').text('- SHOW LESS');
+      } else {
+        $('.info-button').text('+ MORE ABOUT THE LEEWARD');
+      }
+      if ($('.info-button').text() == '+ MORE ABOUT THE SPINNAKER') {
+        $('.info-button').text('- SHOW LESS');
+      } else {
+        $('.info-button').text('+ MORE ABOUT THE SPINNAKER');
+      }
+    });
+  });
+});
+</script>

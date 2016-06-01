@@ -1,0 +1,51 @@
+{% if dress-shirt-banner contains 'Spinnaker' %}
+{% assign temp_collection = collections['spinnaker-collection'] %}
+{% assign extra_class= 'spinnaker-background' %}
+{% endif %}
+
+
+{% if dress-shirt-banner contains 'Leeward' %}
+{% assign temp_collection = collections['leeward-collection'] %}
+{% assign extra_class= 'leeward-background' %} 
+{% endif %}
+
+{% assign banner_text_position = '' %}
+{% if temp_collection.description contains '<!-- position:left -->' %}
+  {% assign banner_text_position = 'snap-left' %}
+{% elsif temp_collection.description contains '<!-- position:right -->' %}
+  {% assign banner_text_position = 'snap-right' %}
+{% endif %}
+
+{% assign collection_title_condition = '' %}
+{% if temp_collection.handle contains '-collection' %}
+  {% assign collection_title_condition = 'downsize' %}
+{% endif %}
+
+{% assign banner_text_width = '40%' }
+{% assign description = temp_collection.description | split: '<!-- width:' %}
+{% assign description = temp_collection.description | split: '<!-- width:' %}
+{% for width in description %}
+  {% if width contains '% -->' %}
+    {% assign new_width = width | split: '% -->' %}
+  {% endif %}
+{% endfor %}
+
+{% assign description-background-x = temp_collection.description | split: '<!-- background-x:' %}
+{% assign description-background-x = temp_collection.description | split: '<!-- background-x:' %}
+{% for width in description-background-x %}
+  {% if width contains '% -->' %}
+    {% assign new_background-x = width | split: '% -->' | first %}
+  {% endif %}
+{% endfor %}
+
+<div class="collection-banner center">
+  <img src="{{ temp_collection.image.src | img_url: '2048x2048' }}" alt="{{ temp_collection.image.alt }}" />
+  <div class="collection-banner-text {{ banner_text_position }} {{ collection_title_condition }}" style="width: {{ new_width | first }}%;" >{{ temp_collection.description }}</div>
+</div>
+
+<div class="mobile-banner-background mobile-banner-background-stretched {{ extra_class }} {% if temp_collection.description contains '<p>' %}{% else %}no-description{% endif %}" style="background-image:url('{{ temp_collection.image.src | img_url: '2048x2048' }}');background-position-x:{{ new_background-x }}%;">
+<div style="background: white;">
+  <div class="collection-banner-text-mobile {{ banner_text_position }} {{ collection_title_condition }} {{ no_description }}" style="width: {{ new_width | first }}%;" >{{ temp_collection.description }}</div>
+</div>
+</div>
+

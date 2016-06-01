@@ -1,0 +1,87 @@
+<div class="sixteen columns page clearfix">
+  <h1 class="center">
+    {{ page.title }}
+  </h1>
+  <div class="feature_divider"></div>
+
+  <div class="headertext">
+    {% comment %}<h4>Who we are.</h4>{% endcomment %}
+    <span class="headersecond">WE ARE TRADITION EVOLVED.</span>
+  </div>
+
+
+  <div class="story">
+    <p>The Mizzen and the Main are the driving forces of a sailboat, harnessing the power of wild ocean winds to propel its captain forward, just as our use of advanced performance fabrics have thrust traditional menswear into a new era. </p>
+    <p> We have broken the chains of your wardrobe by combining the comfort and flexibility of your favorite athletic gear with the fit of a custom dress shirt and style of a Kennedy. </p>
+    <p> Mizzen+Main’s mission of disruption has made waves in the apparel industry, making us a fast favorite among professional athletes. </p>
+  </div>
+
+  <div class="sailpic">
+    <img src="{{ 'sail_pic.jpg' | asset_url }}" width="928" height="619" alt=""/>
+  </div>
+
+  <div class="center">
+    <img src="{{ 'line.png' | asset_url }}" alt="">
+  </div>
+
+  <div class="headertext">
+    {% comment %}<h4>Why we're great.</h4>{% endcomment %}
+    <span class="headersecond">PERFORMANCE FABRIC. TRADITIONAL STYLE.</span>
+  </div>
+
+  <div class="shirtchart" style="text-align:center;">
+    <img src="{{ 'shirt_chart.png' | asset_url }}" alt="" width="750" height="600">
+  </div>
+
+  <div class="mobileshirt">
+    <div class="one-quarter column">
+      <span class="shirttop">Stretch it out </span><br>
+      <span class="shirtbottom">Your secret weapon... comfort</span>
+    </div>
+    <div class="one-quarter column">
+      <span class="shirttop">Fits like a glove </span><br>
+      <span class="shirtbottom">Off the rack never looked so good</span>
+    </div>
+    <div class="one-quarter column">
+      <span class="shirttop">Drama free. </span><br>
+      <span class="shirtbottom">99 problems but dry cleaning isn't one</span>
+    </div>
+    <div class="one-quarter column">
+      <span class="shirttop">Don't sweat it </span><br>
+      <span class="shirtbottom">Throw those hands in the air</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="shirticons">
+      <div class="one-quarter column">
+        <img src="{{ 'shirtchart_moisturewicking.png' | asset_url }}" alt="">
+      </div>
+      <div class="one-quarter column">
+        <img src="{{ 'shirtchart_machinewashable.png' | asset_url }}" alt="">
+      </div>
+      <div class="one-quarter column">
+        <img src="{{ 'shirtchart_fourwaystretch.png' | asset_url }}" alt="">
+      </div>
+      <div class="one-quarter column">
+        <img src="{{ 'shirtchart_superiorfit.png' | asset_url }}" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <img src="{{ 'line.png' | asset_url }}" alt="">
+  </div>
+
+  <div class="headertext">
+    {% comment %}<h4>Who's talking.</h4>{% endcomment %}
+  </div>
+
+  {% include 'press-quotes' %}
+
+  <div class="center">
+    <img src="{{ 'line.png' | asset_url }}" alt="">
+    <img src="{{ 'madeinusa.jpg' | asset_url }}" alt="" width="365" height="204">
+  </div>
+
+</div> {% comment %}sixteen columns page clearfix{% endcomment %}

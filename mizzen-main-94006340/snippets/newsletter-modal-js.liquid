@@ -1,0 +1,56 @@
+<script>
+var HeaderNewsletterSignup = (function($) {
+  var _this = {};
+  var $modal = $('#header .newsletter-modal');
+
+  _this.initialize = function() {
+    var visitor_is_new = checkCookie();
+    {% if customer %}
+      visitor_is_new = false;
+    {% endif %}
+    if (visitor_is_new && Testing.disableNewsletterPromotion === false ) {
+      $modal.addClass('active');
+    };
+    $(document).on('click', '.open-newsletter-modal', function(event) {
+      event.preventDefault();
+      $modal.slideDown();
+    });
+    $(document).on('click', '.close-newsletter-modal', function(event) {
+      event.preventDefault();
+      $modal.slideUp();
+    });
+  }
+
+  return _this;
+
+  function checkCookie() {
+    var visitor_is_new = false;
+
+    var duration = 99999999999; // hours
+    var expires = new Date(); expires.setHours(expires.getHours() + duration);
+    var namespace = 'headerNewsletterSignup';
+    var data = namespace + '=1';
+    data+= '; expires=' + expires.toUTCString();
+    data+= '; path=/';
+
+    if (document.cookie.indexOf(namespace) === -1) { // if its not there, user is new
+      visitor_is_new = true;
+      document.cookie = data;
+    };
+
+    // return true;
+    return visitor_is_new;
+  }
+
+}(jQuery));
+
+$(document).ready(function() {
+
+  if (Testing.disableNewsletterPromotion === null) {
+    // If it's null, don't initialize. Null is passed in via Optimizely when the modal needs to be completely disabled.
+  } else {
+    HeaderNewsletterSignup.initialize();
+  }
+});
+
+</script>

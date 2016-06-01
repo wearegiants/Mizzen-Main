@@ -1,0 +1,108 @@
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      {% comment %}
+      Column 1 - Nav
+      {% endcomment %}
+      <div class="columns three nav">
+        <nav>
+          <h4>Help</h4>
+          <ul class="list-vertical">
+            {% for link in linklists.footer-help.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      {% comment %}
+      Column 2 - Nav
+      {% endcomment %}
+      <div class="columns two nav">
+        <nav>
+          <h4>Company</h4>
+          <ul class="list-vertical">
+            {% for link in linklists.footer-company.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      {% comment %}
+      Column 3 - Social Links
+      {% endcomment %}
+      <div class="columns six social-links">
+        <ul class="list-inline">
+          {% if settings.facebook_link != '' %}
+            <li><a class="facebook" target="_blank" href="{{ settings.facebook_link }}"><i class="fa fa-facebook"></i></a></li>
+          {% endif %}
+          {% if settings.instagram_link != '' %}
+            <li><a class="instagram" target="_blank" href="{{ settings.instagram_link }}"><i class="fa fa-instagram"></i></a></li>
+          {% endif %}
+          {% if settings.twitter_link != '' %}
+            <li><a class="twitter" target="_blank" href="{{ settings.twitter_link }}"><i class="fa fa-twitter"></i></a></li>
+          {% endif %}
+          {% if settings.pinterest_link != '' %}
+            <li><a class="pinterest" target="_blank" href="{{ settings.pinterest_link }}"><i class="fa fa-pinterest"></i></a></li>
+          {% endif %}
+          {% if settings.tumblr_link != '' %}
+            <li><a class="tumblr" target="_blank" href="{{ settings.tumblr_link }}"><i class="fa fa-tumblr"></i></a></li>
+          {% endif %}
+        </ul>
+      </div><!-- .columns.five -->
+      {% comment %}
+      Column 4 - Newsletter Signup
+      {% endcomment %}
+      <div class="columns five newsletter">
+        <h4>Get the Main Scoop</h4>
+          {% comment %}___Old Mailchimp Newsletter____{% endcomment %}
+          {% comment %}<form class="float-contents" action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" target="_blank">
+          <input type="email" name="EMAIL" required="required" placeholder="Your email please...">
+          <input type="submit" value="submit" class="bbutton">
+        </form>{% endcomment %}
+        {% comment %}____END of Mailchimp Newsletter___{% endcomment %}
+        <form id="email_signup_footer" class="klaviyo_styling klaviyo_standard_embed_kgTeMG" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+          <input type="hidden" name="g" value="kgTeMG">
+          <div class="klaviyo_field_group">
+            <label for="k_id_email"></label>
+            <input type="email" value="" name="email" id="k_id_email" placeholder="Your email please..." />
+          </div>
+          <div class="klaviyo_messages">
+            <div class="success_message" style="display:none;">Thanks for Subscribing!</div>
+            <div class="error_message" style="display:none;"></div>
+            </div>
+          <div class="klaviyo_form_actions">
+            <button type="submit" class="klaviyo_submit_button">Submit</button>
+          </div>
+        </form>
+        <style type="text/css">
+          .klaviyo_styling.klaviyo_standard_embed_qECXGE,
+          .klaviyo_condensed_styling.klaviyo_standard_embed_qECXGE {
+            font-family: inherit;
+          }.klaviyo_styling.klaviyo_standard_embed_qECXGE label,
+          .klaviyo_condensed_styling.klaviyo_standard_embed_qECXGE label {
+
+          }.klaviyo_styling.klaviyo_standard_embed_qECXGE input[type=text],
+          .klaviyo_styling.klaviyo_standard_embed_qECXGE input[type=email],
+          .klaviyo_condensed_styling.klaviyo_standard_embed_qECXGE input[type=text],
+          .klaviyo_condensed_styling.klaviyo_standard_embed_qECXGE input[type=email] {
+            border-radius: undefined;
+          }.klaviyo_styling.klaviyo_standard_embed_qECXGE .klaviyo_submit_button,
+          .klaviyo_condensed_styling.klaviyo_standard_embed_qECXGE .klaviyo_submit_button {
+
+            border-radius: undefined;
+          }.klaviyo_styling.klaviyo_standard_embed_qECXGE .klaviyo_submit_button:hover,
+          .klaviyo_condensed_styling.klaviyo_standard_embed_qECXGE .klaviyo_submit_button:hover {
+
+          }
+        </style>
+        <script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+        <script type="text/javascript">
+            KlaviyoSubscribe.attachToForms('#email_signup_footer', {
+            hide_form_on_success: true,
+            custom_success_message: true
+          });
+        </script>
+      </div><!-- .columns.newsletter -->
+    </div><!-- .row -->
+  </div><!-- .container -->
+</footer><!-- #footer -->

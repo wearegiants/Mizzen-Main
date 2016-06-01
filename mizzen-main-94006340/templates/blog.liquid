@@ -1,0 +1,104 @@
+{% if settings.slideshow_blog_enabled %}
+  <div id="slide-blog">
+    <div class="bcg"
+        data-bottom-top="background-position: 50% 200px;"
+        data-top-bottom="background-position: 50% -200px;"
+        data-anchor-target="#slide-blog">
+        <div class="hsContainer">
+            <div class="hsContent {{ settings.image_blog_text_align }}">
+              <div>
+                <h1 class="headline" style="color:{{settings.image_blog_text_color}}">{{ settings.image_blog_headline }}</h1>
+                <p class="subtitle" style="color:{{settings.image_blog_text_color}}">{{ settings.image_blog_subtitle }}</p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container">
+{% endif %}
+
+{% paginate blog.articles by 10 %}
+    {% unless settings.slideshow_blog_enabled %}
+      <div class="sixteen columns">
+        <h1 class="center"><a href="{{ blog.url }}" title="{{ blog.title | escape }}">{{ blog.title }}</a></h1>
+        <div class="feature_divider"></div>
+      </div>  
+    {% endunless %}
+
+    <div class="section clearfix">
+      <div class="sixteen columns clearfix breadcrumb">
+        <div class="eight columns breadcrumb_text alpha">
+          {% if settings.blog_breadcrumb %}
+            <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span> 
+            &nbsp;<span class="icon-right-arrow"></span>
+            <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ blog.url }}" title="{{ blog.title | escape }}" itemprop="url"><span itemprop="title">{{ blog.title }}</span></a></span>       
+            {% if current_tags %}
+              {% for tag in current_tags %}
+                &nbsp;<span class="icon-right-arrow"></span>
+                <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="url"><span itemprop="title">{{ tag }}</span></a></span>
+              {% endfor %}
+            {% endif %}
+          
+            {% if paginate.pages != 0 %}      
+              &nbsp;<span class="icon-right-arrow"></span> Page {{ paginate.current_page }} of {{ paginate.pages }}
+            {% endif %}
+          {% endif %}
+        </div>
+
+      {% if settings.blog_tags %}
+        <div class="four offset-by-four columns section_select omega">
+          <select name="tag_filter" id="tag_filter" class="blog_filter">
+            <option {% unless current_tags %}selected="selected"{% endunless %} value="{{ blog.url }}">All Categories</option>
+            {% for tag in blog.all_tags %}
+              <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% for article in blog.articles %}
+    <div class="sixteen columns article">
+      <div class="five columns alpha omega blog_meta">
+        <h2><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h2>
+          
+        <p class="meta">
+          {{ article.published_at | date: "%B %d, %Y" }}
+        </p>
+
+        {% if article.comments_enabled? %}
+          <p class="meta">
+            <a href="{{ article.url }}#comments" class="title" title="{{ article.title | escape }} Comments">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
+          </p>
+        {% endif %}
+
+        {% if settings.blog_tags %}
+          <p class="meta">
+            {% for tag in article.tags %}
+              <a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}" class="tag">{{ tag }} &rsaquo;</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+
+      </div>
+
+      <div class="ten columns alpha blog_content">
+        {% if article.excerpt != blank %}
+          {{ article.excerpt }}
+          <p>
+            <a href="{{ article.url }}" title="{{ article.title | escape }}">View full article &rarr;</a>  
+          </p>       
+        {% else %}
+          {{ article.content }} 
+        {% endif %}        
+      </div>
+    </div>
+  {% endfor %}
+  
+  <div class="sixteen columns">
+    {% include 'pagination' %} 
+  </div>   
+  
+{% endpaginate %}
