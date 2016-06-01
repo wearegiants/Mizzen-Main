@@ -5,8 +5,8 @@ function cartSize(){
   	var cf = $('#cart-sidebar__footer').height();
   	var ih = wh - ch;
   	$('#cart-sidebar__content').css('height', ih);
-    console.log(wh);
-    console.log(ih);
+    //console.log(wh);
+    //console.log(ih);
   }).resize();
 }
 

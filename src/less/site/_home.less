@@ -123,13 +123,14 @@
         font-size: 15px;
         font-weight: 500;
         margin: 8px 0;
-        transition: 600ms ease;
+        color: @gray;
+        transition: 300ms ease;
       }
       p {
         .font_size(18);
         line-height: 1.2;
         opacity: 0;
-        transition: 600ms ease;
+        transition: 300ms ease;
       }
       .fs-cell {
         &:hover {
@@ -139,6 +140,7 @@
           p {
             opacity: 1;
             transform: translateY(-30px);
+            color: @blue;
           }
           .icon {
             &--first {
@@ -160,7 +162,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
-        transition: 600ms ease;
+        transition: 300ms ease;
 
         &--first {
           opacity: 1;
@@ -282,10 +284,10 @@
 
     &__nav {
       @media @min {
-        width: 20px;  
+        width: 0px;  
       }
       @media @desktop {
-        width: 40px;  
+        width: 30px;  
       }
       position: absolute;
       top: 50%;

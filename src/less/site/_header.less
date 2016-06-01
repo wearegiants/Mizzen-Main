@@ -172,6 +172,8 @@
     pointer-events: none;
     transition: opacity 200ms ease;
     text-align: center;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
 
     @media @min {
       padding: @spaced 0;

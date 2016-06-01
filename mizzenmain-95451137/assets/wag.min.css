@@ -4654,6 +4654,9 @@ hr.nomargin {
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
   text-align: center;
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 }
 @media screen and (min-width: 300px) {
   #header__dropdown {
@@ -5194,16 +5197,17 @@ hr.nomargin {
   font-size: 15px;
   font-weight: 500;
   margin: 8px 0;
-  -webkit-transition: 600ms ease;
-  transition: 600ms ease;
+  color: #999999;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
 }
 .home__performance-icons p {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.2;
   opacity: 0;
-  -webkit-transition: 600ms ease;
-  transition: 600ms ease;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
 }
 .home__performance-icons .fs-cell:hover h4 {
   opacity: 0;
@@ -5212,6 +5216,7 @@ hr.nomargin {
   opacity: 1;
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
+  color: #112D51;
 }
 .home__performance-icons .fs-cell:hover .icon--first {
   opacity: 0;
@@ -5230,8 +5235,8 @@ hr.nomargin {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: 600ms ease;
-  transition: 600ms ease;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
 }
 .home__performance .relative .icon--first {
   opacity: 1;
@@ -5367,12 +5372,12 @@ hr.nomargin {
 }
 @media screen and (min-width: 300px) {
   .home-carousel__nav {
-    width: 20px;
+    width: 0px;
   }
 }
 @media screen and (min-width: 980px) {
   .home-carousel__nav {
-    width: 40px;
+    width: 30px;
   }
 }
 .home-carousel__nav:hover {
