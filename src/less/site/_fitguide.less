@@ -672,3 +672,58 @@
     font-weight: normal;
   }
 }
+
+.fit-link {
+  font-family: 'Bryant Regular Web Font', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0px 15px;
+  font-size:  14px;
+  border-radius: 3px;
+  float: left;
+  transition: 300ms ease;
+
+  &--wrapper {
+    clear: both;
+  }
+  
+  &--ruler {
+    background: url('1464838211_ruler-scale-measure.svg') 7px center no-repeat;
+    border: 1px solid #ddd;
+    background-size: auto 60%;
+    padding-left: 35px;
+    color: @blue!important;
+    &:hover {
+      color: @blue;
+      border: 1px solid @blue;
+    }
+  }
+
+  &--plain {
+    border: 1px solid #ddd;
+    color: @blue!important;
+    &:hover {
+      color: @blue;
+      border: 1px solid @blue;
+    }
+  }
+
+  &--naked {
+    color: @textGray!important;
+    border: 1px solid transparent;
+    &:hover {
+      color: @blue!important;
+      border: 1px solid #ddd;
+    }
+  }
+
+}
+
+
+
+

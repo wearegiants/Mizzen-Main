@@ -167,17 +167,17 @@ Top Section: Gallery and Product Details
           <div class="columns ssubmit">
             <a class="free-shipping">Free Shipping</a>
             <input class="add_product" type="submit" name="add" value="Add to Cart" data-product="{{ product.id }}">
-
-            {% if product.type == 'Dress Shirt' %}
-            <hr class="divider">
-            <a class="fit-link" href="https://mizzenmain.myshopify.com/pages/fit-guide-top">View the Fit Guide</a>
-            {% endif %}
-            {% if product.type == 'Pants' %}
-            <hr class="divider">
-            <a class="fit-link" href="https://mizzenmain.myshopify.com/pages/fit-guide-pants">View the Fit Guide</a>
-            {% endif %}
-
           </div>
+          {% if product.type == 'Dress Shirt' %}
+          <div class="fit-link--wrapper">
+          <a class="fit-link fit-link--ruler" href="https://mizzenmain.myshopify.com/pages/fit-guide-top">Fit Guide</a>
+          <a class="fit-link fit-link--plain" href="https://mizzenmain.myshopify.com/pages/fit-guide-top">Fit Guide</a>
+          <a class="fit-link fit-link--naked" href="https://mizzenmain.myshopify.com/pages/fit-guide-top">Fit Guide</a>
+          </div>
+          {% endif %}
+          {% if product.type == 'Pants' %}
+          <a class="fit-link" href="https://mizzenmain.myshopify.com/pages/fit-guide-pants">Fit Guide</a>
+          {% endif %}
         </div><!-- .row.inputs -->
 
         <div class="row">

@@ -6173,52 +6173,6 @@ hr.nomargin {
   color: #112D51;
   font-weight: normal;
 }
-.fit-link {
-  font-family: 'Bryant Regular Web Font', sans-serif;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 1px;
-  display: block;
-  margin: 0 10px;
-  height: 35px;
-  line-height: 35px;
-  padding: 0px 15px;
-  font-size: 14px;
-  border-radius: 3px;
-  float: left;
-  -webkit-transition: 300ms ease;
-  transition: 300ms ease;
-}
-.fit-link--wrapper {
-  clear: both;
-}
-.fit-link--ruler {
-  background: url('1464838211_ruler-scale-measure.svg') 7px center no-repeat;
-  border: 1px solid #ddd;
-  background-size: auto 60%;
-  padding-left: 35px;
-  color: #112D51 !important;
-}
-.fit-link--ruler:hover {
-  color: #112D51;
-  border: 1px solid #112D51;
-}
-.fit-link--plain {
-  border: 1px solid #ddd;
-  color: #112D51 !important;
-}
-.fit-link--plain:hover {
-  color: #112D51;
-  border: 1px solid #112D51;
-}
-.fit-link--naked {
-  color: #666666 !important;
-  border: 1px solid transparent;
-}
-.fit-link--naked:hover {
-  color: #112D51 !important;
-  border: 1px solid #ddd;
-}
 #bag {
   position: relative;
 }

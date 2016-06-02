@@ -46,6 +46,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/main.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/main.min.js",
+		"outputAbbreviatedPath": "\/assets\/min\/main.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/assets\/mizzenmain-logo_blue.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -4505,6 +4516,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/mizzen-main-94006340\/assets\/min\/77ecc960973800bc72474ed1798c32e9-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/min\/77ecc960973800bc72474ed1798c32e9-min.js",
+		"outputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/min\/min\/77ecc960973800bc72474ed1798c32e9-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/mizzen-main-94006340\/assets\/Mizzen_Main_Logotype_blue_online.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -4512,6 +4534,17 @@
 		"initialSize": 82351,
 		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/Mizzen_Main_Logotype_blue_online.png",
 		"outputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/Mizzen_Main_Logotype_blue_online.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mizzen-main-94006340\/assets\/pants.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 158016,
+		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/pants.jpg",
+		"outputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/pants.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4710,6 +4743,17 @@
 		"initialSize": 159186,
 		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/shirt-pic.png",
 		"outputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/shirt-pic.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mizzen-main-94006340\/assets\/shirt.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 152733,
+		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/shirt.jpg",
+		"outputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/shirt.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4966,6 +5010,26 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/mizzen-main-94006340\/assets\/vendor.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/vendor.min.js",
+		"outputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/min\/vendor.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/mizzen-main-94006340\/assets\/wag.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mizzen-main-94006340\/assets\/wag.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/mizzen-main-94006340\/config\/settings_data.json": {
 		"fileType": 524288,
 		"ignore": 1,
@@ -4987,6 +5051,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
+		},
+	"\/mizzen-main-94006340\/css\/styles.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mizzen-main-94006340\/css\/styles.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/mizzen-main-94006340\/locales\/en.default.json": {
 		"fileType": 524288,
