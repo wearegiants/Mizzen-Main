@@ -1,35 +1,11 @@
 <div class="product-images">
   <div class="fs-row">
-    <div class="fs-cell fs-xl-10 fs-lg-12 fs-md-5 fs-sm-3">
+    <div class="fs-cell fs-xl-12 fs-lg-12 fs-md-6 fs-sm-3">
       <div class="carousel" data-carousel-options='{"controls":false,"pagination":false}'>
         {% for image in product.images %}
-        <div>
+        <div class="carousel__slide">
           <img class="img-responsive" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}" />
         </div>
-        {% endfor %}
-      </div>
-    </div>
-    <hr class="compact invisible fs-cell fs-xl-hide fs-lg-full fs-md-hide fs-sm-3">
-    <div class="fs-cell fs-xl-2 fs-lg-12 fs-md-1 fs-sm-3">
-      <div class="fs-row">
-        {% for image in product.images %}
-
-        {% if forloop.length == 3 %}
-        {% assign count = "fourth" %}
-        {% elsif forloop.length == 4 %}
-        {% assign count = "fourth" %}
-        {% elsif forloop.length == 5 %}
-        {% assign count = "fifth" %}
-        {% elsif forloop.length >= 6 %}
-        {% assign count = "fifth" %}
-        {% else %}
-        {% assign count = "fourth" %}
-        {% endif %}
-
-        <a class="product-images__thumb fs-cell fs-xl-full fs-lg-{{ count }} fs-md-full fs-sm-{{ count }}" onclick='$(".carousel").carousel("jump", {{ forloop.index }});'>
-          <img class="img-responsive" src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" />
-          <hr class="compact invisible fs-sm-hide">
-        </a>
         {% endfor %}
       </div>
     </div>

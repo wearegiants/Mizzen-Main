@@ -1,0 +1,46 @@
+.perf {
+  &__title {
+    .headerFont();
+    color: @blue;
+    -webkit-font-smoothing: antialiased;
+  }
+  &__hero {
+    @media @tablet {
+      height: 500px;
+    }
+    @media @desktop {
+      height: 600px;
+    }
+  }
+  &__centered {
+    @media @tablet {
+      .center();
+      width: 100%;
+    }
+  }
+  &__carousel {
+
+  }
+  &__slide {
+    .headerFont();
+    -webkit-font-smoothing: antialiased;   
+  }
+}
+
+.carousel_fade .fs-carousel-item {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0s linear, visibility 0s linear;
+  transition: opacity 0s linear, visibility 0s linear;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.carousel_fade .fs-carousel-item.fs-carousel-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}

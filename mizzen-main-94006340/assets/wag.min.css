@@ -5641,29 +5641,29 @@ hr.nomargin {
 }
 @media screen and (min-width: 300px) {
   .fit-guide__desc.trim {
-    top: 145px;
+    top: 125px;
     left: 15%;
   }
 }
 @media screen and (min-width: 500px) {
   .fit-guide__desc.trim {
-    top: 145px;
+    top: 125px;
     left: 115px;
   }
 }
 @media screen and (min-width: 740px) {
   .fit-guide__desc.trim {
-    top: 330px;
+    top: 170px;
     left: 15px;
     width: 190px;
   }
   .fit-guide__desc.trim span:before {
-    width: 133px;
+    width: 113px;
   }
 }
 @media screen and (min-width: 980px) {
   .fit-guide__desc.trim {
-    top: 330px;
+    top: 230px;
     left: 40px;
     width: auto;
   }
@@ -5673,7 +5673,7 @@ hr.nomargin {
 }
 @media screen and (min-width: 1220px) {
   .fit-guide__desc.trim {
-    top: 330px;
+    top: 230px;
     left: 140px;
   }
   .fit-guide__desc.trim span:before {
