@@ -4,13 +4,17 @@
       <div class="perf__hero relative">
         <div class="perf__centered wrapper--extra">
           <h2 class="perf__title">Image goes here</h2>
+          <a onclick='$(".perf__carousel").carousel("jump", 1);'>Go to 1</a>
+          <a onclick='$(".perf__carousel").carousel("jump", 2);'>Go to 2</a>
+          <a onclick='$(".perf__carousel").carousel("jump", 3);'>Go to 3</a>
+          <a onclick='$(".perf__carousel").carousel("jump", 4);'>Go to 4</a>
         </div>
       </div>
     </div>
     <div class="fs-cell fs-lg-half fs-md-full fs-sm-3">
       <div class="perf__hero relative">
         <div class="perf__centered wrapper--extra">
-          <div id="perf__carousel" class="carousel_fade carousel" data-carousel-options='{"single":true, "autoHeight":true, "controls":false,"pagination":true}'>
+          <div id="perf__carousel" class="perf__carousel carousel_fade carousel" data-carousel-options='{"single":true, "autoHeight":true, "controls":false,"pagination":false}'>
             <div class="perf__slide carousel__slide bg--bgGray">
               <h2 class="perf__title">Performance Fabric</h2>
               <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
