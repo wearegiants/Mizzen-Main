@@ -1,0 +1,44 @@
+{% comment %}
+_collection_handle
+_title
+_limit
+{% endcomment %}
+{% assign _collection = collections[_collection_handle] %}
+{% assign a = _limit | plus: 1 %}
+
+<div class="products-list">
+  <div class="fs-row heading">
+    <div class="fs-cell fs-all-full text-center">
+      <h2>{{ _title }}</h2>
+    </div><!-- .columns -->
+  </div>
+
+
+  <div class="fs-row products">
+    {% assign i = 0 %}
+    {% for _product in _collection.products | limit: a %}
+      {% unless _product.id == product.id or i >= _limit %}
+
+        {% assign i = i | plus: 1 %}
+        <div class="fs-cell fs-lg-third fs-md-third fs-sm-3 text-center">
+          <a href="{{ _product.url }}">
+            <img src="{{ _product.images.first | img_url: 'large' }}" alt="{{ _product.images.first.alt }}">
+            {% assign h1 = '' %}
+            {% assign h3 = '' %}
+            {% assign a = _product.title | split: '"' %}
+            {% if a.size == 3 %}
+              {% assign h1 = a[1] %}
+              {% assign h3 = a[2] %}
+              <h3>{{ h1 }}</h3>
+              <h4>{{ h3 }}</h4>
+            {% else %}
+              {% assign h1 = {{ _product.title }} %}
+              <h3>{{ h1 }}</h3>
+            {% endif %}
+          </a>
+        </div><!-- .columns.quarter -->
+
+      {% endunless %}
+    {% endfor %}
+  </div><!-- .row -->
+</div><!-- .products-list -->
