@@ -6206,19 +6206,23 @@ hr.nomargin {
   color: #112D51;
   border: 1px solid #112D51;
 }
-.fit-link--plain {
+.fit-link--plain,
+.fit-link #buttonPlacement a {
   border: 1px solid #ddd;
   color: #112D51 !important;
 }
-.fit-link--plain a {
+.fit-link--plain a,
+.fit-link #buttonPlacement a a {
   color: inherit!important;
 }
-.fit-link--plain:hover {
+.fit-link--plain:hover,
+.fit-link #buttonPlacement a:hover {
   color: #112D51;
   border: 1px solid #112D51;
   text-decoration: none;
 }
-.fit-link--plain:hover a {
+.fit-link--plain:hover a,
+.fit-link #buttonPlacement a:hover a {
   text-decoration: none;
 }
 .fit-link--naked {
