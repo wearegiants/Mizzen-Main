@@ -5496,6 +5496,29 @@ hr.nomargin {
 .home-carousel .fs-carousel-page {
   background: #fff;
 }
+#prod {
+  -webkit-font-smoothing: antialiased;
+}
+#prod__info {
+  position: relative;
+}
+#prod .product-title {
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  color: #112D51;
+  letter-spacing: 1px;
+}
+#prod .product-desc {
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+}
+#prod .product-variant label {
+  display: none!important;
+}
+#prod .product-variant select {
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+}
 .mfp-content #fitguide {
   padding: 50px 0;
   background: #fff;

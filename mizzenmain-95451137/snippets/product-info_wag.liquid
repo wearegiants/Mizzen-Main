@@ -27,6 +27,10 @@
 
     <hr class="invisible compact">
 
+    <div class="product-desc">{{ product.description }}</div>
+
+    <hr class="invisible compact">
+
     <div id="product-variants" class="product-variant {% if hide_default_title %} hidden{% endif %}">
       <div class="fs-row">
         <select id="product-select" name="id">
@@ -42,8 +46,22 @@
     <hr class="invisible compact">
 
     <div class="product-add" id="product-add">
-      <input type="submit" name="add" id="add" class="primary btn btn--full color--white" value="Add to Cart">
+      <input type="submit" name="add" id="add" class="primary btn btn--full color--white" value="{{ add_to_cart | escape }}">
+      aaa
     </div>
+
+    {% if product.type == 'Dress Shirt' %}
+    <div class="fit-link--wrapper">
+      <a class="fit-link fit-link--ruler" href="/pages/fit-guide-dress-shirts">Fit Guide</a>
+      <p id="buttonPlacement"></p>
+    </div>
+    {% endif %}
+    {% if product.type == 'Pants' %}
+    <div class="fit-link--wrapper">
+      <a class="fit-link fit-link--ruler" href="/pages/fit-guide-pants">Fit Guide</a>
+      <p id="buttonPlacement"></p>
+    </div>
+    {% endif %}
 
   </div>
 

@@ -1,0 +1,30 @@
+#prod {
+
+  -webkit-font-smoothing: antialiased;
+
+  &__info {
+    position: relative;
+  }
+
+  .product {
+    &-title {
+      .mainFont();
+      color: @blue;
+      letter-spacing: 1px;
+    }
+    &-desc {
+      .mainFont();
+      //color: @blue;
+      //letter-spacing: 1px;
+    }
+    &-variant {
+      label {
+        display: none!important;
+      }
+      select {
+        .mainFont();
+      }
+    }
+  }
+
+}
