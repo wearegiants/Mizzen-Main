@@ -2,12 +2,18 @@
   <div class="fs-row">
     <div class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-right">
       <div class="perf__hero relative">
-        <div class="perf__centered wrapper--extra">
-          <h2 class="perf__title">Image goes here</h2>
-          <a onclick='$(".perf__carousel").carousel("jump", 1);'>Go to 1</a>
-          <a onclick='$(".perf__carousel").carousel("jump", 2);'>Go to 2</a>
-          <a onclick='$(".perf__carousel").carousel("jump", 3);'>Go to 3</a>
-          <a onclick='$(".perf__carousel").carousel("jump", 4);'>Go to 4</a>
+        <div class="perf__centered wrapper--extra fs-row equalized"  data-equalize-options='{"target":".equalize_child", "minWidth":"740px"}'>
+          <div class="perf__column perf__column--main fs-cell fs-lg-10 fs-md-5 fs-sm-3 --right equalize_child">
+            <img src="{{ product.featured_image.src | img_url: '1024x1024' }}" class="img-responsive" alt="Performance Illustration" />
+          </div>
+          <div class="perf__column fs-cell fs-lg-2 fs-md-1 fs-sm-3 equalize_child relative">
+            <div class="centered">
+              <a href="#" onclick='$(".perf__carousel").carousel("jump", 1);'><img src="{{ 'perf_icons-01.svg' | asset_url }}" class="" alt="Performance Illustration" /></a>&nbsp;
+              <a href="#" onclick='$(".perf__carousel").carousel("jump", 2);'><img src="{{ 'perf_icons-02.svg' | asset_url }}" class="" alt="Performance Illustration" /></a>&nbsp;
+              <a href="#" onclick='$(".perf__carousel").carousel("jump", 3);'><img src="{{ 'perf_icons-03.svg' | asset_url }}" class="" alt="Performance Illustration" /></a>&nbsp;
+              <a href="#" onclick='$(".perf__carousel").carousel("jump", 4);'><img src="{{ 'perf_icons-04.svg' | asset_url }}" class="" alt="Performance Illustration" /></a>&nbsp;
+            </div>
+          </div>
         </div>
       </div>
     </div>

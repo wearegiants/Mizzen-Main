@@ -4663,6 +4663,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/mizzenmain-95451137\/assets\/vendor.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mizzenmain-95451137\/assets\/vendor.min.js",
+		"outputAbbreviatedPath": "\/mizzenmain-95451137\/assets\/min\/vendor.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/mizzenmain-95451137\/assets\/wag.min.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -4996,7 +5007,7 @@
 		},
 	"\/src\/bower_components\/Formstone\/dist\/js\/equalize.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/src\/bower_components\/Formstone\/dist\/js\/equalize.js",
 		"outputAbbreviatedPath": "\/src\/bower_components\/Formstone\/dist\/js\/min\/equalize-min.js",
@@ -6230,7 +6241,7 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/src\/bower_components\/Formstone\/src\/less\/equalize.less",
 		"outputAbbreviatedPath": "\/src\/bower_components\/Formstone\/src\/css\/equalize.css",

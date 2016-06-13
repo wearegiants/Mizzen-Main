@@ -5,7 +5,19 @@
     <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
     <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
 
-    <h2 class="product-title" itemprop="name">{{ product.title }}</h2>
+    {% assign h1 = '' %}
+    {% assign h3 = '' %}
+    {% assign a = product.title | split: '"' %}
+
+    {% if a.size == 3 %}
+      {% assign h1 = a[1] %}
+      {% assign h3 = a[2] %}
+    {% else %}
+      {% assign h1 = product.title %}
+    {% endif %}
+
+    <h2 class="product-title" itemprop="name">{{ h1 }}</h2>
+    <h2 class="product-price" itemprop="name">{{ h3 }}</h2>
 
     <div class="product-price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="delta">
       <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
@@ -31,38 +43,38 @@
 
     <hr class="invisible compact">
 
-    <div id="product-variants" class="product-variant {% if hide_default_title %} hidden{% endif %}">
-      <div class="fs-row">
-        <select id="product-select" name="id">
-        {% for variant in product.variants %}
-          <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" class="fs-cell fs-all-half">
-          {{ variant.title }} - {{ variant.price | money }}
-          </option>
-        {% endfor %}
-        </select>
-      </div>
+    <div id="product-variants" class="product-variant fs-row {% if hide_default_title %} hidden{% endif %}">
+      <select id="product-select" name="id">
+      {% for variant in product.variants %}
+        <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" class="fs-cell fs-all-half">
+        {{ variant.title }} - {{ variant.price | money }}
+        </option>
+      {% endfor %}
+      </select>
     </div> 
 
     <hr class="invisible compact">
 
-    <div class="product-add" id="product-add">
-      <input type="submit" name="add" id="add" class="primary btn btn--full color--white" value="{{ add_to_cart | escape }}">
-      aaa
+    <div class="product-add fs-row" id="product-add">
+      <input type="submit" name="add" id="add" class="fs-cell fs-lg-8 fs-md-full fs-sm-3 fs-centered primary btn btn--full color--white" value="Add to Cart">
     </div>
 
+    <hr class="invisible compact">
+
     {% if product.type == 'Dress Shirt' %}
-    <div class="fit-link--wrapper">
+    <div class="fit-link--wrapper inline">
       <a class="fit-link fit-link--ruler" href="/pages/fit-guide-dress-shirts">Fit Guide</a>
-      <p id="buttonPlacement"></p>
+      <p id="buttonPlacement"><a href="#" class="fit-link fit--info">What Size am I?</a></p>
     </div>
     {% endif %}
     {% if product.type == 'Pants' %}
-    <div class="fit-link--wrapper">
+    <div class="fit-link--wrapper inline">
       <a class="fit-link fit-link--ruler" href="/pages/fit-guide-pants">Fit Guide</a>
-      <p id="buttonPlacement"></p>
+      <p id="buttonPlacement"><a href="#" class="fit-link fit--info">What Size am I?</a></p>
     </div>
     {% endif %}
 
   </div>
 
 </form>
+

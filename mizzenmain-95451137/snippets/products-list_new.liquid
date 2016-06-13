@@ -9,7 +9,7 @@ _limit
 <div class="products-list">
   <div class="fs-row heading">
     <div class="fs-cell fs-all-full text-center">
-      <h2>{{ _title }}</h2>
+      <h2 class="product-price">{{ _title }}</h2>
     </div><!-- .columns -->
   </div>
 
@@ -20,22 +20,25 @@ _limit
       {% unless _product.id == product.id or i >= _limit %}
 
         {% assign i = i | plus: 1 %}
-        <div class="fs-cell fs-lg-third fs-md-third fs-sm-3 text-center">
+        <div class="fs-cell fs-lg-third fs-md-third fs-sm-half text-center">
           <a href="{{ _product.url }}">
+            <div class="wrapper wrapper--notop">
             <img src="{{ _product.images.first | img_url: 'large' }}" alt="{{ _product.images.first.alt }}">
+            </div>
             {% assign h1 = '' %}
             {% assign h3 = '' %}
             {% assign a = _product.title | split: '"' %}
             {% if a.size == 3 %}
               {% assign h1 = a[1] %}
               {% assign h3 = a[2] %}
-              <h3>{{ h1 }}</h3>
-              <h4>{{ h3 }}</h4>
+              <h3 class="product-price">{{ h1 }}</h3>
+              <h4 class="product-price__small">{{ h3 }}</h4>
             {% else %}
               {% assign h1 = {{ _product.title }} %}
-              <h3>{{ h1 }}</h3>
+              <h3 class="product-price">{{ h1 }}</h3>
             {% endif %}
           </a>
+          <hr class="invisible compact">
         </div><!-- .columns.quarter -->
 
       {% endunless %}

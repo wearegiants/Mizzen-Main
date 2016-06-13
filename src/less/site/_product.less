@@ -1,27 +1,98 @@
 #prod {
 
   -webkit-font-smoothing: antialiased;
+  max-width: @maxWidth;
+  margin: auto;
 
   &__info {
     position: relative;
   }
 
+  &__images {
+    background: @bgGray;
+  }
+
+  &--note {
+    letter-spacing: 1px;
+    color: @blue;
+    .headerFont();
+    .font_size(13);
+    text-transform: uppercase;
+  }
+
   .product {
+    &-info {
+      position: relative;
+      &__wrapper {
+        position: relative;
+        @media @desktop {
+          top: 50%;
+          transform: translateY(-50%);  
+        }
+      }
+    }
     &-title {
       .mainFont();
       color: @blue;
       letter-spacing: 1px;
+      margin-bottom: 0;
+      line-height: 1.2;
+      @media @min {
+        .font_size(24);
+      }
+      @media @tablet {
+        .font_size(28);
+      }
+      @media @desktop {
+        .font_size(28);
+      }
+      @media @max {
+        .font_size(36);
+      }
+    }
+    &-price {
+      .mainFont();
+      color: @blue;
+      letter-spacing: 1px;
+      margin: @spaced/2 0;
+      .font_size(20);
+      line-height: 1.3;
+      &__small {
+        .font_size(15);
+        margin: 0;
+        .mainFont();
+        padding: 0;
+        letter-spacing: 1px;
+        color: @gray;
+        line-height: 1;
+      }
     }
     &-desc {
-      .mainFont();
+      .byantReg();
+      line-height: 1.5;
       //color: @blue;
       //letter-spacing: 1px;
+      li {
+        margin-bottom: 0;
+      }
+    }
+    &-add {
+      input {
+        margin-bottom: 0;
+      }
     }
     &-variant {
+      text-align: center;
       label {
         display: none!important;
       }
       select {
+        //display: inline-block;
+        margin-bottom: 0;
+        width: 100%;
+        min-width: 100%;
+        text-align: left;
+        //max-width: 40%;
         .mainFont();
       }
     }

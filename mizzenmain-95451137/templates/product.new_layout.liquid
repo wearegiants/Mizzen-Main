@@ -3,10 +3,21 @@
 <div id="prod" class="fs-grid fs-grid-fluid">
 
   <!-- Product Info & Images -->
-  <div class="fs-row">
-    <div class="fs-cell fs-all-full bg--bgGray relative">
-      <div id="prod__info" class="fs-cell fs-lg-half fs-md-half fs-sm-3 fs-contained fs-right"><div class="wrapper--extra">{% include 'product-info_wag' %}</div></div>
-      <div id="prod__images" class="fs-cell fs-lg-half fs-md-half fs-sm-3 fs-contained bg--gray">{% include 'product-images_wag' %}</div>
+  <div class="fs-row equalized" data-equalize-options='{"target":".equalize_child", "minWidth":"740px"}'>
+    <div class="fs-cell fs-all-full bg--bgGray relative equalize_child">
+      <div id="prod__images" class="fs-cell fs-lg-half fs-md-half fs-sm-3 fs-contained">{% include 'product-images_wag' %}</div>
+      <div id="prod__info" class="fs-cell fs-lg-half fs-md-half fs-sm-3 fs-contained fs-right">
+        <div class="fs-row">
+          <div class="fs-cell fs-xl-8 fs-lg-11 fs-md-5 fs-sm-3 fs-centered">
+            <div class="equalize_child">
+              <div class="product-info__wrapper">
+                {% include 'product-info_wag' %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper pinned pinned--bottom text-center"><small id="prod--note">Free shipping over $100</small></div>
+      </div>
     </div>
   </div>
 
@@ -14,8 +25,25 @@
 
   <!-- Product Description -->
   <div class="fs-row">
-    <div id="prod__desc" class="fs-cell fs-lg-4 fs-lg-push-2 fs-md-half fs-sm-3 "><h3 class="text-center color--blue">Description</h3>{{ product.description }}</div>
-    <div id="prod__meta" class="fs-cell fs-lg-4 fs-md-half fs-sm-3"><h3 class="text-center color--blue">Material</h3></div>
+
+    <div id="prod__desc" class="fs-cell fs-lg-4 fs-lg-push-2 fs-md-half fs-sm-3 "><h3 class="text-center color--blue product-price">Description</h3>
+      <div class="product-desc">
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Maecenas aliquam velit vel augue facilisis porttitor.</li>
+          <li>Donec dictum tellus sit amet dui maximus scelerisque.</li>
+        </ul>
+      </div>
+    </div>
+    <div id="prod__meta" class="fs-cell fs-lg-4 fs-md-half fs-sm-3"><h3 class="text-center color--blue product-price">Material</h3>
+      <div class="product-desc">
+        <ul>
+          <li>Donec dictum tellus sit amet dui maximus scelerisque.</li>
+          <li>Maecenas aliquam velit vel augue facilisis porttitor.</li>
+          <li>Donec dictum tellus sit amet dui maximus scelerisque.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <hr class="invisible huge">
@@ -110,7 +138,7 @@ jQuery(function($) {
   
   // Add label if only one product option and it isn't 'Title'.
   {% if product.options.size == 1 and product.options.first != 'Title' %}
-    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>').addClass('fs-cell fs-all-half');
+    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>').addClass('fs-cell fs-lg-8 fs-md-6 fs-sm-3 fs-centered');
 
   {% endif %}
 

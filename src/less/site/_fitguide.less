@@ -674,9 +674,9 @@
 }
 
 .fit-link {
-  font-family: 'Bryant Regular Web Font', sans-serif;
+  .headerFont();
   text-transform: uppercase;
-  font-weight: 900;
+  //font-weight: 900;
   letter-spacing: 1px;
   display: block;
   margin: 0 10px;
@@ -690,6 +690,26 @@
 
   &--wrapper {
     clear: both;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    &.inline {
+      text-align: center;
+      .fit-link {
+        display: inline-block;
+        float: none;
+      }
+    }
+    #buttonPlacement {
+      display: inline-block;
+      a {
+        border: 1px solid #ddd;
+        color: @blue!important;
+        font-weight: normal!important;
+      }
+    }
   }
   
   &--ruler {
@@ -698,6 +718,7 @@
     background-size: auto 60%;
     padding-left: 35px;
     color: @blue!important;
+    font-weight: normal;
     &:hover {
       color: @blue;
       border: 1px solid @blue;
@@ -707,9 +728,8 @@
   &--plain, #buttonPlacement a {
     border: 1px solid #ddd;
     color: @blue!important;
-    a {
-      color: inherit!important;
-    }
+    font-weight: normal!important;
+    
     &:hover {
       color: @blue;
       border: 1px solid @blue;
