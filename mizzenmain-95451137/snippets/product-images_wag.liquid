@@ -1,7 +1,7 @@
 <div class="product-images">
   <div class="fs-row">
     <div class="fs-cell fs-xl-12 fs-lg-12 fs-md-6 fs-sm-3">
-      <div class="carousel" data-carousel-options='{"autoHeight":true,"controls":false,"pagination":false}'>
+      <div class="product-images__carousel carousel" data-carousel-options='{"autoHeight":false,"controls":true,"pagination":true}'>
         {% for image in product.images %}
         <div class="carousel__slide">
           <img class="img-responsive" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}" />
@@ -11,3 +11,12 @@
     </div>
   </div>
 </div>
+{% comment %}
+<div class="product-images__thumbs text-center wrapper">
+{% for image in product.images %}
+  <a class="product-images__thumb" onclick='$(".carousel").carousel("jump", {{ forloop.index }});'>
+    <img class="img-responsive" src="{{ image | img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+  </a>
+{% endfor %}
+</div>
+{% endcomment %}

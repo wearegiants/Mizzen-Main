@@ -9,7 +9,7 @@
   }
 
   &__images {
-    background: @bgGray;
+    background: fade(@black, 5%);
   }
 
   &--note {
@@ -48,6 +48,29 @@
       }
       @media @max {
         .font_size(36);
+      }
+    }
+    &-images {
+      &__thumb {
+        display: inline-block;
+      }
+      &__carousel {
+        .fs-carousel {
+          &-control {
+            opacity: .5;
+            &_next {
+              background: url('1462563526_right.svg');
+              background-size: cover;
+            }
+            &_previous {
+              background: url('1462563615_left.svg');
+              background-size: cover;
+            }
+            &:before {
+              border-color: transparent;
+            }
+          }
+        }
       }
     }
     &-price {
