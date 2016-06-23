@@ -1,0 +1,93 @@
+.about {
+
+	&-shop {
+		padding-top: @spaced*3;
+		padding-bottom: @spaced*3;
+	}
+
+	&-header {
+		.byantReg();
+		text-transform: uppercase;
+		.font_size(32);
+		color: @white;
+		letter-spacing: 2px;
+		//-webkit-font-smoothing: antialiased;
+	}
+
+	&-nav {
+		text-align: center;
+		border-bottom: 1px solid @lighterGray;
+		@media @desktop {
+			padding: @spaced/2 0;
+		}
+		.btn {
+			color: @gray;
+			transition: 300ms ease;
+			&.active, &:hover {
+				color: @blue;
+			}
+		}
+	}
+
+	&-post {
+
+		color: @blue;
+
+		&.color--white {
+			color: @white;
+		}
+
+		&__content {
+			.byantReg();
+			.font_size(20);
+			line-height: 2;
+      //-webkit-font-smoothing: antialiased;
+      color: inherit;
+		}
+
+		&__title {
+			.byantReg();
+			text-transform: uppercase;
+			.font_size(32);
+			color: inherit;
+		}
+
+		margin-bottom: 1px;
+
+		@media @min {
+			text-align: center;
+		}
+		@media @tablet {
+			text-align: left;
+		}
+
+		&.text {
+			&-center {
+				@media @tablet {
+					text-align: center;
+				}
+			}
+		}
+
+		.wrapper--extra {
+			@media @min {
+				padding: @spaced 0 @spaced 0;
+			}
+			@media @tablet {
+				padding: @spaced*2;
+			}
+			@media @desktop {
+				padding: @spaced*2 @spaced*4 @spaced*2 @spaced*4;
+			}
+		}
+
+		// Align the image to the left. Add the tag 'image-left'
+		&.image-left {
+			.about-post__content {
+				float: right;
+			}
+		}
+
+	}
+
+}

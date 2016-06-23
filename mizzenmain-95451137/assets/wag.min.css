@@ -4236,6 +4236,26 @@ hr.nomargin {
 .epm-submit-chimp--full {
   width: 100%;
 }
+.btn--yuuge,
+.epm-submit-chimp--yuuge {
+  border: 2px solid #112D51;
+  height: 95px;
+  line-height: 95px;
+  color: #112D51;
+  padding: 0 60px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-family: 'Bryant Regular Web Font', sans-serif;
+  font-weight: regular;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+.btn--yuuge:hover,
+.epm-submit-chimp--yuuge:hover {
+  color: #fff;
+  background: #112D51;
+}
 .btn--icon img,
 .epm-submit-chimp--icon img {
   display: inline-block;
@@ -6502,4 +6522,91 @@ hr.nomargin {
   transition-duration: 0.25s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+}
+.about-shop {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.about-header {
+  font-family: 'Bryant Regular Web Font', sans-serif;
+  font-weight: regular;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.about-nav {
+  text-align: center;
+  border-bottom: 1px solid #E7E7EC;
+}
+@media screen and (min-width: 980px) {
+  .about-nav {
+    padding: 12.5px 0;
+  }
+}
+.about-nav .btn {
+  color: #999999;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+.about-nav .btn.active,
+.about-nav .btn:hover {
+  color: #112D51;
+}
+.about-post {
+  color: #112D51;
+  margin-bottom: 1px;
+}
+.about-post.color--white {
+  color: #fff;
+}
+.about-post__content {
+  font-family: 'Bryant Regular Web Font', sans-serif;
+  font-weight: regular;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: inherit;
+}
+.about-post__title {
+  font-family: 'Bryant Regular Web Font', sans-serif;
+  font-weight: regular;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-size: 2rem;
+  color: inherit;
+}
+@media screen and (min-width: 300px) {
+  .about-post {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 740px) {
+  .about-post {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 740px) {
+  .about-post.text-center {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 300px) {
+  .about-post .wrapper--extra {
+    padding: 25px 0 25px 0;
+  }
+}
+@media screen and (min-width: 740px) {
+  .about-post .wrapper--extra {
+    padding: 50px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .about-post .wrapper--extra {
+    padding: 50px 100px 50px 100px;
+  }
+}
+.about-post.image-left .about-post__content {
+  float: right;
 }

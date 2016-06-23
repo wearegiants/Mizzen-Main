@@ -167,6 +167,22 @@
     width: 100%;
   }
 
+  &--yuuge {
+    border: 2px solid @blue;
+    height: 95px;
+    line-height: 95px;
+    color: @blue;
+    padding: 0 60px;
+    .font_size(24);
+    letter-spacing: 2px;
+    .byantReg();
+    transition: 300ms ease;
+    &:hover {
+      color: @white;
+      background: @blue;
+    }
+  }
+
   &--icon {
     img {
       display: inline-block;
