@@ -4250,6 +4250,7 @@ hr.nomargin {
   font-weight: regular;
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
+  margin: 0 12.5px;
 }
 .btn--yuuge:hover,
 .epm-submit-chimp--yuuge:hover {
