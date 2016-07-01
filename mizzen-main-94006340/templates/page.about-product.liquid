@@ -1,7 +1,7 @@
- {% layout 'wearegiants' %}
+{% layout 'theme-updated' %}
 
 {% capture header-color %}white{% endcapture %}
-{% capture header-image %}http://i.imgur.com/9CabJCq.jpg{% endcapture %}
+{% capture header-image %}http://i.imgur.com/f6WZ0yb.jpg{% endcapture %}
 
 <div id="about" class="fs-grid fs-grid-fluid">
   <div class="about-header relative bg--black hero wallpaper" data-background-options='{"source":"{{ header-image }}"}'>
@@ -14,12 +14,12 @@
   <div class="about-nav">
     <div class="fs-row">
       <div class="fs-cell fs-all-full">
-        <a class="btn btn--nav active" href="/pages/about-us">Our Story</a>
-        <a class="btn btn--nav" href="/pages/about-our-products">Our Products</a>
+        <a class="btn btn--nav" href="/pages/about-story">Our Story</a>
+        <a class="btn btn--nav active" href="/pages/about-product">Our Products</a>
       </div>
     </div>
   </div>
-  {% assign blog = blogs.about-story %}
+  {% assign blog = blogs.about-product %}
   {% for article in blog.articles %}
   {% capture tags %}{% for tag in article.tags %}{{tag}} {% endfor %}{% endcapture %}
   <div class="about-post {{ tags }}">
@@ -58,18 +58,6 @@
   </div>
   {% endfor %}
   <div class="about-shop text-center">
-    <div class="fs-row">
-      <div class="fs-cell fs-xl-6 fs-lg-8 fs-md-6 fs-sm-3 fs-centered">
-        <div class="fs-row">
-          <div class="fs-cell fs-lg-half fs-md-half fs-sm-3">
-            <a class="btn btn--full btn--yuuge" href="#">Meet the Team</a>
-          </div>
-          <hr class="fs-cell fs-lg-hide fs-md-hide fs-sm-3 compact invisible" />
-          <div class="fs-cell fs-lg-half fs-md-half fs-sm-3">
-            <a class="btn btn--full btn--yuuge" href="#">Press</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a class="btn btn--yuuge" href="#">Start Shopping</a>
   </div>
 </div>

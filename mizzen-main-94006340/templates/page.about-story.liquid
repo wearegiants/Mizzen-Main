@@ -1,4 +1,4 @@
- {% layout 'wearegiants' %}
+{% layout 'theme-updated' %}
 
 {% capture header-color %}white{% endcapture %}
 {% capture header-image %}http://i.imgur.com/9CabJCq.jpg{% endcapture %}
@@ -14,8 +14,8 @@
   <div class="about-nav">
     <div class="fs-row">
       <div class="fs-cell fs-all-full">
-        <a class="btn btn--nav active" href="/pages/about-us">Our Story</a>
-        <a class="btn btn--nav" href="/pages/about-our-products">Our Products</a>
+        <a class="btn btn--nav active" href="/pages/about-story">Our Story</a>
+        <a class="btn btn--nav" href="/pages/about-product">Our Products</a>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
         <div class="fs-cell fs-all-full fs-contained hero relative wallpaper about-post__content" data-background-options='{"source":"{{ article | img_url: '2048x2048' }}"}'>
           <div class="centered wrapper--extra centered--full">
             <div class="fs-row">
-              <div class="fs-cell fs-lg-8 fs-md-5 fs-sm-2 fs-centered">
+              <div class="fs-cell fs-lg-8 fs-md-5 fs-sm-3 fs-centered">
                 <h3 class="about-post__title">{{ article.title }}</h3>
                 {{ article.content }}
               </div>
@@ -61,11 +61,13 @@
     <div class="fs-row">
       <div class="fs-cell fs-xl-6 fs-lg-8 fs-md-6 fs-sm-3 fs-centered">
         <div class="fs-row">
+          <!--
           <div class="fs-cell fs-lg-half fs-md-half fs-sm-3">
             <a class="btn btn--full btn--yuuge" href="#">Meet the Team</a>
           </div>
           <hr class="fs-cell fs-lg-hide fs-md-hide fs-sm-3 compact invisible" />
-          <div class="fs-cell fs-lg-half fs-md-half fs-sm-3">
+          -->
+          <div class="fs-cell fs-lg-half fs-md-half fs-sm-3 fs-centered">
             <a class="btn btn--full btn--yuuge" href="#">Press</a>
           </div>
         </div>

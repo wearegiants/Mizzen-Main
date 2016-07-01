@@ -4,6 +4,14 @@
   max-width: @maxWidth;
   margin: auto;
 
+  .home {
+    &__performance {
+      h2 {
+        display: none!important;
+      }
+    }
+  }
+
   &__info {
     position: relative;
   }
@@ -118,6 +126,48 @@
         //max-width: 40%;
         .mainFont();
       }
+    }
+  }
+
+}
+
+.product-item {
+  &__meta {
+    padding: @spaced/2 0;
+  }
+  &__title {
+    //color: @blue;
+    margin: 0;
+    margin-bottom: 8px;
+    line-height: 1;
+    .mainFont();
+    .font_size(16);
+  }
+  &__subtitle {
+    margin: 0;
+    line-height: 1;
+    color: @blue;
+    .font_size(16);
+    .accentFont();
+    letter-spacing: 0;
+    text-transform: none;
+    margin-bottom: 5px;
+  }
+  &__price {
+    margin: 0;
+    line-height: 1;
+    .font_size(15);
+    .mainFont();
+    color: @blue;
+    letter-spacing: 1px;
+  }
+  &__soldout {
+    .mainFont();
+    color: @white75;
+    text-decoration: underline;
+    -webkit-font-smoothing: antialiased;
+    &:hover {
+      color: @white;
     }
   }
 

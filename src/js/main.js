@@ -45,11 +45,14 @@ function openModal(){
 		removalDelay: 1000,
 		alignTop: true,
 		overflowY: 'scroll',
-		modal: true,
+		//modal: true,
 		mainClass: 'mfp-cart fs-grid',
 		callbacks: {
 		  parseAjax: function(mfpResponse) {
 		    mfpResponse.data = $(mfpResponse.data).find('#cart-sidebar');
+		  },
+		  open: function() {
+		  	$('.mfp-wrap').append('<div class="mfp-closer mfp-cover covered"></div>');
 		  },
 		  ajaxContentAdded: function() {
 		  	$('body').addClass('is-viewing--cart');
@@ -61,7 +64,7 @@ function openModal(){
 		  }
 		}
 	});
-	$(document).on('click', '.popup-modal-dismiss', function (e) {
+	$(document).on('click', '.popup-modal-dismiss, .mfp-closer', function (e) {
 		e.preventDefault();
 		$.magnificPopup.close();
 	});

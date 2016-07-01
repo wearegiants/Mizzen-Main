@@ -3892,8 +3892,15 @@ img.rounded {
 .wrapper {
   padding: 25px;
 }
-.wrapper--extra {
-  padding: 50px;
+@media screen and (min-width: 300px) {
+  .wrapper--extra {
+    padding: 18.75px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .wrapper--extra {
+    padding: 50px;
+  }
 }
 .wrapper--notop {
   padding-top: 0;
@@ -3909,11 +3916,15 @@ img.rounded {
 .bg--black {
   background: #333;
 }
-.bg--black-25 {
-  background: rgba(255, 255, 255, 0.25);
+.bg--black-25,
+.bg--black25 {
+  background: rgba(0, 0, 0, 0.25);
 }
 .bg--black-50 {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+.bg--black-40 {
+  background: rgba(0, 0, 0, 0.4);
 }
 .bg--blue {
   background-color: #112D51;
@@ -4250,7 +4261,7 @@ hr.nomargin {
   font-weight: regular;
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
-  margin: 0 12.5px;
+  margin: 0;
 }
 .btn--yuuge:hover,
 .epm-submit-chimp--yuuge:hover {
@@ -5026,6 +5037,9 @@ hr.nomargin {
 .mfp-cart .mfp-close {
   color: #fff;
 }
+.mfp-cart .mfp-closer {
+  z-index: 0;
+}
 .mfp-cart .mfp-container {
   background: #F2F2F2;
   right: 0;
@@ -5036,6 +5050,7 @@ hr.nomargin {
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
   color: #fff;
+  z-index: 1;
   overflow-y: scroll;
   /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
@@ -5537,6 +5552,9 @@ hr.nomargin {
   max-width: 1600px;
   margin: auto;
 }
+#prod .home__performance h2 {
+  display: none!important;
+}
 #prod__info {
   position: relative;
 }
@@ -5659,6 +5677,49 @@ hr.nomargin {
   text-align: left;
   font-family: 'Bryant Web Font', sans-serif;
   font-weight: regular;
+}
+.product-item__meta {
+  padding: 12.5px 0;
+}
+.product-item__title {
+  margin: 0;
+  margin-bottom: 8px;
+  line-height: 1;
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  font-size: 16px;
+  font-size: 1rem;
+}
+.product-item__subtitle {
+  margin: 0;
+  line-height: 1;
+  color: #112D51;
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: 'Archer Web Font', serif;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 5px;
+}
+.product-item__price {
+  margin: 0;
+  line-height: 1;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  color: #112D51;
+  letter-spacing: 1px;
+}
+.product-item__soldout {
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+  -webkit-font-smoothing: antialiased;
+}
+.product-item__soldout:hover {
+  color: #fff;
 }
 .mfp-content #fitguide {
   padding: 50px 0;
@@ -6565,10 +6626,24 @@ hr.nomargin {
 .about-post__content {
   font-family: 'Bryant Regular Web Font', sans-serif;
   font-weight: regular;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 2;
   color: inherit;
+}
+@media screen and (min-width: 300px) {
+  .about-post__content {
+    line-height: 1.3;
+    font-size: 17px;
+    font-size: 1.0625rem;
+  }
+}
+@media screen and (min-width: 740px) {
+  .about-post__content {
+    line-height: 2;
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+.about-post__content p {
+  line-height: inherit;
 }
 .about-post__title {
   font-family: 'Bryant Regular Web Font', sans-serif;

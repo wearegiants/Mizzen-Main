@@ -114,7 +114,12 @@ img.rounded {
 .wrapper {
   padding: @spaced;
   &--extra {
-    padding: @spaced*2
+    @media @min {
+      padding: @spaced*.75
+    }
+    @media @tablet {
+      padding: @spaced*2
+    }
   }
   &--notop {
     padding-top: 0;
@@ -131,11 +136,14 @@ img.rounded {
 .bg {
   &--black {
     background: @black;
-    &-25 {
-      background: @white25;
+    &-25, &25 {
+      background: @black25;
     }
     &-50 {
-      background: @white50;
+      background: @black50;
+    }
+    &-40 {
+      background: rgba(0,0,0,.4);
     }
   }
   &--blue {
@@ -146,6 +154,7 @@ img.rounded {
     &-25 {
       background: @white25;
     }
+
     &-50 {
       background: @white50;
     }

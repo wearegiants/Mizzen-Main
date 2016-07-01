@@ -190,6 +190,9 @@
 
     &-close {
       color: @white;
+      &r {
+        z-index: 0;
+      }
     }
 
     &-content {
@@ -205,6 +208,7 @@
       transform: translateX(100%);
       transition: 300ms ease;
       color: @white;
+      z-index: 1;
       overflow-y: scroll; /* has to be scroll, not auto */
       -webkit-overflow-scrolling: touch;
 

@@ -1,0 +1,35 @@
+{% assign h1 = '' %}
+{% assign h3 = '' %}
+{% assign a = product.title | split: '"' %}
+
+{% if a.size == 3 %}
+{% assign h1 = a[1] %}
+{% assign h3 = a[2] %}
+{% else %}
+{% assign h1 = product.title %}
+{% endif %}
+
+<div class="product-item relative">
+  <div class="product-item__thumb relative wrapper wrapper--notop bg--bgGray">
+    {% unless product.available %}
+    <div class="covered bg--black-40">
+      <div class="centered text-center">
+        <h2 class="product-item__title color--white">Out of Stock</h2>
+        <a class="color--white product-item__soldout" href="#">Notify Me</a>
+      </div>
+    </div>
+    {% endunless %}
+    <a class="product-item__link" href="{{ product.url }}">
+      <img class="product-item__image product-item__image--first img-responsive" src="{{ product.featured_image.src | img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}">
+      <!--<img class="product-item__image product-item__image--second img-responsive" src="{{ product.images[1] | product_img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}">-->
+    </a>
+  </div>
+  <div class="product-item__meta text-center">
+    <a class="product-item__link" href="{{ product.url }}">
+      <h2 class="product-item__title color--blue" itemprop="name">{{ h1 }}</h2>
+      <h3 class="product-item__subtitle" itemprop="name">{{ h3 }}</h3>
+      <h4 class="product-item__price">{{ product.price | money }}</h4>
+    </a>
+  </div>
+</div>
+<hr class="invisible fs-lg-hide fs-md-hide">

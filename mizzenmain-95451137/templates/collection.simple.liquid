@@ -1,0 +1,26 @@
+{% layout 'wearegiants' %}
+
+{% capture header-color %}white{% endcapture %}
+{% capture header-image %}{{ collection.image.src | img_url: '2048x2048' }}{% endcapture %}
+
+<div id="collection" class="fs-grid">
+
+  <div class="collection-header relative bg--black hero wallpaper" data-background-options='{"source":"{{ header-image }}"}'>
+    <div class="centered">
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full color--{{ header-color }}">{{ page.content }}</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="invisible">
+
+  <div class="collection-products fs-row">
+    {% for product in collection.products %}
+    <div class="fs-cell fs-lg-third fs-md-half fs-sm-full">
+      {% include 'product-grid-item' with products_per_row %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

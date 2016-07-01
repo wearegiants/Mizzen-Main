@@ -1,3 +1,5 @@
+{% layout 'theme-wag' %}
+
 {% comment %}
 Top Section: Gallery and Product Details
 {% endcomment %}
@@ -159,6 +161,18 @@ Top Section: Gallery and Product Details
             <a class="free-shipping">Free Shipping</a>
             <input class="add_product" type="submit" name="add" value="Add to Cart" data-product="{{ product.id }}">
           </div>
+          {% if product.type == 'Dress Shirt' %}
+          <div class="fit-link--wrapper">
+            <a class="fit-link fit-link--ruler" href="/pages/fit-guide-dress-shirts">Fit Guide</a>
+            <p id="buttonPlacement"></p>
+          </div>
+          {% endif %}
+          {% if product.type == 'Pants' %}
+          <div class="fit-link--wrapper">
+            <a class="fit-link fit-link--ruler" href="/pages/fit-guide-pants">Fit Guide</a>
+            <p id="buttonPlacement"></p>
+          </div>
+          {% endif %}
         </div><!-- .row.inputs -->
 
         <div class="row">

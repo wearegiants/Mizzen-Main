@@ -39,10 +39,22 @@
 
 		&__content {
 			.byantReg();
-			.font_size(20);
-			line-height: 2;
       //-webkit-font-smoothing: antialiased;
       color: inherit;
+
+      @media @min {
+      	line-height: 1.3;
+      	.font_size(17);
+      }
+      @media @tablet {
+      	line-height: 2;
+      	.font_size(20);
+      }
+
+      p {
+      	line-height: inherit;
+      }
+
 		}
 
 		&__title {

@@ -1,0 +1,39 @@
+<div id="header-main" class="header fs-grid fs-grid-fluid color--white pinned pinned--top pinned--fixed {% if template != 'index' %}active{% endif %} {% if template == 'index' %}index-page{% endif %}">
+  <div id="header-main__inner">
+    <div class="fs-row">
+      <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-hide">
+        <a class="btn btn--nav btn--first swap" data-swap-linked="toggle_linked" data-swap-target="#header__dropdown, #header-main" href="#">Shop</a>
+        <a class="btn btn--nav fs-md-hide fs-sm-hide fs-lg-hide" href="#">Lookbooks</a>
+        <a class="btn btn--nav" href="/pages/about-us">About Us</a>
+      </div>
+      <div id="header__mobile" class="fs-cell fs-lg-hide fs-md-hide fs-sm-1 fs-xs-fourth">
+        <a class="btn btn--nav btn--icon btn--icon__menu alt swap" data-swap-linked="toggle_linked" data-swap-target="#header__dropdown, #header-main" href="#">{{ '1463631382_Menu1.svg' | asset_url | img_tag }}</a>
+        <a class="btn btn--nav btn--icon btn--icon__menu swap" data-swap-linked="toggle_linked" data-swap-target="#header__dropdown, #header-main" href="#">{{ '1463631382_Menu1_white.svg' | asset_url | img_tag }}</a>
+      </div>
+      <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-half text-center">
+        <a id="header__logo" class="btn btn--nav btn--full" title="Mizzen+Main" href="/"></a>
+      </div>
+      <div id="header__mobile" class="fs-cell fs-lg-hide fs-md-hide fs-sm-fourth text-right">
+        <a class="btn btn--nav btn--icon btn--last btn--icon__cart cart-link alt" href="/cart">{{ '1464808500_basic3-033_shopping_bag.svg' | asset_url | img_tag }}</a>
+        <a class="btn btn--nav btn--icon btn--last btn--icon__cart cart-link" href="/cart">{{ '1464808500_basic3-033_shopping_bag_white.svg' | asset_url | img_tag }}</a>
+      </div>
+      <div class="fs-cell fs-lg-4 fs-md-third fs-sm-1 fs-xs-hide text-right">
+        <a class="btn btn--nav fs-md-hide fs-sm-hide" href="#">Blog</a>
+        <a class="btn btn--nav" href="#">Sign In</a>
+        <a class="btn btn--nav btn--last cart-link text-right" href="/cart">(<span class="cart-count">{{ cart.item_count }}</span>) Bag</a>
+      </div>
+    </div>
+  </div><!-- Inner -->
+  <div id="header__dropdown" class="">
+    <div class="fs-row">
+      <div class="fs-cell fs-xl-10 fs-lg-10 fs-md-6 fs-sm-3 fs-centered">
+        <div class="fs-row">
+          {% include 'v2_header-sub' %}
+        </div>
+      </div>
+    </div>
+  </div><!-- Dropdown -->
+</div>
+{% if template != 'index' %}
+<div id="header-main--spacer"></div>
+{% endif %}
