@@ -5561,6 +5561,11 @@ hr.nomargin {
 #prod__images {
   background: rgba(51, 51, 51, 0.05);
 }
+#prod__images img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
 #prod--note {
   letter-spacing: 1px;
   color: #112D51;
@@ -5615,8 +5620,16 @@ hr.nomargin {
     font-size: 2.25rem;
   }
 }
+#prod .product-images img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
 #prod .product-images__thumb {
   display: inline-block;
+}
+#prod .product-images__carousel .fs-carousel-pagination {
+  margin-bottom: 25px;
 }
 #prod .product-images__carousel .fs-carousel-control {
   opacity: .5;
@@ -5663,6 +5676,12 @@ hr.nomargin {
 }
 #prod .product-add input {
   margin-bottom: 0;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  font-family: 'Bryant Web Font', sans-serif;
+  font-weight: regular;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
 }
 #prod .product-variant {
   text-align: center;
