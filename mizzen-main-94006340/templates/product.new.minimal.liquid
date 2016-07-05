@@ -1,4 +1,4 @@
-{% layout 'wearegiants' %}
+{% layout 'theme-updated' %}
 
 {% assign add_to_cart = 'Add to cart' %}
 {% assign sold_out = 'Sold Out' %}
@@ -7,7 +7,7 @@
 <div id="prod" class="fs-grid fs-grid-fluid">
 
   <!-- Product Info & Images -->
-  <div class="fs-row equalized" data-equalize-options='{"target":".equalize_child", "minWidth":"740px"}'>
+  <div class="fs-row equalized" data-equalize-options='{"target":".equalize_child", "minWidth":"980px"}'>
     <div id="prod__info-wrapper" class="fs-cell fs-all-full relative equalize_child">
       <div id="prod__info" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained fs-right">
         <hr class="invisible compact fs-lg-hide fs-md-6 fs-sm-3 fs-contained">
@@ -30,29 +30,6 @@
     </div>
   </div>
 
-  <hr class="invisible huge">
-
-  <div class="home-page">{% include 'performance-home' %}</div>
-
-  <!-- Product Description -->
-  <div class="fs-row">
-
-    {% assign desc = product.metafields.desc %}
-
-    <div id="prod__desc" class="fs-cell fs-lg-4 fs-lg-push-2 fs-md-half fs-sm-3 "><h3 class="text-center color--blue product-price">Product Details</h3>
-      <div class="product-desc">
-        {{ desc['left'] }}
-      </div>
-    </div>
-    <div id="prod__meta" class="fs-cell fs-lg-4 fs-md-half fs-sm-3"><h3 class="text-center color--blue product-price">Care Instructions</h3>
-      <div class="product-desc">
-        {{ desc['right'] }}
-      </div>
-    </div>
-  </div>
-
-  <hr class="invisible huge"> 
-
   <!-- Performance Section -->
   {% comment %}
   <div id="prod__performance">
@@ -69,6 +46,8 @@
   {% assign lookbook = product.metafields.lookbook %}
   {% unless lookbook['disable'] == 'true' %}
 
+  <hr class="invisible huge"> 
+
   <!-- Lookbook Images -->
   <div id="prod__lookbook">
     <div class="fs-row">
@@ -80,19 +59,19 @@
 
   {% endunless %}
 
-  <hr class="invisible huge">
+  <hr class="invisible"> 
 
   <div id="prod__related">
     <div class="fs-row">
-      <div class="fs-cell fs-lg-9 fs-md-6 fs-sm-3 fs-centered">
+      <div class="fs-cell fs-lg-10 fs-md-6 fs-sm-3 fs-centered">
         {% include 'related-products' %}
       </div>
     </div>
   </div>
 
-  <hr class="invisible huge">
-
 </div>
+
+<hr class="invisible"> 
 
 
 <script>

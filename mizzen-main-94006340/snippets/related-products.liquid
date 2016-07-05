@@ -1,0 +1,17 @@
+{% assign col = '' %}
+
+{% if collection and collection.all_products_count > 1 %}
+  {% assign col = collection.handle %}
+{% else %}
+  {% assign col = product.collections.last.handle %}
+{% endif %}
+
+{% for tag in product.tags %}
+  {% if tag contains 'meta-related-collection-' %}
+    {% assign col = tag | remove: 'meta-related-collection-' %}
+  {% endif %}
+{% endfor %}
+
+{% if col and collections[col].all_products_count > 0 %}
+  {% include 'products-list_new', _collection_handle: col, _title: 'Suggested for You', _limit: 4 %}
+{% endif %}

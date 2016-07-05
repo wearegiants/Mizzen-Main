@@ -16,7 +16,7 @@
 
 	&-nav {
 		text-align: center;
-		border-bottom: 1px solid @lighterGray;
+		//border-bottom: 1px solid @lighterGray;
 		@media @desktop {
 			padding: @spaced/2 0;
 		}
@@ -55,6 +55,25 @@
       	line-height: inherit;
       }
 
+      &-cover {
+      	@media @min {
+      		//color: @blue;
+      		position: relative;
+      	}
+      	@media @desktop {
+      		.cover();
+      		//color: @white;
+      	}
+      	&.light {
+      		@media @min {
+      			color: @blue;
+      		}
+      		@media @desktop {
+      			color: @white;
+      		}
+      	}
+      }
+
 		}
 
 		&__title {
@@ -69,13 +88,13 @@
 		@media @min {
 			text-align: center;
 		}
-		@media @tablet {
+		@media @desktop {
 			text-align: left;
 		}
 
 		&.text {
 			&-center {
-				@media @tablet {
+				@media @desktop {
 					text-align: center;
 				}
 			}
@@ -102,4 +121,18 @@
 
 	}
 
+}
+
+#about {
+	.hero {
+		@media @min {
+			height: 230px;
+		}
+		@media @tablet {
+			height: 500px;
+		}
+		@media @desktop {
+			height: 600px
+		}
+	}
 }

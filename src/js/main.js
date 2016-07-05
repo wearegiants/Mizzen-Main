@@ -45,7 +45,7 @@ function openModal(){
 		removalDelay: 1000,
 		alignTop: true,
 		overflowY: 'scroll',
-		//modal: true,
+		modal: true,
 		mainClass: 'mfp-cart fs-grid',
 		callbacks: {
 		  parseAjax: function(mfpResponse) {

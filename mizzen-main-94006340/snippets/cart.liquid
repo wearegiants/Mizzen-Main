@@ -1,0 +1,61 @@
+<div id="cart-sidebar" class="fs-grid">
+  <!-- Header-->
+  <div id="cart-sidebar__header">
+    <div class='wrapper'>
+      <div class="fs-row">
+        <div class="fs-cell fs-all-half"><span id="cart-sidebar__title" class="color--blue">Your Cart</span></div>
+        <div class="fs-cell fs-all-half text-right"><a onClick="closePopup();" class="close-cart ss-gizmo ss-delete color--blue"></a></div>
+      </div>
+    </div>
+    <hr class="divider nomargin bg--black-25">
+  </div>
+
+  <form action="/cart" method="post" novalidate class="cart">
+
+  <div id="cart-sidebar__content">
+    <div class="wrapper">
+      {% if cart.item_count > 0 %}
+      {% for item in cart.items %}
+      {% include 'cart-item' %}
+      {% endfor %}
+      {% else %}
+      <div class="fs-row">
+        <div class='fs-cell fs-all-full'>
+          <div class="color--blue">Your cart is currently empty.</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="cart-sidebar__footer" class="pinned pinned--bottom">
+    <hr class="divider nomargin bg--black-25">
+    <div class="fs-row">
+      <div class='fs-cell fs-all-full'>
+        {% comment %}
+        <div class="wrapper">
+          <a href="#" class="message-toggle color--blue" data-swap-target="#cart-sidebar__gift">Add a gift message</a>
+          <div id="cart-sidebar__gift">
+            <textarea placeholder="Add your gift message here."></textarea>
+          </div>
+        </div>
+        {% endcomment %}
+      </div>
+    </div>
+    <hr class="divider nomargin bg--black-25">
+    <div class="wrapper">
+      <div class="fs-row">
+        <div class="fs-cell fs-all-half color--blue"><span id="cart-sidebar__subtotal">Subtotal</span></div>
+        <div class="fs-cell fs-all-half text-right color--blue"><span id="cart-sidebar__cost">{{ cart.total_price | money }}</span></div>
+        <div class="fs-cell fs-all-full color--blue-50"><span id="cart-sidebar__note">Shipping, taxes and discounts calculated at checkout.</span></div>
+        <div class="fs-cell fs-all-full">
+          <input type="submit" name="checkout" class="btn btn--full bg--blue color--white" value="Checkout">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </form>
+
+</div>

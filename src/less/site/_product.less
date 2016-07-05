@@ -14,6 +14,14 @@
 
   &__info {
     position: relative;
+    &-wrapper {
+      @media @min {
+        background: transparent;
+      }
+      @media @tablet {
+        background: @bgGray;
+      }
+    }
   }
 
   &__images {

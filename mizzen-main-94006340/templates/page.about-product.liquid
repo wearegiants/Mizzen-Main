@@ -1,7 +1,7 @@
 {% layout 'theme-updated' %}
 
 {% capture header-color %}white{% endcapture %}
-{% capture header-image %}http://i.imgur.com/f6WZ0yb.jpg{% endcapture %}
+{% capture header-image %}https://cdn.shopify.com/s/files/1/0163/4002/files/Untitled-1_ed3359a7-e6ca-43c8-872f-19f56eb45158.jpg?17363458158702345499{% endcapture %}
 
 <div id="about" class="fs-grid fs-grid-fluid">
   <div class="about-header relative bg--black hero wallpaper" data-background-options='{"source":"{{ header-image }}"}'>
@@ -28,20 +28,23 @@
 
         {% if tags contains 'wide' %}
 
-        <div class="fs-cell fs-all-full fs-contained hero relative wallpaper about-post__content" data-background-options='{"source":"{{ article | img_url: '2048x2048' }}"}'>
-          <div class="centered wrapper--extra centered--full">
-            <div class="fs-row">
-              <div class="fs-cell fs-lg-8 fs-md-5 fs-sm-2 fs-centered">
-                <h3 class="about-post__title">{{ article.title }}</h3>
-                {{ article.content }}
+        <div class="relative fs-cell fs-all-full fs-contained">
+          <div class="hero about-post__content about-post__content-cover {% if tags contains 'color--white' %}light{% endif %}" style="z-index:8">
+            <div class="centered wrapper--extra centered--full">
+              <div class="fs-row">
+                <div class="fs-cell fs-lg-8 fs-md-6 fs-sm-3 fs-centered">
+                  <h3 class="about-post__title">{{ article.title }}</h3>
+                  {{ article.content }}
+                </div>
               </div>
             </div>
           </div>
+          <div class="hero relative wallpaper about-post__content" data-background-options='{"source":"{{ article | img_url: '2048x2048' }}"}'></div>
         </div>
 
         {% else %}
 
-        <div class="fs-cell fs-lg-half fs-md-half fs-sm-full fs-contained hero relative about-post__content">
+        <div class="fs-cell fs-lg-half fs-md-full fs-sm-full fs-contained hero relative about-post__content">
           <div class="centered wrapper--extra centered--full">
             <h3 class="color--blue about-post__title">{{ article.title }}</h3>
             {{ article.content }}
@@ -51,13 +54,13 @@
         {% endif %}
 
         {% unless tags contains 'wide' %}
-        <div class="fs-cell fs-lg-half fs-md-half fs-sm-full fs-contained hero bg--black wallpaper about-post__image" data-background-options='{"source":"{{ article | img_url: '2048x2048' }}"}'></div>
+        <div class="fs-cell fs-lg-half fs-md-full fs-sm-full fs-contained hero bg--black wallpaper about-post__image" data-background-options='{"source":"{{ article | img_url: '2048x2048' }}"}'></div>
         {% endunless %}
       </div>
     </div>
   </div>
   {% endfor %}
   <div class="about-shop text-center">
-    <a class="btn btn--yuuge" href="#">Start Shopping</a>
+    <a class="btn btn--yuuge" href="/collections/the-shirt">Start Shopping</a>
   </div>
 </div>

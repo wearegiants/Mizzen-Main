@@ -4027,6 +4027,10 @@ img.rounded {
 .nomargin {
   margin: 0;
 }
+div.divider {
+  height: 1px;
+  background: #F2F2F2;
+}
 hr {
   width: 100%;
   height: 1px;
@@ -5000,13 +5004,17 @@ hr.nomargin {
   text-transform: uppercase;
   display: block;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
   margin-top: 1px;
   padding-right: 25px;
   line-height: 1.2;
   font-weight: 500;
   font-size: 15px;
   font-size: 0.9375rem;
+}
+.cart-item__title small {
+  display: block;
+  margin-bottom: 5px;
 }
 .cart-item__image {
   background-color: #fff;
@@ -5557,6 +5565,16 @@ hr.nomargin {
 }
 #prod__info {
   position: relative;
+}
+@media screen and (min-width: 300px) {
+  #prod__info-wrapper {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 740px) {
+  #prod__info-wrapper {
+    background: #F2F2F2;
+  }
 }
 #prod__images {
   background: rgba(51, 51, 51, 0.05);
@@ -6619,7 +6637,6 @@ hr.nomargin {
 }
 .about-nav {
   text-align: center;
-  border-bottom: 1px solid #E7E7EC;
 }
 @media screen and (min-width: 980px) {
   .about-nav {
@@ -6664,6 +6681,30 @@ hr.nomargin {
 .about-post__content p {
   line-height: inherit;
 }
+@media screen and (min-width: 300px) {
+  .about-post__content-cover {
+    position: relative;
+  }
+}
+@media screen and (min-width: 980px) {
+  .about-post__content-cover {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 300px) {
+  .about-post__content-cover.light {
+    color: #112D51;
+  }
+}
+@media screen and (min-width: 980px) {
+  .about-post__content-cover.light {
+    color: #fff;
+  }
+}
 .about-post__title {
   font-family: 'Bryant Regular Web Font', sans-serif;
   font-weight: regular;
@@ -6677,12 +6718,12 @@ hr.nomargin {
     text-align: center;
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: 980px) {
   .about-post {
     text-align: left;
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: 980px) {
   .about-post.text-center {
     text-align: center;
   }
@@ -6704,4 +6745,19 @@ hr.nomargin {
 }
 .about-post.image-left .about-post__content {
   float: right;
+}
+@media screen and (min-width: 300px) {
+  #about .hero {
+    height: 230px;
+  }
+}
+@media screen and (min-width: 740px) {
+  #about .hero {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 980px) {
+  #about .hero {
+    height: 600px;
+  }
 }

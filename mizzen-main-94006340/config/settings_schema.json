@@ -1,5 +1,852 @@
 [
   {
+    "name": "WAG | Home Text",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Main copy"
+      },
+      {
+        "type": "text",
+        "id": "home_welcome_message_title",
+        "default": "Performance Fabric Menswear",
+        "label": "Main title"
+      },
+      {
+        "type": "textarea",
+        "id": "home_welcome_message",
+        "default": "Our performance fabric apparel has the traditional look of menswear, but feels like the most comfortable athletic gear.",
+        "label": "Main body"
+      }
+    ]
+  },
+  // Home Carousel Start
+  {
+    "name": "WAG | Home Carousel",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Slide 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-1__enable",
+        "label": "Enable slide 1"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-1__image.jpg",
+        "label": "Image",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-1__image-mobile.jpg",
+        "label": "Image Mobile",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-1__shade",
+        "label": "Text color",
+        "options": [
+          {
+            "value": "is-light",
+            "label": "Light"
+          },
+          {
+            "value": "is-dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-1__textalign",
+        "label": "Text Align (Horizontal)",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Align Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Align Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Align Left"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__title",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-1__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__button",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-1__url",
+        "label": "Link URL"
+      },
+      {
+        "type": "header",
+        "content": "Slide 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-2__enable",
+        "label": "Enable slide 2"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-2__image.jpg",
+        "label": "Image",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-2__image-mobile.jpg",
+        "label": "Image Mobile",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-2__shade",
+        "label": "Text color",
+        "options": [
+          {
+            "value": "is-light",
+            "label": "Light"
+          },
+          {
+            "value": "is-dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-2__textalign",
+        "label": "Text Align (Horizontal)",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Align Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Align Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Align Left"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__title",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-2__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__button",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-2__url",
+        "label": "Link URL"
+      },
+            {
+        "type": "header",
+        "content": "Slide 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-3__enable",
+        "label": "Enable slide 3"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-3__image.jpg",
+        "label": "Image",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-3__image-mobile.jpg",
+        "label": "Image Mobile",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-3__shade",
+        "label": "Text color",
+        "options": [
+          {
+            "value": "is-light",
+            "label": "Light"
+          },
+          {
+            "value": "is-dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-3__textalign",
+        "label": "Text Align (Horizontal)",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Align Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Align Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Align Left"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__title",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-3__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__button",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-3__url",
+        "label": "Link URL"
+      },
+            {
+        "type": "header",
+        "content": "Slide 4"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-4__enable",
+        "label": "Enable slide 4"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-4__image.jpg",
+        "label": "Image",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-4__image-mobile.jpg",
+        "label": "Image Mobile",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-4__shade",
+        "label": "Text color",
+        "options": [
+          {
+            "value": "is-light",
+            "label": "Light"
+          },
+          {
+            "value": "is-dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-4__textalign",
+        "label": "Text Align (Horizontal)",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Align Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Align Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Align Left"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__title",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-4__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__button",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-4__url",
+        "label": "Link URL"
+      },
+            {
+        "type": "header",
+        "content": "Slide 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-5__enable",
+        "label": "Enable slide 5"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-5__image.jpg",
+        "label": "Image",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "image",
+        "id": "home-carousel-5__image-mobile.jpg",
+        "label": "Image Mobile",
+        "max-width": 1200,
+        "info": "1200px wide required"
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-5__shade",
+        "label": "Text color",
+        "options": [
+          {
+            "value": "is-light",
+            "label": "Light"
+          },
+          {
+            "value": "is-dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "home-carousel-5__textalign",
+        "label": "Text Align (Horizontal)",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Align Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Align Right"
+          },
+          {
+            "value": "text-left",
+            "label": "Align Left"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__title",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__title-color",
+        "default": "#fff",
+        "label": "Headline Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "home-carousel-5__title-shadow",
+        "label": "Enable Title Shadow"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__button",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__button-color",
+        "default": "#132E50",
+        "label": "Button Color"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__button-bg",
+        "default": "#fff",
+        "label": "Button Background"
+      },
+      {
+        "type": "text",
+        "id": "home-carousel-5__url",
+        "label": "Link URL"
+      }
+    ]
+  },
+  // Home Carousel End
+  // Home Magazine Start
+  {
+  "name": "WAG | Home Magazine",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Magazine module 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-1__enable",
+      "label": "Enable module 1"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-1__image.jpg",
+      "label": "Image",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-1__image-mobile.jpg",
+      "label": "Image Mobile",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "select",
+      "id": "home-mag-1__textalign",
+      "label": "Text Align (Horizontal)",
+      "options": [
+        {
+          "value": "text-center",
+          "label": "Align Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Align Right"
+        },
+        {
+          "value": "text-left",
+          "label": "Align Left"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__title",
+      "label": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__desc",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__button",
+      "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-1__button-disable",
+      "label": "Disable Button"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-1__url",
+      "label": "Link URL"
+    },
+    {
+      "type": "textarea",
+      "id": "home-mag-1__video",
+      "label": "Video Tile"
+    },
+    {
+      "type": "header",
+      "content": "Magazine module 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-2__enable",
+      "label": "Enable module 2"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-2__image.jpg",
+      "label": "Image",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-2__image-mobile.jpg",
+      "label": "Image Mobile",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "select",
+      "id": "home-mag-2__textalign",
+      "label": "Text Align (Horizontal)",
+      "options": [
+        {
+          "value": "text-center",
+          "label": "Align Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Align Right"
+        },
+        {
+          "value": "text-left",
+          "label": "Align Left"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__title",
+      "label": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__desc",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__button",
+      "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-2__button-disable",
+      "label": "Disable Button"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-2__url",
+      "label": "Link URL"
+    },
+    {
+      "type": "textarea",
+      "id": "home-mag-2__video",
+      "label": "Video Tile"
+    },
+    {
+      "type": "header",
+      "content": "Magazine module 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-3__enable",
+      "label": "Enable module 3"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-3__image.jpg",
+      "label": "Image",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-3__image-mobile.jpg",
+      "label": "Image Mobile",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "select",
+      "id": "home-mag-3__textalign",
+      "label": "Text Align (Horizontal)",
+      "options": [
+        {
+          "value": "text-center",
+          "label": "Align Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Align Right"
+        },
+        {
+          "value": "text-left",
+          "label": "Align Left"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__title",
+      "label": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__desc",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__button",
+      "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-3__button-disable",
+      "label": "Disable Button"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-3__url",
+      "label": "Link URL"
+    },
+    {
+      "type": "textarea",
+      "id": "home-mag-3__video",
+      "label": "Video Tile"
+    },
+    {
+      "type": "header",
+      "content": "Magazine module 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-4__enable",
+      "label": "Enable module 4"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-4__image.jpg",
+      "label": "Image",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "image",
+      "id": "home-mag-4__image-mobile.jpg",
+      "label": "Image Mobile",
+      "max-width": 1200,
+      "info": "1200px wide required"
+    },
+    {
+      "type": "select",
+      "id": "home-mag-4__textalign",
+      "label": "Text Align (Horizontal)",
+      "options": [
+        {
+          "value": "text-center",
+          "label": "Align Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Align Right"
+        },
+        {
+          "value": "text-left",
+          "label": "Align Left"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__title",
+      "label": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__desc",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__button",
+      "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__button-color",
+      "default": "#fff",
+      "label": "Button Color"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__button-bg",
+      "default": "#132E50",
+      "label": "Button Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "home-mag-4__button-disable",
+      "label": "Disable Button"
+    },
+    {
+      "type": "text",
+      "id": "home-mag-4__url",
+      "label": "Link URL"
+    },
+    {
+      "type": "textarea",
+      "id": "home-mag-4__video",
+      "label": "Video Tile"
+    }
+  ]
+},
+  // Home Magazine End
+
+  {
     "name": "Welcome",
     "settings": [
       {
@@ -4389,21 +5236,6 @@
         "type": "text",
         "id": "index_pic_4_button_text",
         "label": "Image 4 Button Text"
-      }
-    ]
-  },
-  {
-    "name": "International shipping information popup in Checkout [Plus]",
-    "settings": [
-      {
-        "type": "header",
-        "content": "International shipping popup in Checkout"
-      },
-      {
-        "type": "checkbox",
-        "id": "plus_enable_shipping_popup",
-        "label": "Enable",
-        "default": true
       }
     ]
   }

@@ -13,5 +13,5 @@
 {% endfor %}
 
 {% if col and collections[col].all_products_count > 0 %}
-  {% include 'products-list_new', _collection_handle: col, _title: 'Related Products', _limit: 4 %}
+  {% include 'products-list_new', _collection_handle: col, _title: 'Suggested for You', _limit: 4 %}
 {% endif %}
