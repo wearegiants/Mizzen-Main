@@ -97,11 +97,11 @@
 .fs-grid .fs-row [class*="fs-cell"][class*="-right"] {
   float: right;
 }
-* {
+.fs-grid * {
   box-sizing: border-box;
 }
-*:before,
-*:after {
+.fs-grid *:before,
+.fs-grid *:after {
   box-sizing: inherit;
 }
 .fs-grid .fs-row .fs-all-fifth {
@@ -5691,6 +5691,14 @@ hr.nomargin {
 }
 #prod .product-desc li {
   margin-bottom: 0;
+}
+#prod .product-desc div {
+  position: static!important;
+  -webkit-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+  width: 100%!important;
+  top: auto!important;
+  color: inherit!important;
 }
 #prod .product-add input {
   margin-bottom: 0;
