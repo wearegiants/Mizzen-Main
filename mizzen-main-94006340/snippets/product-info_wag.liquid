@@ -42,15 +42,18 @@
     <div class="product-desc">{{ product.description }}</div>
 
     <hr class="invisible compact">
-
     <div id="product-variants" class="product-variant fs-row {% if hide_default_title %} hidden{% endif %}">
-      <select id="product-select" name="id">
-      {% for variant in product.variants %}
-        <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" class="fs-cell fs-all-half">
-        {{ variant.title }} - {{ variant.price | money }}
-        </option>
-      {% endfor %}
-      </select>
+      <div class="fs-cell fs-lg-8 fs-md-6 fs-sm-3 fs-centered">
+        <select id="product-select" name="id">
+        {% for variant in product.variants %}
+        {% unless variant.metafields.info.visibility contains 'hidden' %}
+          <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" class="fs-cell fs-all-half">
+          {{ variant.title }} - {{ variant.price | money }}
+          </option>
+        {% endunless %}
+        {% endfor %}
+        </select>
+      </div>
     </div> 
 
     <hr class="invisible compact">
