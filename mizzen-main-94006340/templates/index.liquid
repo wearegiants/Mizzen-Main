@@ -1,334 +1,176 @@
-{% comment %}
-Optimizely Default Variation
-{% endcomment %}
-<div id="variation_default">
-  {% comment %}
-  Top Banner
-  {% endcomment %}
-  <section class="banner">
-    <div class="container">
-      <div class="row">
-        <div class="columns sixteen">
-          <a href="{{ settings.index_pic_1_link }}" class="captioned-pic{% if settings.index_pic_1_text_color == 'dark' %} dark{% endif %}">
-            <img class="desktop" src="{{ 'index-slide-1-desktop.jpg' | asset_url }}" alt="">
-            <img class="mobile" src="{{ 'index-slide-1-mobile.jpg' | asset_url }}" alt="">
-            <div class="text">
-              <h2>{{ settings.index_pic_1_heading_text }}</h2>
-              <button class="bbutton">{{ settings.index_pic_1_button_text }}</button>
-            </div><!-- .text -->
-          </a>
-        </div><!-- .columns -->
-      </div><!-- .row -->
-    </div><!-- .container -->
-  </section><!-- .banner -->
-<br>
-  {% comment %}
-  Shop by Collection
-  {% endcomment %}
-  <section class="shop-by-collection">
-    <div class="container">
-      {% comment %}
-      Row A
-      {% endcomment %}
-      <div class="row a">
-        <div class="columns left">
-          <a href="{{ settings.index_pic_2_link }}" class="captioned-pic{% if settings.index_pic_2_text_color == 'dark' %} dark{% endif %}">
-            <img src="{{ 'index-shop-by-collection-1.jpg' | asset_url }}" alt="">
-            <div class="text">
-              {% if settings.index_pic_2_heading_text != '' %}
-                <p>{{ settings.index_pic_2_heading_text }}</p>
-              {% endif %}
-              <button class="bbutton">{{ settings.index_pic_2_button_text }}</button>
-            </div><!-- .text -->
-          </a>
-        </div><!-- .columns.left -->
-        <div class="columns right">
-          <a href="{{ settings.index_pic_3_link }}" class="captioned-pic{% if settings.index_pic_3_text_color == 'dark' %} dark{% endif %}">
-            <img src="{{ 'index-shop-by-collection-2.jpg' | asset_url }}" alt="">
-            <div class="text">
-              {% if settings.index_pic_3_heading_text != '' %}
-                <p>{{ settings.index_pic_3_heading_text }}</p>
-              {% endif %}
-              <button class="bbutton">{{ settings.index_pic_3_button_text }}</button>
-            </div><!-- .text -->
-          </a>
-        </div><!-- .columns.right -->
-      </div><!-- .row.a -->
-      {% comment %}
-      Row B
-      {% endcomment %}
-      <div class="row b">
-        <div class="columns sixteen">
-          <a href="{{ settings.index_pic_4_link }}" class="captioned-pic{% if settings.index_pic_4_text_color == 'dark' %} dark{% endif %}">
-            <img class="desktop" src="{{ 'index-shop-by-collection-3-desktop.jpg' | asset_url }}" alt="">
-            <img class="mobile" src="{{ 'index-shop-by-collection-3-mobile.jpg' | asset_url }}" alt="">
-            <div class="text">
-              {% if settings.index_pic_4_heading_text != '' %}
-                <p>{{ settings.index_pic_4_heading_text }}</p>
-              {% endif %}
-              <button class="bbutton">{{ settings.index_pic_4_button_text }}</button>
-            </div><!-- .text -->
-          </a>
-        </div><!-- .columns.sixteen -->
-      </div><!-- .row.b -->
+{% layout 'theme-updated' %}
 
-    </div><!-- .container -->
-  </section><!-- .shop-by-collection -->
+{% assign shop_1 = "Shop Dress Shirts" %}
+{% assign shop_1_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-shop-by-collection-1.jpg" %}
 
+{% assign shop_2 = "Shop Chinos" %}
+{% assign shop_2_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/Chinos_2048x2048_small.jpg" %}
 
-  {% comment %}
-  America!
-  {% endcomment %}
-  <section class="usa">
-    <div class="container">
-      <div class="row">
-        <div class="columns sixteen text-center">
-          <div class="float-contents">
-            <img src="{{ 'american-flag.png' | asset_url }}" alt="">
-            <p>Made in the USA</p>
+{% assign shop_3 = "Shop Polos" %}
+{% assign shop_3_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/index-shop-by-collection-2.jpg" %}
+
+{% assign shop_4 = "Shop Outerwear" %}
+{% assign shop_4_image = "https://dl.dropboxusercontent.com/u/2280055/Mizzen/Outerwear_2048x2048.jpg" %}
+
+<div id="index" class="fs-grid fs-grid-fluid home-page">
+
+  <!-- Hero -->
+  <div class="home-carousel">
+    <div class="slider royalslider rsMinW">
+    <!--<<div class="carousel">-->
+
+      {% for i in (1..6) %}
+      {% capture slide %}home-carousel-{{ i }}__enable{% endcapture %}
+      {% capture slide_shade %}home-carousel-{{ i }}__shade{% endcapture %}
+      {% capture slide_image %}home-carousel-{{ i }}__image.jpg{% endcapture %}
+      {% capture slide_image-mobile %}home-carousel-{{ i }}__image-mobile.jpg{% endcapture %}
+      {% capture slide_title %}home-carousel-{{ i }}__title{% endcapture %}
+      {% capture slide_title-color %}home-carousel-{{ i }}__title-color{% endcapture %}
+      {% capture slide_title-shadow %}home-carousel-{{ i }}__title-shadow{% endcapture %}
+      {% capture slide_button %}home-carousel-{{ i }}__button{% endcapture %}
+      {% capture slide_url %}home-carousel-{{ i }}__url{% endcapture %}
+      {% capture slide_align %}home-carousel-{{ i }}__textalign{% endcapture %}
+      {% capture slide_button-color %}home-carousel-{{ i }}__button-color{% endcapture %}
+      {% capture slide_button-bg %}home-carousel-{{ i }}__button-bg{% endcapture %}
+      {% if settings[slide] %}
+
+      <div class="carousel__slide relative" data-shade="{{ settings[slide_shade] }}">
+        <div class="home__hero hero hero--wh bg--black relative wallpaper" data-background-options='{"source":{"300px":"{{ slide_image-mobile | asset_url }}","700px":"{{ slide_image | asset_url }}"}}'>
+          <div class="centered centered--full">
+            <div class="fs-row">
+              <div class="fs-cell fs-lg-10 fs-md-5 fs-sm-3 fs-centered">
+                <div class="{{ settings[slide_align] }}">
+                  <h1 style="color:{{ settings[slide_title-color] }}" class="color--blue {% if settings[slide_title-shadow] %}has-shadow{% endif %}">{{ settings[slide_title] }}</h1>
+                  <a href="{{ settings[slide_url] }}" class="btn btn--primary" style="background-color:{{ settings[slide_button-bg] }}; color:{{ settings[slide_button-color] }};">{{ settings[slide_button] }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    <div class="home-carousel__nav home-carousel__nav--prev">{{ '1462563615_left.svg' | asset_url | img_tag }}</div>
+    <div class="home-carousel__nav home-carousel__nav--next">{{ '1462563526_right.svg' | asset_url | img_tag }}</div>
+  </div>
+
+  <hr class="invisible">
+
+  <!-- Performance Tag -->
+
+  {% include 'performance-home' %}
+
+  <!-- Shop Section -->
+
+  <div class="home__shop" style="display: none;">
+    <div class="fs-row">
+      <div class="home__shop-thumb fs-cell fs-lg-full fs-md-full fs-sm-full relative">
+        <div class="home__shop-image hero hero--sm relative wallpaper" data-background-options='{"source":"{{ shop_1_image }}"}'>
+          <a href="#" class="covered"></a>
+          <div class='centered text-center'>
+            <span href="#" class="btn bg--blue color--white">{{ shop_1 }}</span>
+          </div>
+        </div>
+      </div>
+      <hr class="invisible compact fs-cell fs-all-full">
+      <div class="home__shop-thumb fs-cell fs-lg-half fs-md-full fs-sm-full relative">
+        <a href="#" class="covered"></a>
+        <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_3_image }}"}'>
+          <div class='centered text-center'>
+            <span href="#" class="btn bg--blue color--white">{{ shop_3 }}</span>
+          </div>
+        </div>
+      </div>
+      <hr class="invisible compact fs-cell fs-lg-hide fs-md-hide fs-sm-3">
+      <div class="home__shop-thumb fs-cell fs-lg-half fs-md-full fs-sm-full relative">
+        <a href="#" class="covered"></a>
+        <div class="home__shop-image hero hero--xs relative wallpaper" data-background-options='{"source":"{{ shop_4_image }}"}'>
+          <div class='centered text-center'>
+            <span href="#" class="btn bg--blue color--white">{{ shop_4 }}</span>
           </div>
         </div>
       </div>
     </div>
-  </section><!-- .usa -->
-</div><!-- #variation_default -->
+  </div>
 
+  <hr class="invisible">
 
-{% comment %}
-Optimizely Variation 1
-{% endcomment %}
-<div id="variation_1">
+  <!-- Magazine -->
 
-    {% comment %}
-    Top Banner
-    {% endcomment %}
-    <section class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="columns sixteen">
-            <a href="{{ settings.index_pic_1_link }}" class="captioned-pic{% if settings.index_pic_1_text_color == 'dark' %} dark{% endif %}">
-              <img class="desktop" src="{{ 'index-slide-1-desktop.jpg' | asset_url }}" alt="">
-              <img class="mobile" src="{{ 'index-slide-1-mobile.jpg' | asset_url }}" alt="">
-              <div class="text">
-                <h2>{{ settings.index_pic_1_heading_text }}</h2>
-                <button class="bbutton">{{ settings.index_pic_1_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns -->
-        </div><!-- .row -->
-      </div><!-- .container -->
-    </section><!-- .banner -->
+  <div class="home__magazine">
+    <div class="fs-row">
+      {% for i in (1..6) %}
+      {% capture mag %}home-mag-{{ i }}__enable{% endcapture %}
+      {% capture mag_shade %}home-mag-{{ i }}__shade{% endcapture %}
+      {% capture mag_image %}home-mag-{{ i }}__image.jpg{% endcapture %}
+      {% capture mag_image-mobile %}home-mag-{{ i }}__image-mobile.jpg{% endcapture %}
+      {% capture mag_title %}home-mag-{{ i }}__title{% endcapture %}
+      {% capture mag_desc %}home-mag-{{ i }}__desc{% endcapture %}
+      {% capture mag_button %}home-mag-{{ i }}__button{% endcapture %}
+      {% capture mag_button-color %}home-mag-{{ i }}__button-color{% endcapture %}
+      {% capture mag_button-bg %}home-mag-{{ i }}__button-bg{% endcapture %}
+      {% capture mag_url %}home-mag-{{ i }}__url{% endcapture %}
+      {% capture mag_align %}home-mag-{{ i }}__textalign{% endcapture %}
+      {% capture mag_disable_button %}home-mag-{{ i }}__button-disable{% endcapture %}
+      {% capture mag_video %}home-mag-{{ i }}__video{% endcapture %}
 
-    {% comment %}
-    Quote
-    {% endcomment %}
-    <section class="quote">
-      <div class="container">
-        <div class="row">
-          <div class="columns sixteen">
-            <div class="float-contents">
-              <p>"The next evolution of the men's dress shirt."</p>
-              <img src="{{ 'the-new-york-times.png' | asset_url }}" alt="The New York Times">
-            </div>
-          </div><!-- .columns -->
-        </div><!-- .row -->
-      </div><!-- .container -->
-    </section><!-- .text -->
+      {% if settings[mag] %}
 
-    {% comment %}
-    New Arrivals
-    {% endcomment %}
-    {% include 'new-arrivals' %}
+      {% if forloop.first == true %}
+      {% capture mag_size %}home__magazine--large hero hero--md{% endcapture %}
+      {% capture mag_width %}fs-all-full{% endcapture %}
+      {% else %}
+      {% capture mag_size %}hero hero--xs{% endcapture %}
+      {% capture mag_width %}fs-lg-half fs-md-half fs-sm-3{% endcapture %}
+      {% endif %}
 
-
-    {% comment %}
-    Shop by Collection
-    {% endcomment %}
-    <section class="shop-by-collection">
-      <div class="container">
-        {% comment %}
-        Row A
-        {% endcomment %}
-        <div class="row a">
-          <div class="columns left">
-            <a href="{{ settings.index_pic_2_link }}" class="captioned-pic{% if settings.index_pic_2_text_color == 'dark' %} dark{% endif %}">
-              <img src="{{ 'index-shop-by-collection-1.jpg' | asset_url }}" alt="">
-              <div class="text">
-                {% if settings.index_pic_2_heading_text != '' %}
-                  <p>{{ settings.index_pic_2_heading_text }}</p>
-                {% endif %}
-                <button class="bbutton">{{ settings.index_pic_2_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns.left -->
-          <div class="columns right">
-            <a href="{{ settings.index_pic_3_link }}" class="captioned-pic{% if settings.index_pic_3_text_color == 'dark' %} dark{% endif %}">
-              <img src="{{ 'index-shop-by-collection-2.jpg' | asset_url }}" alt="">
-              <div class="text">
-                {% if settings.index_pic_3_heading_text != '' %}
-                  <p>{{ settings.index_pic_3_heading_text }}</p>
-                {% endif %}
-                <button class="bbutton">{{ settings.index_pic_3_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns.right -->
-        </div><!-- .row.a -->
-        {% comment %}
-        Row B
-        {% endcomment %}
-        <div class="row b">
-          <div class="columns sixteen">
-            <a href="{{ settings.index_pic_4_link }}" class="captioned-pic{% if settings.index_pic_4_text_color == 'dark' %} dark{% endif %}">
-              <img class="desktop" src="{{ 'index-shop-by-collection-3-desktop.jpg' | asset_url }}" alt="">
-              <img class="mobile" src="{{ 'index-shop-by-collection-3-mobile.jpg' | asset_url }}" alt="">
-              <div class="text">
-                {% if settings.index_pic_4_heading_text != '' %}
-                  <p>{{ settings.index_pic_4_heading_text }}</p>
-                {% endif %}
-                <button class="bbutton">{{ settings.index_pic_4_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns.sixteen -->
-        </div><!-- .row.b -->
-
-      </div><!-- .container -->
-    </section><!-- .shop-by-collection -->
-
-
-    {% comment %}
-    America!
-    {% endcomment %}
-    <section class="usa">
-      <div class="container">
-        <div class="row">
-          <div class="columns sixteen text-center">
-            <div class="float-contents">
-              <img src="{{ 'american-flag.png' | asset_url }}" alt="">
-              <p>Made in the USA</p>
+      {% unless settings[mag_video] == '' %}
+      <div class="carousel__slide fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
+        <div class="fitVids">{{ settings[mag_video] }}</div>
+      </div>
+      {% else %}
+      <div class="carousel__slide fs-cell fs-lg-11 fs-md-6 fs-sm-3 fs-centered">
+        <div class="home__magazine--large hero hero--md relative wallpaper" data-background-options='{"source":{"0px":"{{ mag_image-mobile | asset_url }}","980px":"{{ mag_image | asset_url }}"}}'>
+          <div class="centered">
+            <div class="wrapper--extra {{ settings[mag_align] }}">
+              <h1>{{ settings[mag_title] }}</h1>
+              <p>{{ settings[mag_desc] }}</p>
+              {% unless settings[mag_disable_button] %}
+              <a href="{{ settings[mag_url] }}" class="btn" style="background-color:{{ settings[mag_button-bg] }}; color:{{ settings[mag_button-color] }};">{{ settings[mag_button] }}</a>
+              {% endunless %}
             </div>
           </div>
         </div>
       </div>
-    </section><!-- .usa -->
+      {% endunless %}
 
-</div><!-- #variation_1 -->
+      <hr class="invisible compact">
 
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 
-{% comment %}
-Optimizely Variation 2
-{% endcomment %}
-<div id="variation_2">
+  <!-- Press -->
 
-    {% comment %}
-    Top Banner
-    {% endcomment %}
-    <section class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="columns sixteen">
-            <a href="{{ settings.index_pic_1_link }}" class="captioned-pic{% if settings.index_pic_1_text_color == 'dark' %} dark{% endif %}">
-              <img class="desktop" src="{{ 'index-slide-1-desktop.jpg' | asset_url }}" alt="">
-              <img class="mobile" src="{{ 'index-slide-1-mobile.jpg' | asset_url }}" alt="">
-              <div class="text">
-                <h2>{{ settings.index_pic_1_heading_text }}</h2>
-                <button class="bbutton">{{ settings.index_pic_1_button_text }}</button>
-              </div><!-- .text -->
+  <!--
+  <div class="home__press">
+    <div class="fs-row">
+      <div class="fs-cell fs-all-full">
+        <div class="carousel">
+          <div class="carousel__slide text-center">
+            <a href="#">
+              <h1 class="home__press-quote"><em>"The evolution of performance menswear."</em></h1>
+              <img src="https://dl.dropboxusercontent.com/u/2280055/Mizzen/logo.png" class="img-responsive" />
             </a>
-          </div><!-- .columns -->
-        </div><!-- .row -->
-      </div><!-- .container -->
-    </section><!-- .banner -->
-
-    {% comment %}
-    Quote
-    {% endcomment %}
-    <section class="quote">
-      <div class="container">
-        <div class="row">
-          <div class="columns sixteen">
-            <div class="float-contents">
-              <p>"The next evolution of the men's dress shirt."</p>
-              <img src="{{ 'the-new-york-times.png' | asset_url }}" alt="The New York Times">
-            </div>
-          </div><!-- .columns -->
-        </div><!-- .row -->
-      </div><!-- .container -->
-    </section><!-- .text -->
-
-    {% comment %}
-    Shop by Collection
-    {% endcomment %}
-    <section class="shop-by-collection">
-      <div class="container">
-        {% comment %}
-        Row A
-        {% endcomment %}
-        <div class="row a">
-          <div class="columns left">
-            <a href="{{ settings.index_pic_2_link }}" class="captioned-pic{% if settings.index_pic_2_text_color == 'dark' %} dark{% endif %}">
-              <img src="{{ 'index-shop-by-collection-1.jpg' | asset_url }}" alt="">
-              <div class="text">
-                {% if settings.index_pic_2_heading_text != '' %}
-                  <p>{{ settings.index_pic_2_heading_text }}</p>
-                {% endif %}
-                <button class="bbutton">{{ settings.index_pic_2_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns.left -->
-          <div class="columns right">
-            <a href="{{ settings.index_pic_3_link }}" class="captioned-pic{% if settings.index_pic_3_text_color == 'dark' %} dark{% endif %}">
-              <img src="{{ 'index-shop-by-collection-2.jpg' | asset_url }}" alt="">
-              <div class="text">
-                {% if settings.index_pic_3_heading_text != '' %}
-                  <p>{{ settings.index_pic_3_heading_text }}</p>
-                {% endif %}
-                <button class="bbutton">{{ settings.index_pic_3_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns.right -->
-        </div><!-- .row.a -->
-        {% comment %}
-        Row B
-        {% endcomment %}
-        <div class="row b">
-          <div class="columns sixteen">
-            <a href="{{ settings.index_pic_4_link }}" class="captioned-pic{% if settings.index_pic_4_text_color == 'dark' %} dark{% endif %}">
-              <img class="desktop" src="{{ 'index-shop-by-collection-3-desktop.jpg' | asset_url }}" alt="">
-              <img class="mobile" src="{{ 'index-shop-by-collection-3-mobile.jpg' | asset_url }}" alt="">
-              <div class="text">
-                {% if settings.index_pic_4_heading_text != '' %}
-                  <p>{{ settings.index_pic_4_heading_text }}</p>
-                {% endif %}
-                <button class="bbutton">{{ settings.index_pic_4_button_text }}</button>
-              </div><!-- .text -->
-            </a>
-          </div><!-- .columns.sixteen -->
-        </div><!-- .row.b -->
-
-      </div><!-- .container -->
-    </section><!-- .shop-by-collection -->
-
-
-    {% comment %}
-    New Arrivals
-    {% endcomment %}
-    {% include 'new-arrivals' %}
-
-
-    {% comment %}
-    America!
-    {% endcomment %}
-    <section class="usa">
-      <div class="container">
-        <div class="row">
-          <div class="columns sixteen text-center">
-            <div class="float-contents">
-              <img src="{{ 'american-flag.png' | asset_url }}" alt="">
-              <p>Made in the USA</p>
-            </div>
           </div>
         </div>
       </div>
-    </section><!-- .usa -->
+    </div>
+  </div>
+  -->
 
-</div><!-- #variation_2 -->
+</div>

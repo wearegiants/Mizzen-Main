@@ -34,7 +34,6 @@
   <!-- Stylesheets -->
   {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
   {{ 'main.css' | asset_url | stylesheet_tag }}
-  {{ 'wag.min.css' | asset_url | stylesheet_tag }}
   {{ 'theme-settings.scss.css' | asset_url | stylesheet_tag }}
 
   <!-- Icons -->
@@ -130,16 +129,14 @@
     {% comment %}
     Header
     {% endcomment %}
-    {% include 'v2_header' %}
-    <div class="divider"></div>
-    <hr class="invisible compact">
+    {% include 'header' %}
 
     {% if template == 'collection' or template contains 'double-collection' %}
       {% include 'collection-mobile-banner' %}
     {% endif %}
 
     {% unless feature_image %}
-      <div class="container main content" style="border:none;">
+      <div class="container main content">
     {% endunless %}
 
     {% if template contains 'list-collections' %}
@@ -158,7 +155,7 @@
 
     </div>
 
-    {% include 'v2-footer' %}
+    {% include 'footer' %}
 
     <div id="search" class="animated">
       <div class="container">
@@ -177,8 +174,6 @@
     </div><!-- #search -->
 
   </div><!-- .mm-page -->
-
-  {{ 'main.min.js' | asset_url | script_tag }}
 
   {% include 'newsletter-popup' %}
   {% include 'currencies' %}
