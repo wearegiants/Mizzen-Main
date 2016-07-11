@@ -1,16 +1,9 @@
-{% assign add_to_cart = 'Add to cart' %}
-{% assign sold_out = 'Sold Out' %}
-{% assign unavailable = 'Unavailable' %}
-
-<div id="product" class="header--lg">
-  <div class="fs-row">
-    <div class="fs-cell fs-xl-8 fs-lg-8 fs-md-6 fs-sm-3">{% include 'product-images_wag' %}</div>
-    <hr class="invisible fs-cell fs-lg-hide fs-md-6 fs-sm-3">
-    <div class="fs-cell fs-xl-4 fs-lg-4 fs-md-6 fs-sm-3">{% include 'product-info_wag' %}</div>
-  </div>
-</div>
-
-<!-- Begin stuff -->
+{% comment %}
+  Disable sold-out variants.
+  Only works for products that have one option.
+  It won't work with products that have two or three options, like Size and Color.
+  See: https://docs.myshopify.io/themes/customization/products/hide-variants-that-are-sold-out
+{% endcomment %}
 
 {% if product.options.size == 1 %}
   <script>

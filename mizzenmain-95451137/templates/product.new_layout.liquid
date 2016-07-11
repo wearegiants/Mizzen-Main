@@ -160,3 +160,27 @@ Shopify.Image.preload({{ product.images | json }}, 'grande');
 Shopify.Image.preload({{ product.images | json }}, '1024x1024');
 
 </script>
+
+<!-- disable stuff -->
+
+{% if product.options.size == 1 %}
+  <script>
+  var $addToCartForm = $('form[action="/cart/add"]');
+  if (window.MutationObserver && $addToCartForm.length) {
+    if (typeof observer === 'object' && typeof observer.disconnect === 'function') {
+      observer.disconnect();
+    }
+    var config = { childList: true, subtree: true };
+    var observer = new MutationObserver(function() { 
+      {% for variant in product.variants %}
+        {% if variant.metafields.info.visibility contains 'hidden' %}
+          jQuery('.single-option-selector option:eq({{ forloop.index0 }})').hide();
+        {% endif %}
+      {% endfor %}
+      jQuery('.single-option-selector').trigger('change');
+      observer.disconnect();
+    });  
+    observer.observe($addToCartForm[0], config);
+  }
+  </script>
+{% endif %}
