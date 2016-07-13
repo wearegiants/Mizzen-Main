@@ -4,6 +4,15 @@
   max-width: @maxWidth;
   margin: auto;
 
+  &__desc, &__meta {
+    @media @min {
+      text-align: center;
+    }
+    @media @desktop {
+      text-align: left;
+    }
+  }
+
   .home {
     &__performance {
       h2 {
@@ -133,6 +142,7 @@
         width: 100%!important;
         top: auto!important;
         color: inherit!important;
+        display: block!important;
       }
     }
     &-add {

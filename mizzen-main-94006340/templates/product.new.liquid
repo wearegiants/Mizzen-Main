@@ -9,6 +9,10 @@
   <!-- Product Info & Images -->
   <div class="fs-row equalized" data-equalize-options='{"target":".equalize_child", "minWidth":"980px"}'>
     <div id="prod__info-wrapper" class="fs-cell fs-all-full relative equalize_child">
+      <div id="prod__images" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained">
+        {% include 'product-images_wag' %}
+      </div>
+      <hr class="invisible fs-sm-3 fs-md-6 fs-lg-hide">
       <div id="prod__info" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained fs-right">
         <hr class="invisible compact fs-lg-hide fs-md-6 fs-sm-3 fs-contained">
         <div class="fs-row">
@@ -22,10 +26,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <hr class="invisible fs-sm-3 fs-md-6 fs-lg-hide">
-      <div id="prod__images" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained">
-        {% include 'product-images_wag' %}
       </div>
     </div>
   </div>
@@ -151,8 +151,10 @@ jQuery(function($) {
   
   // Add label if only one product option and it isn't 'Title'.
   {% if product.options.size == 1 and product.options.first != 'Title' %}
-    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>').addClass('fs-cell fs-lg-8 fs-md-5 fs-sm-3 fs-centered');
+    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
   {% endif %}
+
+  $('.selector-wrapper').addClass('fs-cell fs-lg-8 fs-md-5 fs-sm-3 fs-centered');
 
 });
 
@@ -174,6 +176,11 @@ Shopify.Image.preload({{ product.images | json }}, '1024x1024');
         {% if variant.metafields.info.visibility contains 'hidden' %}
           jQuery('.single-option-selector option:eq({{ forloop.index0 }})').wrap('<span/>');
         {% endif %}
+        var title = jQuery('.single-option-selector option').val();
+        //console.log(title);
+        if(title == 'Default Title') {
+          jQuery('.single-option-selector option').html('One Size');
+        }
       {% endfor %}
       jQuery('.single-option-selector').trigger('change');
       observer.disconnect();

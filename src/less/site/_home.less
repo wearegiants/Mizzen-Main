@@ -13,7 +13,13 @@
       line-height: 1.4;
     }
     .btn {
-      .font_size(17);
+      @media @min {
+        .font_size(15);  
+      }
+      @media @tablet {
+        .font_size(17);
+      }
+      
       height: 45px;
       line-height: 45px;
     }

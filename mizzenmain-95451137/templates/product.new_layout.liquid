@@ -3,12 +3,17 @@
 {% assign add_to_cart = 'Add to cart' %}
 {% assign sold_out = 'Sold Out' %}
 {% assign unavailable = 'Unavailable' %}
+{% assign shippingnote = 'Free shipping over $100' %}
 
 <div id="prod" class="fs-grid fs-grid-fluid">
 
   <!-- Product Info & Images -->
   <div class="fs-row equalized" data-equalize-options='{"target":".equalize_child", "minWidth":"740px"}'>
     <div id="prod__info-wrapper" class="fs-cell fs-all-full relative equalize_child">
+      <div id="prod__images" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained">
+        {% include 'product-images_wag' %}
+      </div>
+      <hr class="invisible fs-sm-3 fs-md-6 fs-lg-hide">
       <div id="prod__info" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained fs-right">
         <hr class="invisible compact fs-lg-hide fs-md-6 fs-sm-3 fs-contained">
         <div class="fs-row">
@@ -16,16 +21,12 @@
             <div class="equalize_child">
               <div class="product-info__wrapper">
                 {% include 'product-info_wag' %}
-                <hr class="invisible compact fs-sm-hide">
-                <div class="text-center"><a href="/pages/faqs#shipping" style="text-decoration: underline"><small id="prod--note">Free shipping over $100</small></a></div>
+                <hr class="invisible compact fs-md-hide fs-sm-hide">
+                <div class="text-center fs-md-hide fs-sm-hide"><a href="/pages/faqs#shipping" style="text-decoration: underline"><small id="prod--note">{{ shippingnote }}</small></a></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <hr class="invisible fs-sm-3 fs-md-6 fs-lg-hide">
-      <div id="prod__images" class="fs-cell fs-lg-half fs-md-full fs-sm-3 fs-contained">
-        {% include 'product-images_wag' %}
       </div>
     </div>
   </div>
