@@ -5,10 +5,39 @@
 
 <div id="collection" class="fs-grid">
 
-  <div class="collection-header relative bg--black hero wallpaper" data-background-options='{"source":"{{ header-image }}"}'>
-    <div class="centered">
+  {% assign valign = collection.metafields.hero.valign %}
+  {% assign halign = collection.metafields.hero.halign %}
+  {% assign color  = collection.metafields.hero.color %}
+
+  {% if valign == 'top' %}
+    {% capture vertical %}pinned pinned--top{% endcapture %}
+  {% elsif valign == 'bottom' %}
+    {% capture vertical %}pinned pinned--bottom{% endcapture %}
+  {% elsif valign == 'center' %}
+    {% capture vertical %}default{% endcapture %}
+  {% else %}
+    {% capture vertical %}default{% endcapture %}
+  {% endif %}
+  
+  {% if halign == 'right' %}
+    {% capture horiz %}fs-right{% endcapture %}
+  {% elsif halign == 'center' %}
+    {% capture horiz %}fs-center{% endcapture %}
+  {% elsif halign == 'left' %}
+    {% capture horiz %}{% endcapture %}
+  {% else %}
+    {% capture horiz %}{% endcapture %}
+  {% endif %}
+
+  <div class="collection-header relative bg--black">
+    <div class="hero wallpaper collection-header__bg" data-background-options='{"source":"{{ header-image }}"}'></div>
+    <div class="collection-header__content {{ vertical }}">
       <div class="fs-row">
-        <div class="fs-cell fs-all-full color--{{ header-color }}">{{ page.content }}</div>
+        <div class="fs-cell fs-lg-half fs-md-half fs-sm-full {{ horiz }} color--{{ color }}">
+          <div class="wrapper">
+            {{ collection.description }}
+          </div>
+        </div>
       </div>
     </div>
   </div>

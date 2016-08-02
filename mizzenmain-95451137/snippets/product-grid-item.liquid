@@ -21,7 +21,7 @@
     {% endunless %}
     <a class="product-item__link" href="{{ product.url }}">
       <img class="product-item__image product-item__image--first img-responsive" src="{{ product.featured_image.src | img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}">
-      <!--<img class="product-item__image product-item__image--second img-responsive" src="{{ product.images[1] | product_img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}">-->
+      <img class="product-item__image product-item__image--second img-responsive" src="{{ product.images[1] | product_img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}">
     </a>
   </div>
   <div class="product-item__meta text-center">

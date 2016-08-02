@@ -1,0 +1,52 @@
+.collection {
+  &-header {
+
+    &__bg {
+      @media @tablet {
+        //.cover();
+      }
+    }
+
+    &__content {
+      z-index: 9;
+      position: relative;
+      .byantReg();
+
+      h1,h2,h3,h4,h5,h6 {
+        display: block;
+        color: inherit;
+        .headerFont();
+      }
+
+      h1 {
+        .font_size(32);
+      }
+
+      @media @min {
+        line-height: 1.3;
+        .font_size(17);
+        background: @white;
+        text-align: center;
+        h1,h2,h3,h4,h5,h6,p { 
+          //text-align: center;
+        }
+      }
+      @media @tablet {
+        line-height: 2;
+        .font_size(20);
+        background: transparent;
+        text-align: initial!important;
+        h1,h2,h3,h4,h5,h6,p { 
+          //text-align: initial!important;
+        }
+      }
+
+      &.default {
+        @media @tablet {
+          .center();
+        }
+      }
+
+    }
+  }
+}

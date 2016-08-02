@@ -191,7 +191,7 @@
     line-height: 1;
     color: @blue;
     .font_size(16);
-    .accentFont();
+    .byantReg();
     letter-spacing: 0;
     text-transform: none;
     margin-bottom: 5px;
@@ -213,5 +213,31 @@
       color: @white;
     }
   }
-
+  &__link {
+    position: relative;
+    display: block;
+    img {
+      transition: opacity 500ms ease;
+    }
+    &:hover {
+      .product-item__image {
+        &--second {
+          opacity: 1;
+        }
+        &--first {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &__image {
+    &--second {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      max-width: 100%;
+    }
+  }
 }
