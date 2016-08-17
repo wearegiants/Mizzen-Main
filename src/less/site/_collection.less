@@ -1,9 +1,88 @@
 .collection {
+
+  &-headline {
+    p {
+      .headerFont();
+      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__border {
+      border-top: 1px solid @lighterGray;
+      margin-bottom: @spaced*2;
+    }
+    &__middle {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: @blue;
+      @media @min {
+        .font_size(22);  
+      }
+      @media @desktop {
+        .font_size(36);  
+      }
+    }
+    &__top, &__bottom {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      .font_size(15);
+      @media @min {
+        color: @gray;
+      }
+      @media @desktop {
+        color: @blue;
+      }
+    }
+  }
+
+  &-notification {
+    .wrapper {
+      padding: @spaced*.5;
+      border-radius: 3px;
+      margin-bottom: @spaced*2;
+      .byantReg();
+      &:hover {
+        color: @white;
+      }
+    }
+  }
+
+  &-filters {
+    padding: 15px 0;
+    border-bottom: 1px solid @lighterGray;
+    text-align: center;
+    &__title {
+      .headerFont();
+      color: @gray;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    &__select {
+      margin-bottom: 0;
+      border: 0;
+      .headerFont();
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      width: auto;
+      padding-right: 2.5em;
+      border: 1px solid @lighterGray;
+      background: url('icon--down.svg') center right .75em no-repeat;
+      background-size: 10px auto;
+      margin-right: 10px;
+    }
+  }
+
   &-header {
 
     &__bg {
       @media @tablet {
         //.cover();
+      }
+      .fs-background {
+        &-media {
+          background-position: top center;
+        }
       }
     }
 

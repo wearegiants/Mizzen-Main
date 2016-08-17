@@ -1,0 +1,21 @@
+{% layout 'theme-updated' %}
+
+{% capture header-color %}white{% endcapture %}
+{% capture header-image %}https://cdn.shopify.com/s/files/1/0163/4002/files/HERO-aboeeeut.jpg?17363458158702345499{% endcapture %}
+{% assign my_content = page.content | split: '<!-- split -->' %}
+
+<div id="about" class="fs-grid fs-grid">
+  <div class="about-header relative bg--black hero wallpaper" data-background-options='{"source":"{{my_content[0]}}"}'>
+    <div class="centered">
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full color--{{ header-color }} text-center">{{ page.title }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-content fs-row">
+    <div class="fs-cell fs-lg-10 fs-md-5 fs-sm-3 fs-centered">
+      <hr class="invisible">
+      {{my_content[1]}}
+    </div>
+  </div>
+</div>
