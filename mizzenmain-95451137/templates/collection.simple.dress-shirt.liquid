@@ -55,6 +55,8 @@
     {% capture horiz %}{% endcapture %}
   {% endif %}
 
+  {% assign collection_handle = '' %}
+
   <div class="collection-header relative bg--black">
     <div class="hero wallpaper collection-header__bg" data-background-options='{"source":"{{ header-image }}"}'></div>
     <div class="collection-header__content {{ vertical }}">
@@ -73,6 +75,7 @@
   <hr class="invisible">
 
   <div class="collection-products fs-row">
+    {% assign collection = collections.leeward-collection %}
     {% for product in collection.products %}
     <div class="fs-cell fs-lg-third fs-md-half fs-sm-full">
       {% include 'product-grid-item' with products_per_row %}

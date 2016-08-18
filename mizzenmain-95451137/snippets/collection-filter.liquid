@@ -1,0 +1,98 @@
+{% assign collection_linklist = 'shop-dress-shirts-collections' %}
+{% assign color_linklist = 'shop-dress-shirts-colors' %}
+{% assign size_linklist = 'shop-dress-shirts-sizes' %}
+{% assign fit_linklist = 'shop-dress-shirts-fit' %}
+  
+<div class="collection-filters">
+  <div class="fs-row">
+    <div class="fs-cell fs-all-full">
+      <span class="collection-filters__title">Filters</span>
+      <select id="filter-by-color" class="collection-filters__select">
+        <option disabled>Filter by Color</option>
+        <option value="">All</option>
+        {% for link in linklists[color_linklist].links %}
+          {% assign selected_attribute = '' %}
+          {% if current_tags contains link.title %}
+            {% assign selected_attribute = ' selected="selected"' %}
+          {% endif %}
+          <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+        {% endfor %}
+      </select>
+      <select id="filter-by-size" class="collection-filters__select">
+        <option disabled>Filter by Size</option>
+        <option value="">All</option>
+        {% for link in linklists[size_linklist].links %}
+          {% assign selected_attribute = '' %}
+          {% if current_tags contains link.title %}
+            {% assign selected_attribute = ' selected="selected"' %}
+          {% endif %}
+          <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+        {% endfor %}
+      </select>
+      <select id="filter-by-trim" class="collection-filters__select">
+        <option disabled>Filter by Trim</option>
+        <option value="">All</option>
+        {% for link in linklists[fit_linklist].links %}
+          {% assign selected_attribute = '' %}
+          {% if current_tags contains link.title %}
+            {% assign selected_attribute = ' selected="selected"' %}
+          {% endif %}
+          <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* Product Tag Filters - Good for any number of filters on any type of collection page.
+     Give you product tag filter select element a class of coll-filter.
+     Give your collection select a class of coll-picker.
+     Brought to you by Caroline Schnapp. */
+  Shopify.queryParams = {};
+  if (location.search.length) {
+    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+      aKeyValue = aCouples[i].split('=');
+      if (aKeyValue.length > 1) {
+        Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+      }
+    }
+  }
+  jQuery('.collection-filters__select').change(function() {
+    if (jQuery(this).val()) {
+      location.href = '/collections/' + jQuery(this).val();
+    }
+    else {
+      location.href = '/collections/all';
+    }
+  });
+  var collFilters = jQuery('.collection-filters__select');
+  collFilters.change(function() {
+    delete Shopify.queryParams.page;
+    var newTags = [];
+    collFilters.each(function() {
+      if (jQuery(this).val()) {
+        newTags.push(jQuery(this).val());
+      }
+    });
+    {% if collection.handle %}
+    var newURL = '/collections/{{ collection.handle }}';
+    if (newTags.length) {
+      newURL += '/' + newTags.join('+');
+    }
+    var search = jQuery.param(Shopify.queryParams);
+    if (search.length) {
+      newURL += '?' + search;
+    }
+    location.href = newURL;
+    {% else %}
+    if (newTags.length) {
+      Shopify.queryParams.constraint = newTags.join('+');
+    }
+    else {
+      delete Shopify.queryParams.constraint;
+    }
+    location.search = jQuery.param(Shopify.queryParams);
+    {% endif %}
+  });
+</script>
