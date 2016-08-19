@@ -4112,6 +4112,10 @@ hr.nomargin {
   -webkit-font-smoothing: antialiased;
   text-decoration: none;
 }
+.btn.color--white:hover,
+.epm-submit-chimp.color--white:hover {
+  color: #fff;
+}
 .btn--primary:active,
 .epm-submit-chimp--primary:active {
   -webkit-transform: translateY(1px);

@@ -1,3 +1,4 @@
+{% if collection.handle contains '-collection' %}
 {% assign collection_linklist = 'shop-dress-shirts-collections' %}
 {% assign color_linklist = 'shop-dress-shirts-colors' %}
 {% assign size_linklist = 'shop-dress-shirts-sizes' %}
@@ -29,6 +30,7 @@
           <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
         {% endfor %}
       </select>
+      {% comment %}
       <select id="filter-by-trim" class="collection-filters__select">
         <option disabled>Filter by Trim</option>
         <option value="">All</option>
@@ -40,6 +42,7 @@
           <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
         {% endfor %}
       </select>
+      {% endcomment %}
     </div>
   </div>
 </div>
@@ -96,3 +99,4 @@
     {% endif %}
   });
 </script>
+{% endif %}

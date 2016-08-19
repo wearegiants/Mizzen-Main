@@ -1,0 +1,127 @@
+{% if collection.handle contains 'leeward' or collection.handle contains 'spinnaker' %}
+
+<hr class="invisible compact">
+
+{% if collection.handle contains '-collection' %}
+  <div class="text-center">
+    <a href="#less-btn-poss" class="btn bg--blue color--white more-button">+ MORE ABOUT THE {{ collection.title | uppercase | replace: 'Collection', '' }}</a>
+  </div>
+{% endif %}
+
+{% if collection.handle contains '-collection' %}
+  <div id="less-btn-poss" class="info-container{% if collection.handle contains 'spinnaker' %} spinnaker{% endif %}">
+    <div class="row icons">
+      <div class="columns">
+        <img src="{{ 'icon-moisture-wicking.png' | asset_url }}" alt="">
+        <h4>Moisture Wicking</h4>
+      </div>
+      <div class="columns">
+        <img src="{{ 'icon-machine-washable.png' | asset_url }}" alt="">
+        <h4>Machine Washable</h4>
+      </div>
+      <div class="columns">
+        <img src="{{ 'icon-four-way-stretch.png' | asset_url }}" alt="">
+        <h4>Four Way Stretch</h4>
+      </div>
+      <div class="columns">
+        <img src="{{ 'icon-superior-fit.png' | asset_url }}" alt="">
+        <h4>Superior Fit</h4>
+      </div>
+    </div>
+    <div class="row no-margin">
+      <div class="columns left featimg">
+        {% if collection.handle contains 'leeward' %}
+          {% assign infoprod = all_products['montauk-blue-check-dress-shirt'] %}
+        {% elsif collection.handle contains 'spinnaker' %}
+          {% assign infoprod = all_products['captiva-bright-coral-gingham-spread-collar-dress-shirt'] %}
+        {% endif %}
+        <a href="{{ infoprod.url }}"><img src="{{ infoprod.featured_image.src | product_img_url: 'master' }}" /></a>
+      </div>
+      <div class="columns right product-info">
+        <ul>
+          <li>
+            <h3>Maintenance</h3>
+            <p>Machine washable and requires no ironing</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <h3>Quick dry</h3>
+            <p>Moisture wicking fabric lets you breathe</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <h3>Four-way Stretch</h3>
+            <p>Moisture wicking fabric lets you breathe</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <h3>Weight</h3>
+            <p>Lightweight and comfortable to keep you cool</p>
+            <div class="bar">
+              <span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row linkholder">
+      <a href="#" class="btn bg--blue color--white  less-button">- LESS</a>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $.fn.scrollView = function () {
+      return this.each(function () {
+          $('html, body').animate({
+              scrollTop: $(this).offset().top - 60
+          }, 500);
+      });
+    }
+    $(document).ready(function() {
+        $( "a.more-button" ).click(function() {
+          $('#less-btn-poss').scrollView();
+          $( ".info-container" ).show().addClass('active');
+
+          return false;
+        });
+        $( "a.less-button" ).click(function() {
+          $( ".info-container" ).hide().removeClass('active');
+          $( "a.more-button" ).scrollView();
+          return false;
+        });
+    });
+  </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.info-button').click(function(){
+          $('.info-container').toggle(function(){
+            if ($('.info-button').text() == '+ MORE ABOUT THE LEEWARD') {
+              $('.info-button').text('- SHOW LESS');
+            }
+            else {
+              $('.info-button').text('+ MORE ABOUT THE LEEWARD');
+            }
+          });
+        });
+        // $('.info-button').click(function(){
+        //   $('.info-container').toggle(function(){
+        //     if ($('.info-button').text() == '+ MORE ABOUT THE SPINNAKER') {
+        //       $('.info-button').text('- SHOW LESS');
+        //     }
+        //     else {
+        //       $('.info-button').text('+ MORE ABOUT THE SPINNAKER');
+        //     }
+        //   });
+        // });
+      });
+    </script>
+  {% endif %}
+
+{% endif %}
