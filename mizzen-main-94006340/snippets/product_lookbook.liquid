@@ -1,0 +1,21 @@
+<div class="fs-row">
+	{% capture handle %}{{ product.handle }}{% endcapture %}
+	{% for article in blogs['lookbook'].articles limit:10 %}
+
+	{% capture article %}{{ article.handle }}{% endcapture %}
+	{% capture arthandle %}{{ article.handle | remove: 'lookbook/' }}{% endcapture %}
+
+	{% if handle == arthandle %}
+	{% assign my_content = article.content | split: '<!-- split -->' %}
+
+	{% for i in (1..10) %}
+	{% if my_content[i] contains 'full' %}<div class="fs-cell fs-all-full">{% endif %}
+	{% if my_content[i] contains 'half' %}<div class="fs-cell fs-lg-half fs-md-half fs-sm-3">{% endif %}
+	{{ my_content[i] }}
+	<hr class="invisible compact">
+	</div>
+	{% endfor %}
+	{% endif %}
+	{% endfor %}
+</div>
+

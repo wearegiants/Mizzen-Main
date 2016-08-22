@@ -5595,6 +5595,10 @@ hr.nomargin {
 #prod .home__performance h2 {
   display: none!important;
 }
+#prod__lookbook img {
+  display: block;
+  max-width: 100%;
+}
 #prod__info {
   position: relative;
 }
