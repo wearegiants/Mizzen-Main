@@ -73,6 +73,8 @@
     <div class="fs-cell fs-lg-third fs-md-half fs-sm-full">
       {% include 'product-grid-item' with products_per_row %}
     </div>
+    {% cycle '', '', '<div class="fs-cell fs-all-full fs-md-hide fs-sm-hide compact invisible">&nbsp;</div>' %}
+    {% cycle '', '<div class="fs-cell fs-lg-hide fs-md-full fs-sm-hide compact invisible">&nbsp;</div>' %}
     {% endfor %}
   </div>
 

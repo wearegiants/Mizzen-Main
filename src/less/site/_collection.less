@@ -17,6 +17,10 @@
       color: @blue;
       @media @min {
         .font_size(22);  
+        line-height: 1.2;
+      }
+      @media @tablet {
+        line-height: 1.4
       }
       @media @desktop {
         .font_size(36);  
@@ -57,6 +61,12 @@
       color: @gray;
       display: inline-block;
       margin-right: 10px;
+      @media @min {
+        display: none;
+      }
+      @media @mobile {
+        display: inline-block;
+      }
     }
     &__select {
       margin-bottom: 0;
@@ -69,15 +79,27 @@
       border: 1px solid @lighterGray;
       background: url('icon--down.svg') center right .75em no-repeat;
       background-size: 10px auto;
-      margin-right: 10px;
+      @media @min {
+        margin: 0 5px;
+      }
+      @media @mobile {
+        margin: 0 0;
+        margin-right: 10px;
+      }
     }
   }
 
   &-header {
 
     &__bg {
+      @media @min {
+        height: 200px;
+      }
       @media @tablet {
-        //.cover();
+        height: 500px;
+      }
+      @media @desktop {
+        height: 600px
       }
       .fs-background {
         &-media {

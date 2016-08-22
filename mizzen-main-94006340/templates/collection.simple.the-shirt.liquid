@@ -3,11 +3,12 @@
 
 <div id="collection" class="fs-grid">
 
-  {% if collection.handle == 'test-collection' %}
+  {% if collection.handle == 'the-shirt' %}
 
   <div class="collection-headline__border"></div>
+
   <div class="fs-row">
-    <div class="fs-cell fs-xl-10 fs-lg-12 fs-md-5 fs-sm-3 fs-centered">
+    <div class="fs-cell fs-xl-10 fs-lg-12 fs-md-5 fs-sm-3 fs-centered fs-lg-hide">
       <div class="collection-headline text-center">
         <p class="collection-headline__top">Introducing your new favorite dress shirt.</p>
         <p class="collection-headline__middle">PERFORMANCE FABRICS. PROFESSIONAL STYLE.</p>
@@ -52,24 +53,38 @@
   {% capture header-image %}{{ collection.image.src | img_url: '2048x2048' }}{% endcapture %} 
   <div class="collection-header relative bg--black">
     <div class="hero wallpaper collection-header__bg" data-background-options='{"source":"{{ header-image }}"}'></div>
+
+    <div class="collection-notification bg--gray">
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fs-lg-hide fs-md-hide">
+          <a style="display:block" href="/collections/the-shirt" class="wrapper text-center color--white">Use "MAINMAN3" at Checkout <br class="fs-lg-hide fs-md-hide"> for $50 Off 3 Dress Shirts</a>
+        </div>
+      </div>
+    </div>
+
     <div class="collection-header__content {{ vertical }}">
       <div class="fs-row">
         <div class="fs-cell fs-lg-5 fs-md-half fs-sm-full {{ horiz }} color--{{ color }}">
           <div class="wrappers">
+            <hr class="fs-lg-hide invisible compact">
             {{ collection.description }}
           </div>
         </div>
       </div>
     </div>
-    <div class="collection-notification">
-      <a style="display:block" href="/collections/the-shirt" class="wrapper bg--gray text-center color--white">Use "MAINMAN3" at Checkout for $50 Off 3 Dress Shirts</a>
+    <div class="collection-notification bg--gray">
+      <div class="fs-row">
+        <div class="fs-cell fs-all-full fs-sm-hide">
+          <a style="display:block" href="/collections/the-shirt" class="wrapper text-center color--white">Use "MAINMAN3" at Checkout <br class="fs-lg-hide fs-md-hide"> for $50 Off 3 Dress Shirts</a>
+        </div>
+      </div>
     </div>
   </div>
-  {% include 'collection-filter' %}
+  {% include 'collection-filter' with collection %}
   <hr class="invisible">
   <div class="collection-products fs-row">
     {% for product in collection.products %}
-    <div class="fs-cell fs-lg-third fs-md-half fs-sm-full">
+    <div class="fs-cell fs-lg-third fs-md-half fs-sm-half fs-xs-full">
       {% include 'product-grid-item' with products_per_row %}
     </div>
     {% endfor %}
@@ -119,7 +134,7 @@
   <hr class="invisible">
   <div class="collection-products fs-row">
     {% for product in collection.products %}
-    <div class="fs-cell fs-lg-third fs-md-half fs-sm-full">
+    <div class="fs-cell fs-lg-third fs-md-half fs-sm-half fs-xs-full">
       {% include 'product-grid-item' with products_per_row %}
     </div>
     {% endfor %}
