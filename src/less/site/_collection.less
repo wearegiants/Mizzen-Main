@@ -96,10 +96,21 @@
         height: 200px;
       }
       @media @tablet {
-        height: 500px;
+        height: 400px;
       }
       @media @desktop {
-        height: 600px
+        height: 500px
+      }
+      &--simple {
+        @media @min {
+          height: 200px;
+        }
+        @media @tablet {
+          height: 400px;
+        }
+        @media @desktop {
+          height: 450px
+        }
       }
       .fs-background {
         &-media {

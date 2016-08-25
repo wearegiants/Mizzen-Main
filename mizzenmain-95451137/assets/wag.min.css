@@ -6984,12 +6984,27 @@ hr.nomargin {
 }
 @media screen and (min-width: 740px) {
   .collection-header__bg {
-    height: 500px;
+    height: 400px;
   }
 }
 @media screen and (min-width: 980px) {
   .collection-header__bg {
-    height: 600px;
+    height: 500px;
+  }
+}
+@media screen and (min-width: 300px) {
+  .collection-header__bg--simple {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .collection-header__bg--simple {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .collection-header__bg--simple {
+    height: 450px;
   }
 }
 .collection-header__bg .fs-background-media {
