@@ -5,11 +5,14 @@
 {% assign size_linklist = 'shop-dress-shirts-sizes' %}
 {% assign fit_linklist = 'shop-dress-shirts-fit' %}
 
+<!-- Collection Testing -->
+<!-- {{ collection.handle }} -->
+
 <div class="collection-filters">
   <div class="fs-row">
     <div class="fs-cell fs-all-full">
       <span class="collection-filters__title">Filters</span>
-      <select id="filter-by-color" class="collection-filters__select">
+      <select id="filter-by-color" class="collection-filters__select {{ collection.handle }}">
         <option selected disabled>Filter by Color</option>
         <option value="">All</option>
         {% for link in linklists[color_linklist].links %}
@@ -20,7 +23,7 @@
           <option value="{{ link.title }}"{{ selected_attribute }}>{{ link.title }}</option>
         {% endfor %}
       </select>
-      <select id="filter-by-size" class="collection-filters__select">
+      <select id="filter-by-size" class="collection-filters__select {{ collection.handle }}">
         <option selected disabled>Filter by Size</option>
         <option value="">All</option>
         {% for link in linklists[size_linklist].links %}
@@ -62,7 +65,7 @@
       }
     }
   }
-  jQuery('.collection-filters__select').change(function() {
+  jQuery('.collection-filters__select.{{ collection.handle }}').change(function() {
     if (jQuery(this).val()) {
       location.href = '/collections/' + jQuery(this).val();
     }
@@ -70,7 +73,7 @@
       location.href = '/collections/all';
     }
   });
-  var collFilters = jQuery('.collection-filters__select');
+  var collFilters = jQuery('.collection-filters__select.{{ collection.handle }}');
   collFilters.change(function() {
     delete Shopify.queryParams.page;
     var newTags = [];
